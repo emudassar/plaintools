@@ -21,7 +21,7 @@ export const site = {
   jurisdiction: "Pakistan",
   /** Nothing renders while these are empty. */
   adsenseClientId: "",
-  gaMeasurementId: "",
+  gaMeasurementId: "G-2K0TL3796N",
 } as const;
 
 /**
@@ -55,6 +55,13 @@ export const thirdPartyServices: readonly ThirdPartyService[] = [
       "Turns a typed address into coordinates, and coordinates back into a place name. Used by What Soil Type Is My Property?",
     privacyUrl: "https://www.komoot.com/privacy",
     receives: "Your IP address and the address text or coordinates you entered.",
+  },
+  {
+    name: "Google Analytics",
+    purpose: "Counts visits and which pages are used, sitewide.",
+    privacyUrl: "https://policies.google.com/privacy",
+    receives:
+      "Your IP address, approximate location, device/browser type, and the pages you view.",
   },
 ] as const;
 

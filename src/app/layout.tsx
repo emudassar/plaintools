@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import { OrganizationSchema, WebsiteSchema } from "@/components/Schema";
-import { site } from "@/config/site";
+import { site, isAnalyticsEnabled } from "@/config/site";
 import { categories, liveTools, usedCategoriesLive, toolsInCategory } from "@/config/tools";
 
 export const metadata: Metadata = {
@@ -35,6 +36,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col">
+        {isAnalyticsEnabled && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${site.gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${site.gaMeasurementId}');
+              `}
+            </Script>
+          </>
+        )}
         <OrganizationSchema />
         <WebsiteSchema />
         <SiteHeader />
