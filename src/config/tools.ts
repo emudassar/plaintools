@@ -23,6 +23,10 @@ export const categories = {
     label: "Workplace & Safety",
     blurb: "What a published standard or regulation actually requires.",
   },
+  construction: {
+    label: "Construction & DIY",
+    blurb: "Measurements, framing and material questions with a concrete numeric or code answer.",
+  },
 } as const;
 
 export type CategoryId = keyof typeof categories;
@@ -78,6 +82,36 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "US",
     dataset: "Penn State Extension and NDSU Extension water softening publications",
+  },
+  {
+    slug: "roof-pitch-calculator",
+    name: "Roof Pitch Calculator",
+    tagline:
+      "Enter the rise and run and get the pitch as x-in-12, the angle, the slope percentage and the rafter length — plus which roof coverings the IRC allows at that slope.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "Geometry, and the 2021 International Residential Code, Chapter 9",
+  },
+  {
+    slug: "septic-tank-size-calculator",
+    name: "Septic Tank Size Calculator",
+    tagline:
+      "Enter the number of bedrooms and get the minimum tank capacity EPA's design manual reports for one- and two-family homes, with the table and page it comes from.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "USEPA Onsite Wastewater Treatment Systems Manual, Table 4-13",
+  },
+  {
+    slug: "rebar-size-chart",
+    name: "Rebar Size Chart",
+    tagline:
+      "Pick a bar size and get its diameter, cross-sectional area and weight per foot in US and metric units, from a state DOT's published reinforcement table.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "Illinois DOT Standard 001001-02, Areas of Reinforcement Bars",
   },
 ] as const;
 

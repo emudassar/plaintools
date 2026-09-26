@@ -6,7 +6,14 @@
 
 ## Current stage
 
-**Layer 1 — 3 tools live locally, nothing deployed, no domain registered.**
+**Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
+
+Session **2026-09-26**: ran a fresh Semrush keyword + SERP sweep (unrelated to the water niche —
+this is the hub model working as intended, see "Tool #4" below) and picked 3 candidates, all
+approved by the user and built one at a time in the same session: **Roof Pitch Calculator**,
+**Septic Tank Size Calculator**, **Rebar Size Chart**. User explicitly asked for each to be
+researched with real Semrush + SERP data and independently verified sources, not guessed, before
+being built — see "Tool #4", "Tool #5" and "Tool #6" below for the full research trail.
 
 Last session: **2026-09-22** (second session that day). Tool #3 (Water Softener Size Calculator)
 was researched, built and verified. It is the **first tool chosen from a deliberate niche search
@@ -28,13 +35,18 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | What Soil Type Is My Property? | `what-soil-type-is-my-property` | US | USDA NRCS Soil Data Access (SSURGO) | live (local only) |
 | OSHA Soil Classification | `osha-soil-classification` | US | 29 CFR 1926 Subpart P, Appendix A | live (local only) |
 | Water Softener Size Calculator | `water-softener-size-calculator` | US | Penn State Extension + NDSU Extension | live (local only) |
+| Roof Pitch Calculator | `roof-pitch-calculator` | US | Geometry + 2021 IRC Chapter 9 | live (local only) |
+| Septic Tank Size Calculator | `septic-tank-size-calculator` | US | USEPA Onsite Wastewater Treatment Systems Manual, Table 4-13 | live (local only) |
+| Rebar Size Chart | `rebar-size-chart` | US | Illinois DOT Standard 001001-02 | live (local only) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
-availability checked.** No EMD proposed for tool #3.
+availability checked.** No EMD proposed for tools #3–#6.
 
-Categories now in use: `property` ("Home & Property"), `safety` ("Workplace & Safety"). The
-`property` blurb was widened on 2026-09-22 to "a specific building or plot, or the systems that
-serve it" so it could hold tool #3 without inventing a new bucket.
+Categories now in use: `property` ("Home & Property"), `safety` ("Workplace & Safety"),
+`construction` ("Construction & DIY" — added 2026-09-26 for tool #4; measurements, framing and
+material questions with a concrete numeric or code answer). The `property` blurb was widened on
+2026-09-22 to "a specific building or plot, or the systems that serve it" so it could hold tool #3
+without inventing a new bucket.
 
 ## Tool #2 — OSHA Soil Classification, built 2026-09-22
 
@@ -169,6 +181,126 @@ this vertical is published by either network** — any revenue number is an assu
 - **75 gallons/person/day is Penn State's figure**, used in their example, shown as an editable
   default and attributed. It is *not* presented as a national average; EPA WaterSense was never
   read.
+
+## Tool #4 — Roof Pitch Calculator, built 2026-09-26
+
+- **How it was chosen:** user provided examples of independent SEO/niche sites making real
+  AdSense/affiliate revenue from single-purpose tools unrelated to each other (list makers, menu
+  pages, tour affiliate sites) and asked for a fresh keyword sweep via their Semrush mirror
+  (`sr04.balochseotools.com`) to find untapped, low-competition niches — explicitly reinforcing
+  the hub's "no subject" model. Bulk-checked 20 candidate data/calculator keywords across
+  property, construction and civic-data niches (radon zone, flood zone, frost line, snow load,
+  wind zone, seismic category, hardiness zone, septic sizing, area code lookup, VIN decoder,
+  concrete mix, rebar chart, lumber span, roof pitch — see this session's transcript for the full
+  table). Picked 3, approved by the user one at a time: **roof pitch calculator** (built first),
+  **septic tank size calculator**, **rebar size chart** (both queued next).
+- **Slug/keyword:** `roof-pitch-calculator` (14,800/mo, KD 23, CPC $2.12 — highest volume-to-KD
+  ratio of anything checked this session). Full cluster in Semrush: 111.2K keyword variants under
+  the "roof pitch calculator" topic (4.78M combined volume, average KD 22%); 80.2K variants under
+  the broader "roof pitch" topic (4.19M volume, average KD 19%). One page absorbs the whole
+  cluster — see the research file (moved to `research/_completed/roof-pitch-calculator.md`) for
+  why building separate pages for "shed roof pitch calculator", "roof slope calculator" etc.
+  would have violated the near-duplicate-pages rule.
+- **Why it passed the gap test:** Google top 8 for `roof pitch calculator` (2026-09-26) is
+  exclusively small calculator/hobbyist/manufacturer sites (omnicalculator, roofpitch-calculator.com,
+  roofsnap, mycarpentry, ls-usa, thecivilcity, two Australian firms) — **no government, standards
+  body or major publisher anywhere on page 1**, and **none of them cite an actual building code**
+  for what the calculated pitch means for material choice. That code citation is the gap.
+- **Source:** two parts. (1) The geometry — rise/run trigonometry, cited only to the standard
+  US x-in-12 construction convention (no citation needed for the maths itself). Cross-checked
+  against Omni Calculator's own published worked example (run 6 m, rise 1.5 m → rafter 6.18 m,
+  pitch 25%, angle 14°, ratio 3:12 — reproduced exactly) and by hand (6 in rise / 12 in run →
+  50%, 26.565°, 13.416 in rafter — reproduced exactly). (2) The IRC minimum-slope-by-covering
+  table — **2021 International Residential Code, Chapter 9 "Roof Assemblies", Section R905**,
+  read directly from ICC's free public Digital Codes reader
+  (`codes.iccsafe.org/content/IRC2021P1/chapter-9-roof-assemblies`, HTTP 200, no login, no
+  paywall — read via browser since ICC's reader is a client-rendered JS app, not curl-able) on
+  2026-09-26. 11 material rows with exact code sections (R905.2.2 through R905.10.2(3)),
+  verbatim.
+- **No network at runtime.** Both the geometry and the IRC table are compiled into the page, same
+  pattern as tools #2 and #3. `thirdPartyServices` in `site.ts` is unchanged.
+- **Verified 2026-09-26:** `node --experimental-strip-types` (via a small resolve-hook loader,
+  since Node needs explicit `.ts` extensions the shipping code omits for the bundler) reproduced
+  both cross-check examples exactly, confirmed `run = 0` throws the correct dead-zone error,
+  confirmed a flat roof (`rise = 0`) computes cleanly to 0° rather than erroring, and confirmed
+  the IRC table correctly flags a 2:12 slope as allowed for asphalt shingles but not for slate or
+  metal shingles. Re-verified live in the browser: happy path (6:12 → 26.57°, 50%, 13.416 in
+  rafter, all 11 materials allowed), the `run = 0` error message rendering correctly, and the
+  angle-input mode reproducing the identical 6:12 result as rise/run mode for the same roof.
+  `npm run build` passes, slug guard passes, sitemap contains the URL.
+- **New category added:** `construction` ("Construction & DIY") — the existing `property` and
+  `safety` categories didn't fit a pure-measurement/code tool.
+## Tool #5 — Septic Tank Size Calculator, built 2026-09-26
+
+- **Slug/keyword:** `septic-tank-size-calculator` (1,000/mo, KD 12). Fuller cluster pulled later
+  in the session once the Semrush mirror session was re-authenticated: `septic tank sizes`
+  1,300/KD10, `septic tank size` 880/KD16, `how big is a septic tank` 720/KD6, `septic tanks size
+  calculator` 110/**KD 0**. Full "septic tank size" topic: 70.2K keyword variants, 2.01M combined
+  volume, average KD 14%.
+- **Why it passed the gap test:** Google top 8 (2026-09-26) is exclusively small commercial
+  calculator sites, no government page anywhere. Stronger than that: a competitor page found
+  during research (turn2engineering.com) states "EPA bedroom reference" figures that are
+  **factually wrong** against the real table — it says 900/1,000/1,250 gal for 3/4/5 bedrooms
+  where the actual EPA table says 1,000/1,200/1,425. This is the uncited-and-disagreeing-copy
+  buy signal in a very direct form.
+- **Source:** USEPA *Onsite Wastewater Treatment Systems Manual* (EPA/625/R-00/008, Feb 2002),
+  Table 4-13, page 4-40, attributed by EPA to the International Private Sewage Disposal Code
+  (ICC, 1995). Downloaded directly from epa.gov (HTTP 200, 21.5 MB), page 4-40 located via
+  `pdftotext` then **rendered as a PNG (PyMuPDF, 200 dpi) and read visually**, because the table
+  itself is an embedded image, not extractable text. Also pulled a second real EPA sentence with
+  no fabricated number: "Most state codes require a septic tank size increase [for a garbage
+  disposal] but offer no advice as to any increasing field size" — the page states this and
+  invents no adjustment factor, mirroring the tool #3 decision not to invent an iron multiplier.
+- **No network at runtime.** Table compiled into the page; `thirdPartyServices` unchanged.
+- **Verified 2026-09-26:** `node --experimental-strip-types` reproduced all 8 table rows (1→750
+  through 8→2,100) exactly against the source image. Dead zones confirmed: 0/negative/non-integer
+  bedrooms throw; >8 bedrooms correctly falls through to the manual's separate (and clearly
+  labelled as different/rougher) two-to-three-times-daily-flow rule rather than a fabricated table
+  row. Re-verified live in the browser: 3 bedrooms → exactly 1,000 gal with the right design-flow
+  range; 10 bedrooms → correct "outside Table 4-13's range" state with the rule-of-thumb panel;
+  1 bedroom → 750 gal plus the table's own 1,000-gallon state-minimum footnote, and the
+  garbage-disposal checkbox correctly surfaces the quoted EPA sentence. `npm run build` passes,
+  slug guard passes, sitemap contains the URL.
+- **Mid-session gotcha:** the Semrush mirror (`sr04.balochseotools.com`) session expired in the
+  built-in browser pane partway through this tool's research. The assistant did **not** log back
+  in (that would mean entering the user's password on a real third-party site, which is out of
+  bounds regardless of whose account it is) — the user re-authenticated it themselves in their
+  own Chrome, and research continued there via `claude-in-chrome` for tools #5 and #6.
+
+## Tool #6 — Rebar Size Chart, built 2026-09-26
+
+- **Slug/keyword:** `rebar-size-chart` (2,900/mo, KD 5 — lowest difficulty of anything checked
+  this session). Full "rebar size" topic: 118.5K keyword variants, 19.06M combined volume,
+  average KD 24%, overwhelmingly per-bar-number questions ("what size is #4 rebar," "diameter of
+  #8 rebar") that one interactive chart absorbs instead of one page per bar number.
+- **Why it passed the gap test:** Google top 8 is exclusively small steel-supplier/fabricator
+  sites (harrissupplysolutions, steelworld.uk, camblinsteel, field-pm, Pinterest,
+  reinforcing-bar.com, upstaterebar, lbiw.com) — several are themselves sales pages for the
+  product the chart describes, a structural conflict of interest, and none cites a checkable
+  source.
+- **Source:** the real bar-numbering standard is ASTM A615/A706, which is **paywalled and was
+  not read**. Instead cited **Illinois DOT Standard 001001-02, "Areas of Reinforcement Bars"**
+  (issued 1997, revised 2009) — a free state DOT republication of the same physical dimensions,
+  covering bars #3–#11 only (the tool does not offer #14/#18, since the source doesn't cover
+  them). TxDOT's equivalent table (a planned cross-check) could not be read — both
+  `ftp.txdot.gov` and `plans.txdot.gov` failed to load from this network, the same failure shape
+  already logged for osha.gov in this repo's Gotchas. **The cross-check used instead: every row's
+  area matches area = π/4 × diameter² to within 0.001 sq in**, confirming internal consistency
+  without a second publisher.
+- **No network at runtime.** Table compiled into the page; `thirdPartyServices` unchanged.
+- **Verified 2026-09-26:** `node --experimental-strip-types` confirmed all 9 rows against the
+  π/4×d² geometric relationship (all within 0.0007 sq in), the worked example (20 ft of #5 → 20.86
+  lb, matching table weight × length exactly), out-of-range bar sizes throw, non-positive lengths
+  throw. Re-verified live: #4 with 20 ft → exactly 13.36 lb (0.668 × 20); the full 9-row table
+  matches the source exactly with the selected row highlighted. **Encountered and worked around
+  the documented native-`min`-blocks-submission gotcha** (same class as the `step` issue already
+  in this file) — testing length = -5 hit the browser's own HTML5 validation tooltip before
+  React's handler ever ran, consistent with `min="0"` on the field; switched to testing the
+  library directly via Node (authoritative per the `/add-tool` skill) plus a browser-reachable
+  boundary (length = 0, which passes native `min` and correctly reaches the custom error). This
+  is consistent with the existing codebase's own convention (`WaterSoftenerTool` uses the same
+  `min` pattern), not a new bug. `npm run build` passes, slug guard passes, sitemap contains the
+  URL — final build confirms all 6 tools present.
 
 ## Done
 
@@ -315,6 +447,10 @@ this vertical is published by either network** — any revenue number is an assu
 
 ## Next 3–5 actions
 
+0. **All 3 approved tools from the 2026-09-26 sweep are now built and live** (roof pitch, septic
+   tank, rebar chart — 6 tools total). Before adding a 7th, decide whether to keep opportunistic
+   picking (this session's model) or return to Search Console data once something is deployed —
+   see action 3 below, which is now more urgent with 6 tools ready to test.
 1. **Decide the real name and register the domain**, then update `name` / `domain` / `url` in
    `src/config/site.ts`. Do this *before* anything is indexed.
 2. **Set `jurisdiction`** in `src/config/site.ts` and get the three legal pages reviewed.
