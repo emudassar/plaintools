@@ -4,3 +4,6 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# SEO reports from the hub SEO engine (local analysis output, same as the other sites)
+/reports/
