@@ -30,7 +30,14 @@
   Both fixed and re-verified.
 - **Categories:** no new one. Egress + ramp → `construction`, parking → `property`.
 - **Deployment fact:** `plaintools.site` was already live (Cloudflare, 6 tools in its sitemap)
-  when checked on 2026-10-03. "Nothing deployed" below is out of date.
+  when checked on 2026-10-03. "Nothing deployed" below is out of date. Pushed 726eca7 with the
+  user's approval: **push to `main` auto-deploys, live in under a minute** (404 → 200 within ~45 s).
+  Re-verified on the live site: all 3 pages 200, sitemap lists 9 tools, old tools still 200, and
+  real inputs on each tool gave the same results as local (egress 20×24 → 3.33 sq ft fail;
+  parking 501 → 11/2; ramp 45 in → 45 ft, 2 runs, 3 landings), no console errors.
+- **Gotcha:** the user's Chrome showed an error page for plaintools.site (even the homepage) while
+  curl and the built-in browser loaded it fine. Likely Chrome DNS/extension. Not investigated;
+  the user approved using the built-in browser instead.
 
 Session **2026-10-03**: research-only sweep for tools #7–#9 (nothing built). Semrush (sr04 mirror,
 user's Chrome) + Google US SERP + the "copy SEO" knowledge base (click-necessity / moat rules).
