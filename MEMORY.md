@@ -8,6 +8,47 @@
 
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
+**2026-10-03, later the same session: tools #7–#9 BUILT and verified** (user approved all three):
+`egress-window-calculator`, `ada-parking-space-requirements`, `ada-ramp-calculator`. 9 tools live.
+- **Sources finished before coding:** ADA §104.2 settles rounding ("the next greater whole number"),
+  so 2% of 501 = 10.02 → 11. Also read: ADA §208.2.3 (residential, deliberately NOT modelled, page
+  says so), §502.2/502.3 widths, §303.2–303.4 (≤1/4 in vertical, ≤1/2 in bevel, more = ramp),
+  §405.3 cross slope 1:48, §402.2/§403.3 (1:20 is the walking-surface limit, NOT a ramp minimum).
+  IRC R310.4.1 well ≥ 9 sq ft with ≥ 36 in projection and width, R310.4.2 ladder when deeper than 44 in,
+  Chapter 2 grade-floor definition (within 44 in above OR below grade). R310.5 replacement windows
+  NOT read in detail. The page only names it.
+- **Verified:** 91/91 Node logic cases (every Table 208.2 boundary, the 2% band, 1000+ formula, van
+  rounding, 10%/20% medical rules, ramp 30-in run split, 6-in handrail trigger, Table 405.2 limits,
+  §303 thresholds, cm input, egress area/width/height/sill/grade-floor boundaries, well checks,
+  bad inputs). Browser, real clicks: egress 24×36 passes, 20×24 fails on area only (3.33 sq ft),
+  basement with missing well warns, 30-in well projection fails, −5 width errors. Parking 120→5/1,
+  501→11/2, 1250→23/4, hospital 85→9/2, 10.5 errors. Ramp 24 in→24 ft/2 landings, 45 in→2 runs/3
+  landings, 7 in at 1:10 not permitted, 0.4 in bevel, 0 errors. Zero console errors. Build passes,
+  all 3 in sitemap, one H1 each, JSON-LD valid (HowTo 5/4/4 steps, FAQ 7 each).
+- **Two fixes found during browser testing:** the headline said "meets every minimum" when the area
+  well was not checked yet, and the ladder row said "Meets" when it only states a requirement.
+  Both fixed and re-verified.
+- **Categories:** no new one. Egress + ramp → `construction`, parking → `property`.
+- **Deployment fact:** `plaintools.site` was already live (Cloudflare, 6 tools in its sitemap)
+  when checked on 2026-10-03. "Nothing deployed" below is out of date.
+
+Session **2026-10-03**: research-only sweep for tools #7–#9 (nothing built). Semrush (sr04 mirror,
+user's Chrome) + Google US SERP + the "copy SEO" knowledge base (click-necessity / moat rules).
+Three picks, each with a research file in `research/` waiting for approval:
+**`egress-window-calculator`** (590/KD 7, cluster ~7.3K/mo; no calculator and no AI Overview on
+`egress window size requirements`; source 2021 IRC R310), **`ada-parking-space-requirements`**
+(2,900/KD 31/**$5.68**; no calculator in top 8; source 2010 ADA Standards §208.2, gov text) and
+**`ada-ramp-calculator`** (590/KD 22, cluster ~10.7K/mo; SERP is mostly ramp sellers; source 2010 ADA
+§405; weakest gap of the three). **Rejected this session, with reasons:** `grain bin capacity
+calculator` (480/KD 8, but U of Arkansas + UNL CropWatch calculators rank top 3),
+`gutter size calculator` (SMACNA's own calculator is #1), `stair stringer calculator` (9,900/KD 29),
+`baluster spacing calculator` (1,000/KD 24), `box fill calculator` (1,900/KD 27, and NEC is copyrighted),
+`drain pipe slope calculator` (320/KD 7), `occupant load calculator` (210/KD 17) and `footing size
+calculator` (320/KD 11): page 1 is full of working calculators for all six.
+Too small: trench slope (20), OSHA noise dose (0), ladder angle (90), sling angle (140), fall
+clearance (50), stocking rate (50), plumbing fixture count (50). Mirror throttled again after
+~30 keywords (500 / "Something went wrong"). Batches of about 10 worked.
+
 Session **2026-09-26**: ran a fresh Semrush keyword + SERP sweep (unrelated to the water niche —
 this is the hub model working as intended, see "Tool #4" below) and picked 3 candidates, all
 approved by the user and built one at a time in the same session: **Roof Pitch Calculator**,
@@ -38,6 +79,9 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Roof Pitch Calculator | `roof-pitch-calculator` | US | Geometry + 2021 IRC Chapter 9 | live (local only) |
 | Septic Tank Size Calculator | `septic-tank-size-calculator` | US | USEPA Onsite Wastewater Treatment Systems Manual, Table 4-13 | live (local only) |
 | Rebar Size Chart | `rebar-size-chart` | US | Illinois DOT Standard 001001-02 | live (local only) |
+| Egress Window Calculator | `egress-window-calculator` | US | 2021 IRC R310 + Ch. 2 grade-floor definition | live (built 2026-10-03) |
+| How Many ADA Parking Spaces Are Required? | `ada-parking-space-requirements` | US | 2010 ADA Standards §104.2, §208.2, §502 | live (built 2026-10-03) |
+| ADA Ramp Calculator | `ada-ramp-calculator` | US | 2010 ADA Standards §303, §405 | live (built 2026-10-03) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.

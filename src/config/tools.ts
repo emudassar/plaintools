@@ -113,6 +113,36 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Illinois DOT Standard 001001-02, Areas of Reinforcement Bars",
   },
+  {
+    slug: "egress-window-calculator",
+    name: "Egress Window Calculator",
+    tagline:
+      "Enter a window's clear opening and sill height and see which IRC R310 egress minimums it meets — area, width, height, sill and window well — with the section for each.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "2021 International Residential Code, Section R310",
+  },
+  {
+    slug: "ada-parking-space-requirements",
+    name: "How Many ADA Parking Spaces Are Required?",
+    tagline:
+      "Enter the total spaces in a parking lot and get the minimum accessible and van-accessible count from the 2010 ADA Standards, with the rule and the arithmetic.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "2010 ADA Standards for Accessible Design, §208.2 and §502",
+  },
+  {
+    slug: "ada-ramp-calculator",
+    name: "ADA Ramp Calculator",
+    tagline:
+      "Enter the rise and get the minimum ramp length, the number of runs and landings, and whether handrails are required under the 2010 ADA Standards §405.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "2010 ADA Standards for Accessible Design, §303 and §405",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

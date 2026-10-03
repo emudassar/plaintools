@@ -52,6 +52,14 @@ Until then every new tool goes on the hub. The hub is the cheap place to be wron
 | Tool | Slug | Scope | Data source | Status |
 |---|---|---|---|---|
 | What Soil Type Is My Property? | `what-soil-type-is-my-property` | US | USDA NRCS Soil Data Access (SSURGO) | **live** |
+| OSHA Soil Classification | `osha-soil-classification` | US | 29 CFR 1926 Subpart P, Appendix A | **live** |
+| Water Softener Size Calculator | `water-softener-size-calculator` | US | Penn State + NDSU Extension | **live** |
+| Roof Pitch Calculator | `roof-pitch-calculator` | US | Geometry + 2021 IRC Chapter 9 | **live** |
+| Septic Tank Size Calculator | `septic-tank-size-calculator` | US | USEPA OWTS Manual, Table 4-13 | **live** |
+| Rebar Size Chart | `rebar-size-chart` | US | Illinois DOT Standard 001001-02 | **live** |
+| Egress Window Calculator | `egress-window-calculator` | US | 2021 IRC R310 | **live** (built 2026-10-03) |
+| How Many ADA Parking Spaces Are Required? | `ada-parking-space-requirements` | US | 2010 ADA Standards §208.2, §502 | **live** (built 2026-10-03) |
+| ADA Ramp Calculator | `ada-ramp-calculator` | US | 2010 ADA Standards §303, §405 | **live** (built 2026-10-03) |
 
 EMD candidate for tool #1: `whatsoiltype.com` — **availability not checked**.
 
