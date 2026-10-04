@@ -203,6 +203,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
   },
+  {
+    slug: "pool-alkalinity-calculator",
+    name: "Pool Alkalinity Calculator",
+    tagline:
+      "Enter your pool's volume and current and target total alkalinity and get how much baking soda, soda ash or sesquicarbonate raises it — or acid lowers it — product by product.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
