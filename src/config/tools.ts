@@ -31,6 +31,10 @@ export const categories = {
     label: "Farm & Livestock",
     blurb: "Breeding, feeding and field questions answered from extension and agency publications.",
   },
+  health: {
+    label: "Health & Everyday",
+    blurb: "Everyday measurement questions answered from published specifications and agency formulas.",
+  },
 } as const;
 
 export type CategoryId = keyof typeof categories;
@@ -346,6 +350,16 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "US",
     dataset: "Allegion Steelcraft handing procedures and Schlage handing instruction",
+  },
+  {
+    slug: "capsule-size-chart",
+    name: "Capsule Size Chart",
+    tagline:
+      "Pick a capsule size, 000 to 5, and get its volume, how many mg it holds at your powder's density, and its length and diameter — or enter a fill and get the smallest size that holds it.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Capsugel Coni-Snap hard gelatin capsule specifications",
   },
 ] as const;
 

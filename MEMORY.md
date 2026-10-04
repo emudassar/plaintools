@@ -22,8 +22,13 @@ door-handing-chart (Allegion Steelcraft handing procedures + Schlage P509-664).
 **SWAPPED OUT: garage door spring calculator** — no free citable torsion-spring formula and safety-critical;
 replaced by shower-floor-slope-calculator (tell user).
 
-**REMAINING from the 30-list (13), build in this order next session:**
-capsule-size-chart, motorcycle-wind-chill-chart, christmas-tree-light-calculator, chainsaw-file-size-chart,
+Then (#30): capsule-size-chart (new `health` category "Health & Everyday"; Capsugel Coni-Snap brochure
+BAS 255 p.16, read via a distributor copy at euromar.co.il since capsugel.com's PDF 404s; all 56 printed
+capacity cells = volume x density x 1000; source slip: 0el closed length printed 0.909 in / 23.5 mm, flagged
+on the page, not corrected). Gotcha: euromar serves the PDF slowly and truncates; `curl -C -` resume worked.
+
+**REMAINING from the 30-list (12), build in this order next session:**
+motorcycle-wind-chill-chart, christmas-tree-light-calculator, chainsaw-file-size-chart,
 aquarium-gravel-calculator, deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
