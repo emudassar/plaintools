@@ -297,6 +297,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Sowa Tool tap & drill chart, taper pipe taps (NPT) and straight pipe taps (NPS)",
   },
+  {
+    slug: "sine-bar-calculator",
+    name: "Sine Bar Calculator",
+    tagline:
+      "Enter a sine bar's length and an angle in degrees, minutes and seconds to get the gauge block stack height — or enter the stacks to get the angle. Inches or millimetres.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Sine bar formula, Manufacturing Processes 4-5 (open textbook, CC BY)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
