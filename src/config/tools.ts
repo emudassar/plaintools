@@ -183,6 +183,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Mass-balance formula, cross-checked against Hayward's AquaRite manual salt table",
   },
+  {
+    slug: "pool-shock-calculator",
+    name: "Pool Shock Calculator",
+    tagline:
+      "Enter your pool's volume, current and target free chlorine and the product you use, and get how much shock to add — from a state health department's published dose table.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
