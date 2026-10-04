@@ -223,6 +223,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
   },
+  {
+    slug: "pool-pump-run-time-calculator",
+    name: "Pool Pump Run Time Calculator",
+    tagline:
+      "Enter your pool's volume and the flow through the filter and get how long one turnover takes and how many hours a day the pump must run — with the CDC model code's maximum turnover times for public pools.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "CDC Model Aquatic Health Code 2023, section 4.7.1.10 and Table 4.7.1.10",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
