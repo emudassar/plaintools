@@ -287,6 +287,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Water Systems Council wellcare sheet, Sizing a Well Pump",
   },
+  {
+    slug: "npt-tap-drill-size",
+    name: "NPT Tap Drill Size",
+    tagline:
+      "Pick a pipe thread size from 1/16 to 3 inch and get the tap drill for NPT — with its decimal and millimetre size and the NPS straight-thread drill — from a tap maker's published chart.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Sowa Tool tap & drill chart, taper pipe taps (NPT) and straight pipe taps (NPS)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
