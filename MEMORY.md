@@ -32,8 +32,12 @@ not defined >50 F or <=3 mph per NWS -> explained no-data; 70/80 mph rows marked
 page discloses that NWS V is 33-ft station wind reduced to face height, so riding speed likely understates).
 Gotcha: the built-in browser's first tab hung after a dev restart; a fresh tab (tabs_create) worked.
 
-**REMAINING from the 30-list (11), build in this order next session:**
-christmas-tree-light-calculator, chainsaw-file-size-chart,
+Then (#32): christmas-tree-light-calculator (no official standard: page calls it a rule of thumb, cites
+Mahoney's Garden Center 75/100/125 per ft + Govee 100/ft; CPSC "never string together more than three sets of
+incandescent lights" -> runs; LED -> label). balsamhill.com returned 429; cpsc.gov 403 to curl, read via WebFetch.
+
+**REMAINING from the 30-list (10), build in this order next session:**
+chainsaw-file-size-chart,
 aquarium-gravel-calculator, deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).

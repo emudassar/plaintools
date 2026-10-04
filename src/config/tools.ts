@@ -371,6 +371,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "National Weather Service wind chill formula (2001)",
   },
+  {
+    slug: "christmas-tree-light-calculator",
+    name: "Christmas Tree Light Calculator",
+    tagline:
+      "Enter your tree's height and the lights per set and get how many lights and sets to buy, by the 100-lights-per-foot rule, plus how many incandescent sets CPSC says can be joined.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Published lights-per-foot rule of thumb; U.S. CPSC holiday safety guidance",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
