@@ -267,6 +267,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Merck Veterinary Manual (normal sheep gestation 144–150 days)",
   },
+  {
+    slug: "r22-pt-chart",
+    name: "R22 PT Chart",
+    tagline:
+      "Enter a temperature to get R-22's saturation pressure, or a gauge reading to get its saturation temperature — °F or °C, psig, psia, kPa or bar — from NIST data, −40°F to 150°F.",
+    category: "property",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "NIST Chemistry WebBook (SRD 69), R22 saturation properties",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
