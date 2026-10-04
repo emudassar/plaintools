@@ -337,6 +337,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "2021 International Residential Code, Section P2709.1",
   },
+  {
+    slug: "door-handing-chart",
+    name: "Door Handing Chart",
+    tagline:
+      "Answer three questions — which side you're on, where the hinges are, which way the door swings — and get the door hand: LH, RH, LHR or RHR, by Allegion's published handing rule.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "Allegion Steelcraft handing procedures and Schlage handing instruction",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

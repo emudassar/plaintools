@@ -16,6 +16,22 @@ sheep-gestation-calculator (Merck Vet Manual 144–150 d), r22-pt-chart (NIST We
 cross-checked vs iGas chart ≤0.05 psi), well-pump-size-calculator (Water Systems Council wellcare sheet),
 npt-tap-drill-size (Sowa Tool chart), sine-bar-calculator (LibreTexts CC BY textbook table, 12/12 match),
 asphalt-tonnage-calculator (Asphalt magazine Eq.1, 110 lb/sy/in; article has a 2,322.2 vs 2,323.2 slip).
+Then (#27–#29): asphalt-millings-calculator (FHWA-RD-97-148 Table 13-2, 100–125 lb/ft3 compacted),
+shower-floor-slope-calculator (2021 IRC P2709.1 read in Chrome on codes.iccsafe.org; fractions rounded inward),
+door-handing-chart (Allegion Steelcraft handing procedures + Schlage P509-664).
+**SWAPPED OUT: garage door spring calculator** — no free citable torsion-spring formula and safety-critical;
+replaced by shower-floor-slope-calculator (tell user).
+
+**REMAINING from the 30-list (13), build in this order next session:**
+capsule-size-chart, motorcycle-wind-chill-chart, christmas-tree-light-calculator, chainsaw-file-size-chart,
+aquarium-gravel-calculator, deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
+tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
+linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
+Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
+plumbing-drain-slope, deck-load, horse-gestation, goat-gestation (omni ranks), r410a/r134a/r32 PT (NIST has
+r134a C811972 & r32 C75105; blends not in NIST).
+Workflow per tool: find primary source → lib + node test vs source example → component → page (10 uses,
+6–8 FAQs, no unsourced claims) → register live → dev-server test via JS → STOP dev server → build → commit → push.
 - Sources: Hayward AquaRite manual (salt table, 10 printed cells match formula); Indiana DOH "Adjusting
   Chemical Levels in a Swimming Pool" (NSPF-derived table, decoded into `lib/pool-dosing.ts`, every cell
   cross-checked by the guide's own formulas or chemistry); CDC MAHC 2023 Table 4.7.1.10; DOE Energy Saver
