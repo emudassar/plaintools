@@ -193,6 +193,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
   },
+  {
+    slug: "muriatic-acid-pool-calculator",
+    name: "Muriatic Acid Pool Calculator",
+    tagline:
+      "Enter your pool's volume and current and target total alkalinity and get how much 31.4% muriatic acid to add, and how many separate additions the one-quart limit means.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

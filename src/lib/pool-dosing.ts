@@ -115,8 +115,10 @@ export function formatAmount(amount: number, measure: Measure): string {
     return `${n(amount / 16, 2)} lb (${n(amount, 0)} oz)`;
   }
   if (amount < 32) return `${n(amount, 1)} fl oz`;
-  if (amount < 128) return `${n(amount / 32, 2)} quarts (${n(amount, 0)} fl oz)`;
-  return `${n(amount / 128, 2)} gallons (${n(amount, 0)} fl oz)`;
+  const plural = (v: number, one: string, many: string) => (n(v, 2) === "1" ? one : many);
+  if (amount < 128)
+    return `${n(amount / 32, 2)} ${plural(amount / 32, "quart", "quarts")} (${n(amount, 0)} fl oz)`;
+  return `${n(amount / 128, 2)} ${plural(amount / 128, "gallon", "gallons")} (${n(amount, 0)} fl oz)`;
 }
 
 /** Metric companion: grams or millilitres. */
