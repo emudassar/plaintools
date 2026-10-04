@@ -8,6 +8,13 @@
 
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
+**2026-10-04: 30-tool keyword shortlist researched, nothing built.** See
+`research/2026-10-04-30-tool-shortlist.md`. Semrush (KD 0–14) sweep of ~6,300 keywords, then
+top-10 SERP strength checked for 215 candidates, plus Google allintitle for 15. Strongest picks:
+pool salt calculator (6,600, all top-10 pages AS 0–20), cow gestation calculator (5,400),
+r22 pt chart (4,400), motorcycle wind chill chart (2,400), a 7-tool pool-service cluster.
+Waiting on Mudassar to pick which to build; each still needs its own research file + source check.
+
 **2026-10-03, later the same session: tools #7–#9 BUILT and verified** (user approved all three):
 `egress-window-calculator`, `ada-parking-space-requirements`, `ada-ramp-calculator`. 9 tools live.
 - **Sources finished before coding:** ADA §104.2 settles rounding ("the next greater whole number"),

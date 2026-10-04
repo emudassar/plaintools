@@ -173,6 +173,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "2024 IRC Section R310.3 / 2021 IRC Section R314.3",
   },
+  {
+    slug: "pool-salt-calculator",
+    name: "Pool Salt Calculator",
+    tagline:
+      "Enter your pool's volume, current salt reading and target level and get the pounds of salt to add — or how much water to replace if the salt is too high.",
+    category: "property",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Mass-balance formula, cross-checked against Hayward's AquaRite manual salt table",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
