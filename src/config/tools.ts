@@ -277,6 +277,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "NIST Chemistry WebBook (SRD 69), R22 saturation properties",
   },
+  {
+    slug: "well-pump-size-calculator",
+    name: "Well Pump Size Calculator",
+    tagline:
+      "Count your bathrooms and fixtures and get the pump capacity in gallons per minute by the Water Systems Council's two methods — fixture count and seven-minute peak demand — checked against your well's yield.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Water Systems Council wellcare sheet, Sizing a Well Pump",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
