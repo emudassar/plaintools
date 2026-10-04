@@ -233,6 +233,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "CDC Model Aquatic Health Code 2023, section 4.7.1.10 and Table 4.7.1.10",
   },
+  {
+    slug: "pool-heater-size-calculator",
+    name: "Pool Heater Size Calculator",
+    tagline:
+      "Enter your pool's size, the temperature you want and the coldest month's average and get the approximate gas heater output in Btu/hour, by the U.S. Department of Energy's formula.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "U.S. Department of Energy, Energy Saver: Gas Pool Heaters (sizing formula)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
