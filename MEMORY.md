@@ -8,6 +8,17 @@
 
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
+**2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
+Live so far (tools #13–#19): pool-salt-calculator, pool-shock-calculator, muriatic-acid-pool-calculator,
+pool-alkalinity-calculator, pool-stabilizer-calculator, pool-pump-run-time-calculator, pool-heater-size-calculator.
+- Sources: Hayward AquaRite manual (salt table, 10 printed cells match formula); Indiana DOH "Adjusting
+  Chemical Levels in a Swimming Pool" (NSPF-derived table, decoded into `lib/pool-dosing.ts`, every cell
+  cross-checked by the guide's own formulas or chemistry); CDC MAHC 2023 Table 4.7.1.10; DOE Energy Saver
+  gas pool heater formula (live page 404s, cited via Wayback 2025-01-10 snapshot).
+- **Gotcha: `npm run build` while the dev server runs clobbers `.next` and breaks hydration in dev** —
+  forms then submit natively. Stop the preview server before building, restart it after.
+- Test harness for `lib/*.ts`: node --experimental-strip-types with a resolve hook adding `.ts`.
+
 **2026-10-04: 30-tool keyword shortlist researched, nothing built.** See
 `research/2026-10-04-30-tool-shortlist.md`. Semrush (KD 0–14) sweep of ~6,300 keywords, then
 top-10 SERP strength checked for 215 candidates, plus Google allintitle for 15. Strongest picks:

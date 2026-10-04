@@ -27,6 +27,10 @@ export const categories = {
     label: "Construction & DIY",
     blurb: "Measurements, framing and material questions with a concrete numeric or code answer.",
   },
+  farm: {
+    label: "Farm & Livestock",
+    blurb: "Breeding, feeding and field questions answered from extension and agency publications.",
+  },
 } as const;
 
 export type CategoryId = keyof typeof categories;
@@ -242,6 +246,16 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "US",
     dataset: "U.S. Department of Energy, Energy Saver: Gas Pool Heaters (sizing formula)",
+  },
+  {
+    slug: "cow-gestation-calculator",
+    name: "Cow Gestation Calculator",
+    tagline:
+      "Enter a breeding or AI date and get the calving date at the traditional 283 days and at the shorter average a 101,787-mating Angus study found — with the window most calves arrive in.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "K-State Extension Beef Tips (July 2026), gestation length in modern beef cattle",
   },
 ] as const;
 
