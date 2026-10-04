@@ -307,6 +307,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Sine bar formula, Manufacturing Processes 4-5 (open textbook, CC BY)",
   },
+  {
+    slug: "asphalt-tonnage-calculator",
+    name: "Asphalt Tonnage Calculator",
+    tagline:
+      "Enter the area and compacted thickness and get the tons of hot-mix asphalt, using the 110 lb per square yard per inch rule of thumb or a state DOT's spread rate.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "Asphalt magazine (Asphalt Institute), Equation 1 and the 110 lb/sq yd/in spread rate",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
