@@ -11,6 +11,11 @@
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
 Live so far (tools #13–#19): pool-salt-calculator, pool-shock-calculator, muriatic-acid-pool-calculator,
 pool-alkalinity-calculator, pool-stabilizer-calculator, pool-pump-run-time-calculator, pool-heater-size-calculator.
+Then (#20–#26): cow-gestation-calculator (new `farm` category; K-State Beef Tips 2026 Angus study),
+sheep-gestation-calculator (Merck Vet Manual 144–150 d), r22-pt-chart (NIST WebBook SRD 69 baked in,
+cross-checked vs iGas chart ≤0.05 psi), well-pump-size-calculator (Water Systems Council wellcare sheet),
+npt-tap-drill-size (Sowa Tool chart), sine-bar-calculator (LibreTexts CC BY textbook table, 12/12 match),
+asphalt-tonnage-calculator (Asphalt magazine Eq.1, 110 lb/sy/in; article has a 2,322.2 vs 2,323.2 slip).
 - Sources: Hayward AquaRite manual (salt table, 10 printed cells match formula); Indiana DOH "Adjusting
   Chemical Levels in a Swimming Pool" (NSPF-derived table, decoded into `lib/pool-dosing.ts`, every cell
   cross-checked by the guide's own formulas or chemistry); CDC MAHC 2023 Table 4.7.1.10; DOE Energy Saver

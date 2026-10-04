@@ -317,6 +317,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Asphalt magazine (Asphalt Institute), Equation 1 and the 110 lb/sq yd/in spread rate",
   },
+  {
+    slug: "asphalt-millings-calculator",
+    name: "Asphalt Millings Calculator",
+    tagline:
+      "Enter the area and compacted depth and get the cubic yards of asphalt millings and a tons range from FHWA's published weight for reclaimed asphalt — or your supplier's own weight.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "FHWA-RD-97-148, Reclaimed Asphalt Pavement, Table 13-2",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
