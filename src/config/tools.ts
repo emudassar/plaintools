@@ -361,6 +361,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Capsugel Coni-Snap hard gelatin capsule specifications",
   },
+  {
+    slug: "motorcycle-wind-chill-chart",
+    name: "Motorcycle Wind Chill Chart",
+    tagline:
+      "Enter the air temperature and your riding speed and get the wind chill by the National Weather Service formula, with a full chart from 10 to 80 mph.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "National Weather Service wind chill formula (2001)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

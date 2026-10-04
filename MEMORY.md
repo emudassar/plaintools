@@ -27,8 +27,13 @@ BAS 255 p.16, read via a distributor copy at euromar.co.il since capsugel.com's 
 capacity cells = volume x density x 1000; source slip: 0el closed length printed 0.909 in / 23.5 mm, flagged
 on the page, not corrected). Gotcha: euromar serves the PDF slowly and truncates; `curl -C -` resume worked.
 
-**REMAINING from the 30-list (12), build in this order next session:**
-motorcycle-wind-chill-chart, christmas-tree-light-calculator, chainsaw-file-size-chart,
+Then (#31): motorcycle-wind-chill-chart (NWS 2001 formula; all 216 cells of windchillchart3.pdf reproduced;
+not defined >50 F or <=3 mph per NWS -> explained no-data; 70/80 mph rows marked beyond the 60 mph chart;
+page discloses that NWS V is 33-ft station wind reduced to face height, so riding speed likely understates).
+Gotcha: the built-in browser's first tab hung after a dev restart; a fresh tab (tabs_create) worked.
+
+**REMAINING from the 30-list (11), build in this order next session:**
+christmas-tree-light-calculator, chainsaw-file-size-chart,
 aquarium-gravel-calculator, deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
