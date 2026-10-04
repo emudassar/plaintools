@@ -257,6 +257,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "K-State Extension Beef Tips (July 2026), gestation length in modern beef cattle",
   },
+  {
+    slug: "sheep-gestation-calculator",
+    name: "Sheep Gestation Calculator",
+    tagline:
+      "Enter a breeding date — or the dates a ram or crayon colour was on — and get the lambing window from the Merck Veterinary Manual's 144–150-day normal gestation.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Merck Veterinary Manual (normal sheep gestation 144–150 days)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

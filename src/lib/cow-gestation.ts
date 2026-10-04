@@ -1,4 +1,7 @@
 import { ToolError } from "./errors";
+import { addDays, parseDate, type DateRange } from "./calendar-days";
+
+export { formatDate, formatRange } from "./calendar-days";
 
 /**
  * Cow gestation / calving date.
@@ -25,7 +28,15 @@ export const GESTATION_URL =
   "https://enewsletters.k-state.edu/beeftips/2026/07/01/when-is-she-due-understanding-gestation-length-in-modern-beef-cattle/";
 
 export const TRADITIONAL_DAYS = 283;
-export const STUDY = { mean: 278.6, sd: 4.69, min: 264, max: 292, n: 101_787, oneSdLow: 274.2, oneSdHigh: 283.3 } as const;
+export const STUDY = {
+  mean: 278.6,
+  sd: 4.69,
+  min: 264,
+  max: 292,
+  n: 101_787,
+  oneSdLow: 274.2,
+  oneSdHigh: 283.3,
+} as const;
 
 /** Table 2, age of dam (years) -> mean gestation days. */
 export const BY_DAM_AGE: Readonly<Record<number, number>> = {
@@ -47,11 +58,6 @@ export interface GestationInput {
   damAge: number | null;
 }
 
-export interface DateRange {
-  from: Date;
-  to: Date;
-}
-
 export interface GestationResult {
   bredOn: Date;
   bredUntil: Date | null;
@@ -64,44 +70,38 @@ export interface GestationResult {
   retrievedAt: string;
 }
 
-const DAY_MS = 86_400_000;
-
-export function parseDate(s: string, label: string): Date {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim());
-  if (!m) throw new ToolError("bad-input", `Enter the ${label} as a full date.`);
-  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
-  const dt = new Date(Date.UTC(y, mo - 1, d));
-  if (dt.getUTCFullYear() !== y || dt.getUTCMonth() !== mo - 1 || dt.getUTCDate() !== d) {
-    throw new ToolError("bad-input", `The ${label} is not a real calendar date.`);
-  }
-  if (y < 1900 || y > 2200) throw new ToolError("bad-input", `The ${label} year looks wrong.`);
-  return dt;
-}
-
-/** Adds a (possibly fractional) number of days and rounds to the nearest calendar day. */
-export function addDays(d: Date, days: number): Date {
-  return new Date(d.getTime() + Math.round(days) * DAY_MS);
-}
-
 function span(start: Date, end: Date, days: number): DateRange {
   return { from: addDays(start, days), to: addDays(end, days) };
 }
 
 export function calculateGestation(input: GestationInput): GestationResult {
   const bredOn = parseDate(input.bredOn, "breeding date");
-  const bredUntil = input.bredUntil ? parseDate(input.bredUntil, "end of bull exposure") : null;
+  const bredUntil =
+    input.bredUntil !== null
+      ? parseDate(input.bredUntil, "end of bull exposure")
+      : null;
   if (bredUntil && bredUntil < bredOn) {
-    throw new ToolError("bad-input", "The end of bull exposure is before the breeding start date.");
+    throw new ToolError(
+      "bad-input",
+      "The end of bull exposure is before the breeding start date.",
+    );
   }
-  if (bredUntil && (bredUntil.getTime() - bredOn.getTime()) / DAY_MS > 365) {
-    throw new ToolError("bad-input", "A breeding period longer than a year is outside what this calculator handles.");
+  if (
+    bredUntil &&
+    (bredUntil.getTime() - bredOn.getTime()) / 86_400_000 > 365
+  ) {
+    throw new ToolError(
+      "bad-input",
+      "A breeding period longer than a year is outside what this calculator handles.",
+    );
   }
   if (input.damAge !== null && !(input.damAge in BY_DAM_AGE)) {
     throw new ToolError("bad-input", "Pick the cow's age from the list.");
   }
   const end = bredUntil ?? bredOn;
 
-  const studyMeanDays = input.damAge === null ? STUDY.mean : BY_DAM_AGE[input.damAge];
+  const studyMeanDays =
+    input.damAge === null ? STUDY.mean : BY_DAM_AGE[input.damAge];
   const studyMeanSource =
     input.damAge === null
       ? "study mean, all ages"
@@ -114,16 +114,14 @@ export function calculateGestation(input: GestationInput): GestationResult {
     studyMeanDays,
     studyMeanSource,
     studyMean: span(bredOn, end, studyMeanDays),
-    likelyWindow: { from: addDays(bredOn, STUDY.oneSdLow), to: addDays(end, STUDY.oneSdHigh) },
-    observedRange: { from: addDays(bredOn, STUDY.min), to: addDays(end, STUDY.max) },
+    likelyWindow: {
+      from: addDays(bredOn, STUDY.oneSdLow),
+      to: addDays(end, STUDY.oneSdHigh),
+    },
+    observedRange: {
+      from: addDays(bredOn, STUDY.min),
+      to: addDays(end, STUDY.max),
+    },
     retrievedAt: GESTATION_RETRIEVED,
   };
-}
-
-export function formatDate(d: Date): string {
-  return d.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
-}
-
-export function formatRange(r: DateRange): string {
-  return r.from.getTime() === r.to.getTime() ? formatDate(r.from) : `${formatDate(r.from)} – ${formatDate(r.to)}`;
 }
