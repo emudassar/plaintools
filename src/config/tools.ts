@@ -327,6 +327,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "FHWA-RD-97-148, Reclaimed Asphalt Pavement, Table 13-2",
   },
+  {
+    slug: "shower-floor-slope-calculator",
+    name: "Shower Floor Slope Calculator",
+    tagline:
+      "Enter the distance from the drain to the farthest edge of the shower floor and get how high that edge must sit under the 2021 IRC's ¼ to ½ inch per foot rule — and check a planned slope and curb.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "2021 International Residential Code, Section P2709.1",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
