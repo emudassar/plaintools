@@ -213,6 +213,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
   },
+  {
+    slug: "pool-stabilizer-calculator",
+    name: "Pool Stabilizer Calculator",
+    tagline:
+      "Enter your pool's volume and current and target stabilizer (cyanuric acid) and get how much to add — or what share of the water to replace if it is too high.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Indiana Department of Health pool chemical adjustment guide (adapted from the NSPF handbook)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
