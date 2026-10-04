@@ -41,7 +41,10 @@
 
 **2026-10-04, later the same session: tools #10–#12 BUILT and verified** (user approved all three):
 `propane-tank-expiration-date`, `fire-extinguisher-expiration-date`, `how-many-smoke-detectors-do-i-need`.
-12 tools live locally. **Not pushed.** Committed locally only.
+12 tools. **Pushed 8b85436 with the user's approval on 2026-10-04 and live on plaintools.site
+about 40 s later.** Re-verified live: all 3 pages 200, sitemap 13 entries (12 tools + index), old pages
+still 200. Real inputs on the live site matched local: propane 04/2019 → April 2031; smoke defaults → 5;
+extinguisher dry chem 06/2018 + recharge 02/2023 → hydro June 2030, 6-year Feb 2029. No console errors.
 - **Propane source correction (important):** the research file had quoted "12 years then every 7".
   That is 49 CFR 180.209(j), for fire-extinguisher cylinders. Propane uses (e) and (g): first requal
   12 years after manufacture, then plain date +12, "S" +10, "E" +5 (marks per 180.213(f)(1)/(4)/(5)).
