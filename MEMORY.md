@@ -39,6 +39,66 @@
   curl and the built-in browser loaded it fine. Likely Chrome DNS/extension. Not investigated;
   the user approved using the built-in browser instead.
 
+**2026-10-04, later the same session: tools #10–#12 BUILT and verified** (user approved all three):
+`propane-tank-expiration-date`, `fire-extinguisher-expiration-date`, `how-many-smoke-detectors-do-i-need`.
+12 tools live locally. **Not pushed.** Committed locally only.
+- **Propane source correction (important):** the research file had quoted "12 years then every 7".
+  That is 49 CFR 180.209(j), for fire-extinguisher cylinders. Propane uses (e) and (g): first requal
+  12 years after manufacture, then plain date +12, "S" +10, "E" +5 (marks per 180.213(f)(1)/(4)/(5)).
+  PHMSA's propane leaflet says 10/10/10/5, but it predates 85 FR 68790 (effective 2020-11-30, NPGA
+  petition), which set the 12-year periods. History from that rule: 12/7 before HM-233F, then 10/10,
+  then today's 12 (12 initial + 10 for later proof pressure). The page has a FAQ on it.
+  eCFR showed a 2026-08-04 amendment (91 FR 49357) that only touches 3A/3AA bundles in (b).
+- **Extinguisher:** full Table L-1 (9 rows at 5 years, 5 at 12, 2 footnote-1 rows removed by
+  1982-01-01). OSHA's own 1910.157(e)(4) has the 6-year rule (stored-pressure dry chemical, restarted
+  by recharge or hydro, disposables exempt), so NFPA 10 is never quoted. Disposable dry chemical unit:
+  no date, explained (dead zone).
+- **Smoke alarms:** **2024 IRC renumbered R314 → R310** and added item 6 (sleeping loft). Cooking
+  distances differ (2021: 20/10/6/6 by type; 2024: 10 ft, or 6 ft where necessary). Edition selector,
+  default 2024. 0 bedrooms is a `no-data` dead zone (the list is keyed to sleeping rooms; R310.2.1 /
+  R314.2.1 still require alarms). Cross-check: NFPA's public page has the same core locations.
+- **Shared code added:** `src/lib/month.ts` (month/year maths, validation, due status) and
+  `src/components/MonthYearFields.tsx`. Propane refactored onto both. Reuse them for any
+  month-and-year-stamped tool.
+- **Verified:** Node 22/22 propane, 18/18 extinguisher, 18/18 smoke (all bad-input and dead-zone
+  paths). Browser, real clicks: propane 04/2019 → April 2031; 2005 + E 03/2017 → overdue since March
+  2022; "19" year error; future year error; ASME tank dead zone. Extinguisher: dry chem 06/2018 +
+  recharge 02/2023 → hydro June 2030, 6-year Feb 2029; no recharge → 6-year overdue June 2024 shown in
+  the headline; CO2 06/2018 → overdue June 2023; disposable and soldered brass dead zones; "22" error.
+  Smoke: defaults → 5; +tall room +loft (2024) → 7; 2021 → 6; 2021 + loft → 5 with the "not counted"
+  note; 0 bedrooms → no-data message; 3 areas > 2 bedrooms → error. Zero console errors from the new
+  pages (one dev-server 500 came from hot-reload re-fetching propane mid-refactor, not reproduced).
+  `npm run build` passes, all 3 in sitemap, one H1 each, 6 JSON-LD blocks each, HowTo 4/4/5 and FAQ
+  7/7/7 match the rendered pages, wasm count 0. No new third-party service, so the privacy policy is
+  unchanged.
+- **Gotchas:** osha.gov **and phmsa.dot.gov** return 403 to curl from this network. Read PDFs in
+  Chrome. The eCFR versioner API needs `--compressed`. The ICC reader text is readable via
+  `document.body.innerText` in Chrome. When the built-in browser pane is hidden it has a 0×0 viewport
+  (empty accessibility tree). `resize_window` 1280×800 on the tab fixes it for testing.
+
+Session **2026-10-04**: research-only sweep for tools #10–#12 (nothing built). User asked for
+"no competitor" keywords and to check intitle/inurl. Semrush sr04 (user's Chrome), about 17 bulk
+batches, then the mirror threw "Something went wrong". sr05 loaded blank. **Google started showing a
+CAPTCHA in the user's Chrome after ~15 searches.** Not solved. Switched to Semrush's SERP Analysis
+for the top 10 and Bing for intitle checks. Picks, each with a research file in `research/`:
+**`propane-tank-expiration-date`** (720/KD 9, family 107 kw / 4.6K, recertification family 14.4K;
+top 10 = Reddit #1, propane sellers, 2 PDFs, a FB video, zero tools; source 49 CFR 180.209 verified on
+eCFR), **`fire-extinguisher-expiration-date`** (1,000/KD 6, family 134 kw / 5.5K; zero tools in
+the top 10 or in Bing intitle; source OSHA 1910.157 Table L-1 verified on eCFR) and
+**`how-many-smoke-detectors-do-i-need`** (1,900/KD 12/$3.75; no tool on page 1, but small tools
+exist off page 1 and allintitle ≈ 12,600, so it is the weakest; IRC R314.3 NOT read yet).
+**Rejected 2026-10-04:** HVAC / water heater age by serial (`bradford white water heater age`
+12,100/KD 24, `goodman serial number age` 1,900/KD 8/$9.44: building-center.org, inspectorhandbook,
+stewartchi decoders on page 1 and Bradford White's own lookup), `tire date code` (8,100/KD 26,
+family 40.3K, but 8+ decoder sites incl. EMD tireage.com), `fence post depth calculator` (1,300/KD 6)
+and `chicken coop size calculator` (590/KD 8) (page 1 is all calculators), `aquarium stocking
+calculator` (1,000/KD 2, AqAdvisor), `car seat expiration date` (3,600/KD 18, no single source, each
+maker differs), new-law tax calculators (KD 37–55). Too small: hours of service, boat capacity, FAA
+medical, propane date code alone, appliance serial decoders other than HVAC.
+**Gotchas:** the keywordoverview URL `?q=` does not fill the bulk box. Type into the textarea. The
+bulk page's "Clear all / textarea / Analyze" refs stay stable between runs. eCFR's versioner API
+returns 406 unless curl sends `--compressed`. Bing result links are redirect URLs, so read `cite` text.
+
 Session **2026-10-03**: research-only sweep for tools #7–#9 (nothing built). Semrush (sr04 mirror,
 user's Chrome) + Google US SERP + the "copy SEO" knowledge base (click-necessity / moat rules).
 Three picks, each with a research file in `research/` waiting for approval:
@@ -89,6 +149,9 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Egress Window Calculator | `egress-window-calculator` | US | 2021 IRC R310 + Ch. 2 grade-floor definition | live (built 2026-10-03) |
 | How Many ADA Parking Spaces Are Required? | `ada-parking-space-requirements` | US | 2010 ADA Standards §104.2, §208.2, §502 | live (built 2026-10-03) |
 | ADA Ramp Calculator | `ada-ramp-calculator` | US | 2010 ADA Standards §303, §405 | live (built 2026-10-03) |
+| When Does My Propane Tank Expire? | `propane-tank-expiration-date` | US | 49 CFR 180.209(e), (g); 180.213 | live (built 2026-10-04) |
+| When Does My Fire Extinguisher Expire? | `fire-extinguisher-expiration-date` | US | OSHA 29 CFR 1910.157(e), (f), Table L-1 | live (built 2026-10-04) |
+| How Many Smoke Detectors Do I Need? | `how-many-smoke-detectors-do-i-need` | US | 2024 IRC R310.3 / 2021 IRC R314.3 | live (built 2026-10-04) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.

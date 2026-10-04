@@ -143,6 +143,36 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "2010 ADA Standards for Accessible Design, §303 and §405",
   },
+  {
+    slug: "propane-tank-expiration-date",
+    name: "When Does My Propane Tank Expire?",
+    tagline:
+      "Enter the date stamped on your propane cylinder's collar, and any requalification mark, and get the month it next needs requalifying under 49 CFR 180.209.",
+    category: "safety",
+    status: "live",
+    scope: "US",
+    dataset: "49 CFR 180.209(e) and (g), marks per 49 CFR 180.213",
+  },
+  {
+    slug: "fire-extinguisher-expiration-date",
+    name: "When Does My Fire Extinguisher Expire?",
+    tagline:
+      "Pick the extinguisher type and enter its manufacture or last test date to get the next hydrostatic test, and the 6-year maintenance where it applies, from OSHA 1910.157 Table L-1.",
+    category: "safety",
+    status: "live",
+    scope: "US",
+    dataset: "OSHA 29 CFR 1910.157(e) and (f), Table L-1",
+  },
+  {
+    slug: "how-many-smoke-detectors-do-i-need",
+    name: "How Many Smoke Detectors Do I Need?",
+    tagline:
+      "Enter your bedrooms, sleeping areas and levels and get the minimum number of smoke alarms the International Residential Code requires, location by location, for the 2024 or 2021 edition.",
+    category: "safety",
+    status: "live",
+    scope: "US",
+    dataset: "2024 IRC Section R310.3 / 2021 IRC Section R314.3",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

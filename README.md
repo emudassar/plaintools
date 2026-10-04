@@ -60,6 +60,9 @@ Until then every new tool goes on the hub. The hub is the cheap place to be wron
 | Egress Window Calculator | `egress-window-calculator` | US | 2021 IRC R310 | **live** (built 2026-10-03) |
 | How Many ADA Parking Spaces Are Required? | `ada-parking-space-requirements` | US | 2010 ADA Standards §208.2, §502 | **live** (built 2026-10-03) |
 | ADA Ramp Calculator | `ada-ramp-calculator` | US | 2010 ADA Standards §303, §405 | **live** (built 2026-10-03) |
+| When Does My Propane Tank Expire? | `propane-tank-expiration-date` | US | 49 CFR 180.209(e), (g); marks per 180.213 | **live** (built 2026-10-04) |
+| When Does My Fire Extinguisher Expire? | `fire-extinguisher-expiration-date` | US | OSHA 29 CFR 1910.157(e), (f), Table L-1 | **live** (built 2026-10-04) |
+| How Many Smoke Detectors Do I Need? | `how-many-smoke-detectors-do-i-need` | US | 2024 IRC R310.3 / 2021 IRC R314.3 | **live** (built 2026-10-04) |
 
 EMD candidate for tool #1: `whatsoiltype.com` — **availability not checked**.
 
