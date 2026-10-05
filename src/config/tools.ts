@@ -485,6 +485,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "U.S. CPSC Public Playground Safety Handbook, Table 2 and §2.4.2.2",
   },
+  {
+    slug: "lumber-cost-calculator",
+    name: "Lumber Cost Calculator",
+    tagline:
+      "Enter a cut list and the prices you were quoted — per piece, linear foot, board foot or MBF — and get the board feet, cost per board foot and total with waste and tax.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "NIST Handbook 130 (2026) board foot definition and Table 1 lumber sizes",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
