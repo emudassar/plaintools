@@ -535,6 +535,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Blum TANDEM 563H spec sheet; Accuride 3832EC quick reference",
   },
+  {
+    slug: "gridfinity-calculator",
+    name: "Gridfinity Calculator",
+    tagline:
+      "Enter a drawer's inside size and get how many 42 mm Gridfinity units fit, the leftover margin, the tallest bin in 7 mm units, and how to split the baseplate for your print bed.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Gridfinity Design Reference v5 (gridfinity.xyz): 42 mm grid, 7 mm height unit",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
