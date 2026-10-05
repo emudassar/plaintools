@@ -65,8 +65,12 @@ lb/ft and ft/lb for 11.75/11.875/15" x .027/.032 Al, 16/20 oz Cu, 26 ga Galvalum
 printed factor; source slip 15" .027 Al 0.476 lb/ft vs 2.08 ft/lb (1/0.476=2.10), flagged on the result; full coil
 ~350 lb from product page; AZoM 3105 density used as cross-check only). Node 26/26.
 
-**REMAINING from the 30-list (5), build in this order next session:**
-tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
+Then (#38): tip-pool-calculator (new `business` category "Work & Business"; split by hours / hours x points /
+equal in whole cents, largest-remainder so shares sum to the pool; DOL WHD Fact Sheet #15 quoted for who may be in
+a pool, incl. its "dishwashers and cooks" example for no-tip-credit pools). Node 20/20.
+
+**REMAINING from the 30-list (4), build in this order next session:**
+pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
 plumbing-drain-slope, deck-load, horse-gestation, goat-gestation (omni ranks), r410a/r134a/r32 PT (NIST has
@@ -240,11 +244,12 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Deck Joist Span Calculator | `deck-joist-span-calculator` | US | IRC Table R507.6 (2021 = 2024); DCA 6 cross-check | live (built 2026-10-05) |
 | Hip Roof Calculator | `hip-roof-calculator` | Worldwide | Geometry + Griffith, Carpentry s.23 | live (built 2026-10-05) |
 | Gutter Coil Calculator | `gutter-coil-calculator` | US | Gutter Supply Coil Yields sheet | live (built 2026-10-05) |
+| Tip Pool Calculator | `tip-pool-calculator` | US | Proportional split; DOL Fact Sheet #15 | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.
 
-Categories now in use: `property` ("Home & Property"), `safety` ("Workplace & Safety"),
+Categories now in use (2026-10-05 added `business` "Work & Business"): `property` ("Home & Property"), `safety` ("Workplace & Safety"),
 `construction` ("Construction & DIY" — added 2026-09-26 for tool #4; measurements, framing and
 material questions with a concrete numeric or code answer). The `property` blurb was widened on
 2026-09-22 to "a specific building or plot, or the systems that serve it" so it could hold tool #3

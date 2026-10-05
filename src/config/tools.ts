@@ -35,6 +35,10 @@ export const categories = {
     label: "Health & Everyday",
     blurb: "Everyday measurement questions answered from published specifications and agency formulas.",
   },
+  business: {
+    label: "Work & Business",
+    blurb: "Pay, cost and logistics arithmetic, with the published rules and figures behind it.",
+  },
 } as const;
 
 export type CategoryId = keyof typeof categories;
@@ -430,6 +434,16 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "US",
     dataset: "Gutter Supply \"Coil Yields\" spec sheet (lb per ft and ft per lb)",
+  },
+  {
+    slug: "tip-pool-calculator",
+    name: "Tip Pool Calculator",
+    tagline:
+      "Enter the night's pooled tips and each person's hours (or hours and points) and get every share to the cent, adding up to the pool exactly.",
+    category: "business",
+    status: "live",
+    scope: "US",
+    dataset: "Proportional split in whole cents; U.S. DOL WHD Fact Sheet #15 for tip-pool rules context",
   },
 ] as const;
 
