@@ -495,6 +495,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "NIST Handbook 130 (2026) board foot definition and Table 1 lumber sizes",
   },
+  {
+    slug: "log-volume-calculator",
+    name: "Log Volume Calculator",
+    tagline:
+      "Enter a log's small-end diameter and length and get its wood volume in board feet by the Doyle and International 1/4-inch rules, plus cubic feet and cubic metres.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Briggs (1994), Univ. of Washington: log rule formulas and Appendix 3 tables",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

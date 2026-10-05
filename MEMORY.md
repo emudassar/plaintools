@@ -13,6 +13,11 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
 - #43 lumber-cost-calculator (140/KD9; `construction`): NIST HB 130-2026 §2.12.1.1 board foot = 144 in3, Table 1 dry dressed
   sizes; per piece / LF / BF / MBF, waste, tax. Node 16/16; browser 10x2x6x8 @ $1000/MBF + 4x2x6x12 @ $1.10/LF = $132.80 ✓.
 
+- #44 log-volume-calculator (user asked "wood volume calculator" = 20/mo; log volume 170/KD5, log board foot 720/KD5): Briggs 1994
+  (UW) Ch.2 + Appendix 3. Doyle formula = all 150 table cells; International 1/4 = 0.905x(0.22d2-0.71d) per 4-ft cylinder,
+  147/150 cells (table shown in range, formula outside, labelled). Briggs' printed 0.20d2 is wrong vs his own 85 BF example.
+  Scribner left out (diagram rule; Briggs 10-in row looked odd). Smalian/cylinder cubic. Node 308/308.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
