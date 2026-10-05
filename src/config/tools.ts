@@ -579,6 +579,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Volume geometry; NIST HB 44 gallon/litre; USGS 8.34 lb per gallon",
   },
+  {
+    slug: "betta-tank-size-calculator",
+    name: "Betta Tank Size Calculator",
+    tagline:
+      "Enter your betta's tank dimensions or volume and see its real water volume, compared with the RSPCA's 10-litre minimum and 20-litre ideal and a 2024 welfare study's figure.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "RSPCA Australia betta care (2024); Clark-Shen et al. 2024, Animal Welfare",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

@@ -45,6 +45,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   (flat-to-flat)/quarter-circle/pentagon corner; minus rim gap + substrate; 231 in3/gal, 3.785 L (NIST HB44), 8.34 lb/gal (USGS
   Million Gallons page). Node 16/16; browser 100x40x50 cm = 200 L.
 
+- #52 betta-tank-size-calculator ("betta tank size" 880/KD10; chewy ranks #1): compares water volume (reuses aquarium-volume lib)
+  with RSPCA AU (10 L absolute min, 20 L+ ideal, 2024) and Clark-Shen et al. 2024 Animal Welfare (5.6 L retail min; their 22x15x17
+  cm tank = 5.61 L here). WAVMA "5 gal" claim seen in search NOT used (unverified). Node 10/10.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
