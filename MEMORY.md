@@ -8,6 +8,8 @@
 
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
+**2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
+
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
 Live so far (tools #13–#19): pool-salt-calculator, pool-shock-calculator, muriatic-acid-pool-calculator,
 pool-alkalinity-calculator, pool-stabilizer-calculator, pool-pump-run-time-calculator, pool-heater-size-calculator.
@@ -82,7 +84,13 @@ Then (#41): linear-feet-calculator-freight (`business`; rows across the trailer,
 halves positions; default 101" inside width from Utility Trailer dry van page (wearband to wearband). Carrier
 linear-foot thresholds differ (8/10/12 ft seen in secondary sources) — page names no carrier rule). Node 25/25.
 
-**REMAINING from the 30-list (1), build next:** playground-mulch-calculator (CPSC handbook).
+Then (#42): playground-mulch-calculator (`safety`; CPSC Public Playground Safety Handbook Pub. 325 — curl 403, the
+PDF came via WebFetch's saved binary then pymupdf: Table 2 depths 6 in rubber->10 ft, 9 in sand 4 / pea gravel 5 /
+wood mulch 7 / wood chips 10 ft; s.2.4.2.2 compress >=25% (9 in -> 12 in initial; rubber no allowance); s.5.3.10
+general 6 ft use zone as an option). Node 19/19.
+
+**30-list COMPLETE on 2026-10-05: 42 tools live.** (Garage door spring was swapped out earlier.) Next work would
+come from the reserves below or a fresh keyword sweep.
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
 plumbing-drain-slope, deck-load, horse-gestation, goat-gestation (omni ranks), r410a/r134a/r32 PT (NIST has
 r134a C811972 & r32 C75105; blends not in NIST).
@@ -259,6 +267,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Pressure Washer Nozzle Calculator | `pressure-washer-nozzle-calculator` | Worldwide | General Pump Nozzle Chart 2021 | live (built 2026-10-05) |
 | Truck Cost Per Mile Calculator | `truck-cost-per-mile-calculator` | US | Cost / miles; ATRI 2026 benchmark | live (built 2026-10-05) |
 | Freight Linear Feet Calculator | `linear-feet-calculator-freight` | US | Pallet geometry; Utility Trailer 101" width | live (built 2026-10-05) |
+| Playground Mulch Calculator | `playground-mulch-calculator` | US | CPSC Pub. 325 Table 2 | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.

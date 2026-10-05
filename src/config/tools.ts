@@ -475,6 +475,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Pallet floor geometry; Utility Trailer 53' dry van inside width (101 in)",
   },
+  {
+    slug: "playground-mulch-calculator",
+    name: "Playground Mulch Calculator",
+    tagline:
+      "Enter the play area and the surfacing — wood chips, wood mulch, rubber, pea gravel or sand — and get the cubic yards to install at CPSC's minimum depth, allowing for compression.",
+    category: "safety",
+    status: "live",
+    scope: "US",
+    dataset: "U.S. CPSC Public Playground Safety Handbook, Table 2 and §2.4.2.2",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
