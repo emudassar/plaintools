@@ -33,6 +33,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   v5 image on gridfinity.xyz/specification (42 mm grid, 41.5 bin, 7 mm u, ~4.4 lip, ~5 baseplate; spec says WIP). Units, margins,
   max bin u, baseplate split for bed. Node 20/20.
 
+- #49 angle-drawer-calculator (cluster "draw angle (in standard position) calculator" ~20/mo each): new `math` category "Math &
+  Study". OpenStax Precalculus 2e s.5.1 definitions; SVG standard-position drawing, spiral for >360, quadrant/axis, reference angle
+  (none for quadrantal), coterminal, exact pi radians, sin/cos/tan. Gotcha: Tailwind `uppercase` turns pi into capital PI. Node 35/35.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

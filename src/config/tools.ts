@@ -39,6 +39,10 @@ export const categories = {
     label: "Work & Business",
     blurb: "Pay, cost and logistics arithmetic, with the published rules and figures behind it.",
   },
+  math: {
+    label: "Math & Study",
+    blurb: "Math and science questions worked from open textbook definitions, shown step by step.",
+  },
 } as const;
 
 export type CategoryId = keyof typeof categories;
@@ -544,6 +548,16 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "Worldwide",
     dataset: "Gridfinity Design Reference v5 (gridfinity.xyz): 42 mm grid, 7 mm height unit",
+  },
+  {
+    slug: "angle-drawer-calculator",
+    name: "Angle Drawer Calculator",
+    tagline:
+      "Type an angle in degrees or radians and see it drawn in standard position, with its quadrant, reference angle, coterminal angles and sin, cos and tan.",
+    category: "math",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStax Precalculus 2e, §5.1 Angles",
   },
 ] as const;
 
