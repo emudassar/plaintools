@@ -599,6 +599,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Practical Fishkeeping stocking guideline; FishBase maximum lengths",
   },
+  {
+    slug: "honey-yield-calculator",
+    name: "Honey Yield Calculator",
+    tagline:
+      "Weigh your supers before and after extraction and get the honey harvested in pounds, kilograms, gallons and full jars, with yield per hive against USDA's U.S. average.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "National Honey Board (12 lb per gallon); USDA NASS Honey, March 2026",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

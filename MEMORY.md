@@ -53,6 +53,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   article itself says guidelines fall over for territorial cichlids — shown on every result). 24 species, FishBase Max length as
   printed (SL/TL) fetched by curl 2026-10-05. No compatibility claims. Node 13/13.
 
+- #54 honey-yield-calculator (10/mo; "how much honey per hive" 210/KD10): weigh-before minus weigh-after (no per-frame guesses —
+  the per-frame lb figures found were all unsourced blogs). NHB FAQ read in Chrome (honey.com 403s curl/WebFetch): 12 lb/gal, cup 12 oz.
+  Shared `lib/honey-nass.ts` = NASS Honey 2026-03-13 table for 2025 (20 states + other + US; sums reproduce US totals exactly). Node 11/11.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
