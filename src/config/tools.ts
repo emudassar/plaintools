@@ -411,6 +411,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "IRC Table R507.6 Maximum Deck Joist Spans (2021 and 2024, identical); AWC DCA 6-2015 Table 2",
   },
+  {
+    slug: "hip-roof-calculator",
+    name: "Hip Roof Calculator",
+    tagline:
+      "Enter the building's length, width, pitch and overhang and get the hip roof's area in squares, the ridge length and the common and hip rafter lengths.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Roof geometry by pitch per 12 in of run; hip rafter method from Griffith, Carpentry §23",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

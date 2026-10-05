@@ -54,8 +54,14 @@ in-browser vs 2024 IRC: identical. 40 psf spans also = AWC DCA 6-2015 Table 2. L
 snow; cantilever by back span 4-18 ft, interpolation allowed (fn g), NP neighbour -> NP, <4 ft -> no extrapolation,
 back span > allowable span -> none). Node 35/35.
 
-**REMAINING from the 30-list (7), build in this order next session:**
-hip-roof-calculator, gutter-coil-calculator,
+Then (#36): hip-roof-calculator (geometry: area = plan incl. overhang x slope factor; ridge L-W; hip = common run x
+sqrt(2*144+rise^2)/12; method cited to Ira S. Griffith "Carpentry" s.23 on chestofbooks (public domain);
+equal pitch rectangle only; W>L swapped). Node 32/32 + Griffith 6/12 12'7" run -> 18.875 ft.
+Gotcha: built-in browser `computer` clicks fail while the pane is hidden ("not compositing"); JS
+`button.click()` in javascript_tool works.
+
+**REMAINING from the 30-list (6), build in this order next session:**
+gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
@@ -228,6 +234,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Chainsaw File Size Chart | `chainsaw-file-size-chart` | Worldwide | Oregon filing chart FOR 149 + manual; STIHL files page | live (built 2026-10-05) |
 | Aquarium Gravel Calculator | `aquarium-gravel-calculator` | Worldwide | CaribSea FAQ formula + densities | live (built 2026-10-05) |
 | Deck Joist Span Calculator | `deck-joist-span-calculator` | US | IRC Table R507.6 (2021 = 2024); DCA 6 cross-check | live (built 2026-10-05) |
+| Hip Roof Calculator | `hip-roof-calculator` | Worldwide | Geometry + Griffith, Carpentry s.23 | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.
