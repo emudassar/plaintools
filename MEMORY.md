@@ -69,8 +69,12 @@ Then (#38): tip-pool-calculator (new `business` category "Work & Business"; spli
 equal in whole cents, largest-remainder so shares sum to the pool; DOL WHD Fact Sheet #15 quoted for who may be in
 a pool, incl. its "dishwashers and cooks" example for no-tip-credit pools). Node 20/20.
 
-**REMAINING from the 30-list (4), build in this order next session:**
-pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
+Then (#39): pressure-washer-nozzle-calculator (General Pump Nozzle Chart 2021 PDF: size = GPM at 4000 PSI,
+GPM = size x sqrt(PSI/4000); all 496 cells checked, 490 match, 6 print slips e.g. size 7 @ 2000 = 1.95 vs 4.95).
+**Caveat found:** size numbering is NOT universal — Spraying Systems rates WashJet MEG 2540 at 4 gpm @ 40 psi;
+page says so and makes no "25040 = 25 deg size 4.0" claim. Node 25/25.
+
+**REMAINING from the 30-list (3), build in this order next session:** truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
 plumbing-drain-slope, deck-load, horse-gestation, goat-gestation (omni ranks), r410a/r134a/r32 PT (NIST has
@@ -245,6 +249,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Hip Roof Calculator | `hip-roof-calculator` | Worldwide | Geometry + Griffith, Carpentry s.23 | live (built 2026-10-05) |
 | Gutter Coil Calculator | `gutter-coil-calculator` | US | Gutter Supply Coil Yields sheet | live (built 2026-10-05) |
 | Tip Pool Calculator | `tip-pool-calculator` | US | Proportional split; DOL Fact Sheet #15 | live (built 2026-10-05) |
+| Pressure Washer Nozzle Calculator | `pressure-washer-nozzle-calculator` | Worldwide | General Pump Nozzle Chart 2021 | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.

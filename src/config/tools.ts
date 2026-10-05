@@ -445,6 +445,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Proportional split in whole cents; U.S. DOL WHD Fact Sheet #15 for tip-pool rules context",
   },
+  {
+    slug: "pressure-washer-nozzle-calculator",
+    name: "Pressure Washer Nozzle Calculator",
+    tagline:
+      "Enter your pressure washer's GPM and PSI and get the nozzle orifice size, the nearest standard sizes and the pressure each would give, from a pump maker's nozzle chart.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "General Pump Nozzle Chart (2021): GPM by nozzle size and PSI",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
