@@ -421,6 +421,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Roof geometry by pitch per 12 in of run; hip rafter method from Griffith, Carpentry §23",
   },
+  {
+    slug: "gutter-coil-calculator",
+    name: "Gutter Coil Calculator",
+    tagline:
+      "Turn a gutter coil's weight into feet, or feet of gutter into pounds of coil, for 11-3/4, 11-7/8 and 15 inch aluminum, copper and Galvalume coil, from a supplier's published yield chart.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "Gutter Supply \"Coil Yields\" spec sheet (lb per ft and ft per lb)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

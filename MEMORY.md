@@ -60,8 +60,12 @@ equal pitch rectangle only; W>L swapped). Node 32/32 + Griffith 6/12 12'7" run -
 Gotcha: built-in browser `computer` clicks fail while the pane is hidden ("not compositing"); JS
 `button.click()` in javascript_tool works.
 
-**REMAINING from the 30-list (6), build in this order next session:**
-gutter-coil-calculator,
+Then (#37): gutter-coil-calculator (Gutter Supply "Coil Yields" spec sheet PDF linked from its coil product page:
+lb/ft and ft/lb for 11.75/11.875/15" x .027/.032 Al, 16/20 oz Cu, 26 ga Galvalume; each direction uses its own
+printed factor; source slip 15" .027 Al 0.476 lb/ft vs 2.08 ft/lb (1/0.476=2.10), flagged on the result; full coil
+~350 lb from product page; AZoM 3105 density used as cross-check only). Node 26/26.
+
+**REMAINING from the 30-list (5), build in this order next session:**
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
@@ -235,6 +239,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Aquarium Gravel Calculator | `aquarium-gravel-calculator` | Worldwide | CaribSea FAQ formula + densities | live (built 2026-10-05) |
 | Deck Joist Span Calculator | `deck-joist-span-calculator` | US | IRC Table R507.6 (2021 = 2024); DCA 6 cross-check | live (built 2026-10-05) |
 | Hip Roof Calculator | `hip-roof-calculator` | Worldwide | Geometry + Griffith, Carpentry s.23 | live (built 2026-10-05) |
+| Gutter Coil Calculator | `gutter-coil-calculator` | US | Gutter Supply Coil Yields sheet | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.
