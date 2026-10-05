@@ -391,6 +391,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Oregon saw chain filing and grinding angles chart (catalog p. FOR 149); STIHL saw chain files",
   },
+  {
+    slug: "aquarium-gravel-calculator",
+    name: "Aquarium Gravel Calculator",
+    tagline:
+      "Enter your tank's inside length and width and the bed depth you want and get the pounds of gravel or sand and the number of bags, using CaribSea's published formula and substrate weights.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "CaribSea FAQ: length x width x depth / 1,728 x substrate density",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

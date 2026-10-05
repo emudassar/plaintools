@@ -43,8 +43,13 @@ Safety Manual p.12 (2004, lacks 68/80 -> pitch taken from chart grouping, gauge 
 STIHL's own sizes shown alongside from shop.stihl.ca saw-chain-files: 3/8 = 13/64" (5.16 mm) vs Oregon 7/32".
 Node 68/68. Gotcha: pymupdf (python) renders PDF pages to PNG here; no pdftoppm on this machine.
 
-**REMAINING from the 30-list (9), build in this order next session:**
-aquarium-gravel-calculator, deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
+Then (#34): aquarium-gravel-calculator (CaribSea FAQ "How many pounds do I need?": L x W x depth in / 1,728 x
+density; 9 printed product densities 75-100 lb/ft3, Special Grade Reef Sand listed twice 85 / 90 dry, both kept;
+1-2 lb/gal rule shown as optional check; category `health`). Node 25/25. Note: HTML min="0" blocks submit of a
+negative value natively, so the stale result stays — same as other tools; lib rejects it anyway.
+
+**REMAINING from the 30-list (8), build in this order next session:**
+deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
@@ -215,6 +220,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | When Does My Fire Extinguisher Expire? | `fire-extinguisher-expiration-date` | US | OSHA 29 CFR 1910.157(e), (f), Table L-1 | live (built 2026-10-04) |
 | How Many Smoke Detectors Do I Need? | `how-many-smoke-detectors-do-i-need` | US | 2024 IRC R310.3 / 2021 IRC R314.3 | live (built 2026-10-04) |
 | Chainsaw File Size Chart | `chainsaw-file-size-chart` | Worldwide | Oregon filing chart FOR 149 + manual; STIHL files page | live (built 2026-10-05) |
+| Aquarium Gravel Calculator | `aquarium-gravel-calculator` | Worldwide | CaribSea FAQ formula + densities | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.
