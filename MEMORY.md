@@ -57,6 +57,9 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   the per-frame lb figures found were all unsourced blogs). NHB FAQ read in Chrome (honey.com 403s curl/WebFetch): 12 lb/gal, cup 12 oz.
   Shared `lib/honey-nass.ts` = NASS Honey 2026-03-13 table for 2025 (20 states + other + US; sums reproduce US totals exactly). Node 11/11.
 
+- #55 honey-production-calculator (10/mo): distinct from #54 (estimate vs measured harvest; each page's FAQ says so).
+  colonies x NASS 2025 state yield (or own), value at state avg / US wholesale 2.45 / retail 7.15 / own price. Node 10/10.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

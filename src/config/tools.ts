@@ -609,6 +609,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "National Honey Board (12 lb per gallon); USDA NASS Honey, March 2026",
   },
+  {
+    slug: "honey-production-calculator",
+    name: "Honey Production Calculator",
+    tagline:
+      "Enter your colonies and state to estimate honey production in pounds and its value, from USDA's 2025 yield per colony and honey prices — or your own figures.",
+    category: "farm",
+    status: "live",
+    scope: "US",
+    dataset: "USDA NASS Honey (March 2026): 2025 yield and price by state",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
