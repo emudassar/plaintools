@@ -515,6 +515,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Volume arithmetic (231 in³/gal, NIST HB 44); cross-checked to TotalBoat's 12.8 sq ft/gal at 1/8 in",
   },
+  {
+    slug: "cash-drawer-calculator",
+    name: "Cash Drawer Calculator",
+    tagline:
+      "Count the drawer by bills, rolls and coins and get the total, the deposit that leaves your starting float, which notes and coins to pull, and whether it is over or short.",
+    category: "business",
+    status: "live",
+    scope: "US",
+    dataset: "Whole-cent arithmetic; U.S. Mint coin roll contents",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

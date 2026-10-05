@@ -21,6 +21,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
 - #45 table-top-epoxy-calculator (user: "tabletop calculator"; "table top epoxy calculator" 170/KD6): area x coat x coats / 231
   in3/gal; reproduces TotalBoat's 12.8 sq ft/gal at 1/8 in; flags coats > 1/4 in (TotalBoat guide). Rect/round, edges, ratio. Node 14/14.
 
+- #46 cash-drawer-calculator (260/KD38; `business`): whole-cent count; rolls from U.S. Mint kids page (40q/50d/40n/50p).
+  Deposit pull: greedy to ~$200 left, then fewest-pieces bounded knapsack (pure greedy failed: took 22 $1 bills and all coin).
+  Reports unmatched cents if no exact mix. Node 16/16 + 300 random draws, 0 bad.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
