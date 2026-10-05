@@ -37,6 +37,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   Study". OpenStax Precalculus 2e s.5.1 definitions; SVG standard-position drawing, spiral for >360, quadrant/axis, reference angle
   (none for quadrantal), coterminal, exact pi radians, sin/cos/tan. Gotcha: Tailwind `uppercase` turns pi into capital PI. Node 35/35.
 
+- #50 stair-stringer-calculator (9,900/KD29 — previously rejected on competition 2026-10-03, built because user asked): AWC DCA 6
+  (2015) pp.20-21 rendered to PNG: 7-3/4 riser, 3/8 variation, 10 tread, 5 in throat, cut span 6'0", solid 13'3", landing >12 ft,
+  36 in wide, >=3 cut stringers @18 o.c., handrail >=4 risers, guard >=30 in. Throat formula reproduces DCA 6 commentary 5.1 in. Node 32/32.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

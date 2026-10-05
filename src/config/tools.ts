@@ -559,6 +559,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "OpenStax Precalculus 2e, §5.1 Angles",
   },
+  {
+    slug: "stair-stringer-calculator",
+    name: "Stair Stringer Calculator",
+    tagline:
+      "Enter the total rise and tread depth and get the risers, riser height, total run, stringer length, angle and throat, checked against the American Wood Council's DCA 6 deck stair rules.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "American Wood Council DCA 6 (2015 IRC): stair requirements, Figures 27–30",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
