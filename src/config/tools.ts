@@ -569,6 +569,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "American Wood Council DCA 6 (2015 IRC): stair requirements, Figures 27–30",
   },
+  {
+    slug: "aquarium-volume-calculator",
+    name: "Aquarium Volume Calculator",
+    tagline:
+      "Enter a fish tank's inside dimensions — rectangle, bow front, cylinder, hexagon or corner — and get the water volume in gallons and litres after substrate and rim gap, plus its weight.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Volume geometry; NIST HB 44 gallon/litre; USGS 8.34 lb per gallon",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

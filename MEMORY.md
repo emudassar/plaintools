@@ -41,6 +41,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   (2015) pp.20-21 rendered to PNG: 7-3/4 riser, 3/8 variation, 10 tread, 5 in throat, cut span 6'0", solid 13'3", landing >12 ft,
   36 in wide, >=3 cut stringers @18 o.c., handrail >=4 risers, guard >=30 in. Throat formula reproduces DCA 6 commentary 5.1 in. Node 32/32.
 
+- #51 aquarium-volume-calculator (2,400/KD21; `health` like the gravel tool): rect/bowfront (circular segment)/cylinder/hexagon
+  (flat-to-flat)/quarter-circle/pentagon corner; minus rim gap + substrate; 231 in3/gal, 3.785 L (NIST HB44), 8.34 lb/gal (USGS
+  Million Gallons page). Node 16/16; browser 100x40x50 cm = 200 L.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
