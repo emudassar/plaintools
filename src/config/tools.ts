@@ -679,6 +679,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Owner's burn rate and price; NC Sea Grant full-throttle estimate and rule of thirds",
   },
+  {
+    slug: "what-size-trolling-motor-do-i-need",
+    name: "Trolling Motor Size Calculator",
+    tagline:
+      "Enter your fully loaded boat weight and get the minimum trolling motor thrust, the 12/24/36 V battery setup, and the shaft length for your bow or transom height.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Minn Kota Motor Size selection guide (Rev. 8.21.2020) and buying guide",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

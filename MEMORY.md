@@ -89,7 +89,16 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   hulls; its 250-hp example 25 gph WOT / 12.5 gph at 77.5% -> shown as warning. No diesel rule (none sourced). Rule of thirds
   from same article -> fuel aboard = 1.5 x trip; optional tank check. Node 24/24; browser 12.5 gph, 34 nm at 17 kn = 1.36 nmpg ✓.
 
-**HANDOFF (session ended 2026-10-05 on the user's 5-hour limit): 16 of 20 done & pushed. REMAINING 4, same rules (build, test,
+- #62 what-size-trolling-motor-do-i-need (390/KD18; `health`): Minn Kota Motor Size selection guide PDF (Rev. 8.21.2020;
+  Incapsula blocks curl -> read in user's Chrome PDF viewer): 2 lb thrust per 100 lb fully loaded; 6-row weight/length/thrust/
+  battery chart (row = first at or above weight); bow shaft 0-10->36, 16-22->42-45, 22-28->48-52, 28-44->54-72, 45+->87 — chart
+  has NO 10-16 row (and 44-45) -> reported as gap with rows either side; transom 0-10->30, 10-16->36, 16-22->42, >22 consult
+  factory; shared end values show both rows; +5 in rough water; +9 in Hand Control shown as note (ambiguous what it adds to).
+  Volt tiers from buying guide (<=55 12V / 68-80 24V / 101-115 36V; smallest tier reaching the rule). Node 32/32; browser ✓.
+
+**20-tool batch COMPLETE 2026-10-05: 62 tools live (#43-#62).** Handoff above is done.
+
+**HANDOFF (DONE later on 2026-10-05, all 4 built as #59-#62) (session ended 2026-10-05 on the user's 5-hour limit): 16 of 20 done & pushed. REMAINING 4, same rules (build, test,
 commit, push; push pre-approved for this batch by the user):**
   1. resin-volume-calculator (110/KD2; 'resin calculator' 1,600/KD19): mold shapes -> ml/oz + weight; keep it distinct from
      #45 table-top-epoxy (coats on a surface). Needs a cited resin density (maker TDS) or a user-entered density.
