@@ -76,6 +76,13 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   volume or weight. Cross-check: 27.68/1.10 = 25.2 = Smooth-On's printed 25 cu in/lb (and 26.4 for SC300). Node 25/25;
   browser 4 x 10 cm round x 1 cm +10% = 345.6 ml ✓.
 
+- #60 stl-volume-calculator (~20/mo each variant): binary (size == 84+50n, even if header says 'solid') or ASCII STL read in
+  the browser, never uploaded. Signed tetrahedra (Zhang & Chen ICIP 2001, Cornell PDF); layout per LoC fdd000505. Closed-mesh
+  check (edges not shared by exactly 2 tris), inverted normals -> abs, units mm/cm/in, bbox. Prusament TDS densities PLA 1.24 /
+  PETG 1.27 / ASA 1.07 (ISO 1183) + custom. Solid volume only (no infill guess). Node 23/23 (UV sphere -> 4/3 pi r3 within 0.2%);
+  browser 20 mm cube = 8 cm3 / 9.9 g PLA ✓. Gotcha: `npm run build` while dev runs clobbers dev chunks (404s, no hydration) —
+  stop dev before building, or restart it after.
+
 **HANDOFF (session ended 2026-10-05 on the user's 5-hour limit): 16 of 20 done & pushed. REMAINING 4, same rules (build, test,
 commit, push; push pre-approved for this batch by the user):**
   1. resin-volume-calculator (110/KD2; 'resin calculator' 1,600/KD19): mold shapes -> ml/oz + weight; keep it distinct from

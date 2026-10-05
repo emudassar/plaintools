@@ -659,6 +659,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Solid geometry; specific gravities from Smooth-On and West System technical data sheets",
   },
+  {
+    slug: "stl-volume-calculator",
+    name: "STL Volume Calculator",
+    tagline:
+      "Open a binary or ASCII STL file in your browser and get its volume, bounding box, a closed-mesh check and the solid weight in PLA, PETG, ASA or your own material.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Signed-tetrahedron volume (Zhang & Chen 2001); Prusament filament densities",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
