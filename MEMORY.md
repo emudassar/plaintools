@@ -18,6 +18,9 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   147/150 cells (table shown in range, formula outside, labelled). Briggs' printed 0.20d2 is wrong vs his own 85 BF example.
   Scribner left out (diagram rule; Briggs 10-in row looked odd). Smalian/cylinder cubic. Node 308/308.
 
+- #45 table-top-epoxy-calculator (user: "tabletop calculator"; "table top epoxy calculator" 170/KD6): area x coat x coats / 231
+  in3/gal; reproduces TotalBoat's 12.8 sq ft/gal at 1/8 in; flags coats > 1/4 in (TotalBoat guide). Rect/round, edges, ratio. Node 14/14.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

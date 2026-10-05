@@ -505,6 +505,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Briggs (1994), Univ. of Washington: log rule formulas and Appendix 3 tables",
   },
+  {
+    slug: "table-top-epoxy-calculator",
+    name: "Table Top Epoxy Calculator",
+    tagline:
+      "Enter a tabletop's size, coat thickness and number of coats and get the gallons of epoxy to mix, with edges, an allowance for drips and the resin/hardener split.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Volume arithmetic (231 in³/gal, NIST HB 44); cross-checked to TotalBoat's 12.8 sq ft/gal at 1/8 in",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
