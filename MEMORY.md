@@ -64,6 +64,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   easy 0.03 / avg 0.0333 / hard 0.04 Mcal/kg; light x1.2, moderate x1.4, heavy x1.6, very heavy 0.0363x1.9; table footnote 200-600 kg
   -> flagged outside. The 0.0303/0.0363 'min/elevated' maintenance trio seen in search was NOT used (only blogs). Optional ration check. Node 11/11.
 
+- #57 horse-blanket-size-chart (user: "horse blanket size calculator"; "horse blanket size chart" 1,900/KD9 + "horse blanket sizes"
+  1,600/KD7): WeatherBeeta size guide table read in user's Chrome (19 rows, 36-87 in, Euro back seam, X Small-X Large; 'choose the
+  bigger size'). Compares in the unit entered (inch and cm columns rounded separately). Node 14/14.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

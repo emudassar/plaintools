@@ -629,6 +629,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Merck Veterinary Manual (2026), NRC Nutrient Requirements of Horses (2007)",
   },
+  {
+    slug: "horse-blanket-size-chart",
+    name: "Horse Blanket Size Chart",
+    tagline:
+      "Enter your horse's chest-to-rump measurement and get the blanket size in US inches, UK feet and centimetres, plus the Euro back-seam size, with the full chart.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "WeatherBeeta horse blanket size guide",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
