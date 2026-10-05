@@ -49,6 +49,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   with RSPCA AU (10 L absolute min, 20 L+ ideal, 2024) and Clark-Shen et al. 2024 Animal Welfare (5.6 L retail min; their 22x15x17
   cm tank = 5.61 L here). WAVMA "5 gal" claim seen in search NOT used (unverified). Node 10/10.
 
+- #53 cichlid-stocking-calculator (20/mo; no SERP data): length budget only. Practical Fishkeeping FAQ 2.5 cm per 4.55 L (tropicals;
+  article itself says guidelines fall over for territorial cichlids — shown on every result). 24 species, FishBase Max length as
+  printed (SL/TL) fetched by curl 2026-10-05. No compatibility claims. Node 13/13.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

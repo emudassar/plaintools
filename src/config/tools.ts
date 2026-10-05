@@ -589,6 +589,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "RSPCA Australia betta care (2024); Clark-Shen et al. 2024, Animal Welfare",
   },
+  {
+    slug: "cichlid-stocking-calculator",
+    name: "Cichlid Stocking Calculator",
+    tagline:
+      "List the cichlids you plan to keep and see their total adult length from FishBase against a published stocking guideline for your tank's volume.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Practical Fishkeeping stocking guideline; FishBase maximum lengths",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
