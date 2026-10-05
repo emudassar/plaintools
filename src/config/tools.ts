@@ -639,6 +639,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "WeatherBeeta horse blanket size guide",
   },
+  {
+    slug: "horse-feed-cost-calculator",
+    name: "Horse Feed Cost Calculator",
+    tagline:
+      "Enter hay and grain amounts and your bale and bag prices and get the daily, monthly and yearly cost to feed a horse, plus bales and bags used per month.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Owner's own prices; Merck Veterinary Manual forage guideline",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

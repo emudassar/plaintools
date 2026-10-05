@@ -68,6 +68,23 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   1,600/KD7): WeatherBeeta size guide table read in user's Chrome (19 rows, 36-87 in, Euro back seam, X Small-X Large; 'choose the
   bigger size'). Compares in the unit entered (inch and cm columns rounded separately). Node 14/14.
 
+- #58 horse-feed-cost-calculator (20/mo; "how much does it cost to feed a horse" 260/KD7): owner's prices; optional Merck
+  forage guideline (at least 1.5-2% BW forage DM/day; hay DM% from user's hay test, no default). Node 17/17; browser $8.03/day ✓.
+
+**HANDOFF (session ended 2026-10-05 on the user's 5-hour limit): 16 of 20 done & pushed. REMAINING 4, same rules (build, test,
+commit, push; push pre-approved for this batch by the user):**
+  1. resin-volume-calculator (110/KD2; 'resin calculator' 1,600/KD19): mold shapes -> ml/oz + weight; keep it distinct from
+     #45 table-top-epoxy (coats on a surface). Needs a cited resin density (maker TDS) or a user-entered density.
+  2. stl-volume-calculator (~20/mo each variant): parse binary + ASCII STL in the browser (file never uploaded), signed-tetrahedron
+     volume (cite Zhang & Chen 2001), bounding box, grams via a cited filament/resin density.
+  3. boat-fuel-cost-calculator (30/mo; 'boat fuel consumption calculator' 110/KD17): GPH x hours or distance/speed; find a
+     citable source before using any 'HP x factor' GPH rule (none verified yet).
+  4. trolling motor -> slug what-size-trolling-motor-do-i-need (390/KD18; westmarine #1): Minn Kota thrust guide
+     (lb thrust per 100 lb loaded boat), voltage, shaft length; verify from Minn Kota's own page first.
+  Scratch harness lived in the session scratchpad (lost): re-create a node resolve hook mapping @/ -> src/ and adding .ts.
+  Gotchas this session: preview tab reloads to / after preview_start -> wait ~10 s then navigate; Tailwind `uppercase`
+  turns pi into PI; honey.com and weatherbeeta tables read via user's Chrome (curl 403/JS tables).
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**
