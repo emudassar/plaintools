@@ -60,6 +60,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
 - #55 honey-production-calculator (10/mo): distinct from #54 (estimate vs measured harvest; each page's FAQ says so).
   colonies x NASS 2025 state yield (or own), value at state avg / US wholesale 2.45 / retail 7.15 / own price. Node 10/10.
 
+- #56 horse-calorie-calculator (20/mo; cluster "how many calories does a horse need" ~50): Merck Vet Manual (Feb 2026, from NRC 2007):
+  easy 0.03 / avg 0.0333 / hard 0.04 Mcal/kg; light x1.2, moderate x1.4, heavy x1.6, very heavy 0.0363x1.9; table footnote 200-600 kg
+  -> flagged outside. The 0.0303/0.0363 'min/elevated' maintenance trio seen in search was NOT used (only blogs). Optional ration check. Node 11/11.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

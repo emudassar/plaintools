@@ -619,6 +619,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "USDA NASS Honey (March 2026): 2025 yield and price by state",
   },
+  {
+    slug: "horse-calorie-calculator",
+    name: "Horse Calorie Calculator",
+    tagline:
+      "Enter a horse's weight and workload and get its daily digestible energy need in Mcal and kcal from the NRC (2007) equations, with an optional hay and grain check.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Merck Veterinary Manual (2026), NRC Nutrient Requirements of Horses (2007)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
