@@ -25,6 +25,10 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   Deposit pull: greedy to ~$200 left, then fewest-pieces bounded knapsack (pure greedy failed: took 22 $1 bills and all coin).
   Reports unmatched cents if no exact mix. Node 16/16 + 300 random draws, 0 bad.
 
+- #47 drawer-size-calculator (user: "cabinet drawer calculator" 30/mo; "drawer size calculator" 70/KD0): Blum TANDEM 563H sheet
+  (inside = opening-42 mm, outside deduction 10-18 mm by side 16-12 mm, height = opening-20 mm, runner depth mins 557/480/404/328;
+  reproduces Blum's 21" -> 20-19/32" example) + Accuride 3832EC (opening - 1-1/16", 14-28" slides, min height 1-7/8") + custom. Node 20/20.
+
 **2026-10-05: 30-tool shortlist finished — 42 tools live (#33–#42 built and pushed this day).**
 
 **2026-10-04 (later): building the 30-tool shortlist one by one, each verified then pushed (user said push).**

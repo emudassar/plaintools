@@ -525,6 +525,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Whole-cent arithmetic; U.S. Mint coin roll contents",
   },
+  {
+    slug: "drawer-size-calculator",
+    name: "Drawer Size Calculator",
+    tagline:
+      "Enter the cabinet opening and get the drawer box width, height and length for Blum TANDEM 563H undermount or Accuride 3832EC side-mount slides, from each maker's clearances.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Blum TANDEM 563H spec sheet; Accuride 3832EC quick reference",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
