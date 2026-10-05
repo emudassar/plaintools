@@ -465,6 +465,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Cost ÷ miles; ATRI 2026 Operational Costs of Trucking benchmark ($2.336/mile in 2025)",
   },
+  {
+    slug: "linear-feet-calculator-freight",
+    name: "Freight Linear Feet Calculator",
+    tagline:
+      "Enter the pallet count, pallet size and whether they stack, and get the linear feet of trailer floor they take — loaded straight and turned — in a 101-inch-wide trailer or your own.",
+    category: "business",
+    status: "live",
+    scope: "US",
+    dataset: "Pallet floor geometry; Utility Trailer 53' dry van inside width (101 in)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

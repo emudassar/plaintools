@@ -74,8 +74,15 @@ GPM = size x sqrt(PSI/4000); all 496 cells checked, 490 match, 6 print slips e.g
 **Caveat found:** size numbering is NOT universal — Spraying Systems rates WashJet MEG 2540 at 4 gpm @ 40 psi;
 page says so and makes no "25040 = 25 deg size 4.0" claim. Node 25/25.
 
-**REMAINING from the 30-list (3), build in this order next session:** truck-cost-per-mile-calculator,
-linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
+Then (#40): truck-cost-per-mile-calculator (`business`; user's own costs / miles, fuel from MPG x price or amount,
+deadhead -> per loaded mile; benchmark only from ATRI 2026-07-15 press release: $2.336/mi in 2025, $1.854 ex fuel.
+Line-item figures quoted by trade press were NOT used — not in the primary release). Node 24/24.
+
+Then (#41): linear-feet-calculator-freight (`business`; rows across the trailer, straight vs turned, stack 2-high
+halves positions; default 101" inside width from Utility Trailer dry van page (wearband to wearband). Carrier
+linear-foot thresholds differ (8/10/12 ft seen in secondary sources) — page names no carrier rule). Node 25/25.
+
+**REMAINING from the 30-list (1), build next:** playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
 plumbing-drain-slope, deck-load, horse-gestation, goat-gestation (omni ranks), r410a/r134a/r32 PT (NIST has
 r134a C811972 & r32 C75105; blends not in NIST).
@@ -250,6 +257,8 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | Gutter Coil Calculator | `gutter-coil-calculator` | US | Gutter Supply Coil Yields sheet | live (built 2026-10-05) |
 | Tip Pool Calculator | `tip-pool-calculator` | US | Proportional split; DOL Fact Sheet #15 | live (built 2026-10-05) |
 | Pressure Washer Nozzle Calculator | `pressure-washer-nozzle-calculator` | Worldwide | General Pump Nozzle Chart 2021 | live (built 2026-10-05) |
+| Truck Cost Per Mile Calculator | `truck-cost-per-mile-calculator` | US | Cost / miles; ATRI 2026 benchmark | live (built 2026-10-05) |
+| Freight Linear Feet Calculator | `linear-feet-calculator-freight` | US | Pallet geometry; Utility Trailer 101" width | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.
