@@ -381,6 +381,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Published lights-per-foot rule of thumb; U.S. CPSC holiday safety guidance",
   },
+  {
+    slug: "chainsaw-file-size-chart",
+    name: "Chainsaw File Size Chart",
+    tagline:
+      "Pick your chain's pitch or the number stamped on its drive link and get the round file size, filing angles and depth-gauge setting from Oregon's published chart, with STIHL's own figure alongside.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Oregon saw chain filing and grinding angles chart (catalog p. FOR 149); STIHL saw chain files",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

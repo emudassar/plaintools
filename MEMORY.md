@@ -36,8 +36,14 @@ Then (#32): christmas-tree-light-calculator (no official standard: page calls it
 Mahoney's Garden Center 75/100/125 per ft + Govee 100/ft; CPSC "never string together more than three sets of
 incandescent lights" -> runs; LED -> label). balsamhill.com returned 429; cpsc.gov 403 to curl, read via WebFetch.
 
-**REMAINING from the 30-list (10), build in this order next session:**
-chainsaw-file-size-chart,
+Then (#33, 2026-10-05): chainsaw-file-size-chart (Oregon catalog p. FOR 149 "Filing/Grinding Angles" 2020 PDF,
+all 21 rows x 10 cells read off a rendered image; drive-link number -> pitch/gauge from Oregon Maintenance &
+Safety Manual p.12 (2004, lacks 68/80 -> pitch taken from chart grouping, gauge null); numbers 11/16/18/33-35/
+50-52 in manual but not chart -> no-data; square-ground CJ/CK/CL rows -> no round file (footnote 3).
+STIHL's own sizes shown alongside from shop.stihl.ca saw-chain-files: 3/8 = 13/64" (5.16 mm) vs Oregon 7/32".
+Node 68/68. Gotcha: pymupdf (python) renders PDF pages to PNG here; no pdftoppm on this machine.
+
+**REMAINING from the 30-list (9), build in this order next session:**
 aquarium-gravel-calculator, deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
@@ -208,6 +214,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | When Does My Propane Tank Expire? | `propane-tank-expiration-date` | US | 49 CFR 180.209(e), (g); 180.213 | live (built 2026-10-04) |
 | When Does My Fire Extinguisher Expire? | `fire-extinguisher-expiration-date` | US | OSHA 29 CFR 1910.157(e), (f), Table L-1 | live (built 2026-10-04) |
 | How Many Smoke Detectors Do I Need? | `how-many-smoke-detectors-do-i-need` | US | 2024 IRC R310.3 / 2021 IRC R314.3 | live (built 2026-10-04) |
+| Chainsaw File Size Chart | `chainsaw-file-size-chart` | Worldwide | Oregon filing chart FOR 149 + manual; STIHL files page | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.
