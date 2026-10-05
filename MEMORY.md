@@ -71,6 +71,11 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
 - #58 horse-feed-cost-calculator (20/mo; "how much does it cost to feed a horse" 260/KD7): owner's prices; optional Merck
   forage guideline (at least 1.5-2% BW forage DM/day; hay DM% from user's hay test, no default). Node 17/17; browser $8.03/day ✓.
 
+- #59 resin-volume-calculator (110/KD2): box/cylinder/sphere/dome/cone or water-measured ml; weight = ml x SG from makers' TDS
+  (Smooth-On EpoxAcast 690 1.10 / 692 1.08, Smooth-Cast 300 1.05, West System 105/207 cured 1.15, or custom). A/B split by
+  volume or weight. Cross-check: 27.68/1.10 = 25.2 = Smooth-On's printed 25 cu in/lb (and 26.4 for SC300). Node 25/25;
+  browser 4 x 10 cm round x 1 cm +10% = 345.6 ml ✓.
+
 **HANDOFF (session ended 2026-10-05 on the user's 5-hour limit): 16 of 20 done & pushed. REMAINING 4, same rules (build, test,
 commit, push; push pre-approved for this batch by the user):**
   1. resin-volume-calculator (110/KD2; 'resin calculator' 1,600/KD19): mold shapes -> ml/oz + weight; keep it distinct from

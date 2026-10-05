@@ -649,6 +649,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Owner's own prices; Merck Veterinary Manual forage guideline",
   },
+  {
+    slug: "resin-volume-calculator",
+    name: "Resin Volume Calculator",
+    tagline:
+      "Enter a mold's shape and inside size, or the water it holds, and get the resin to mix in ml and fl oz, its weight, and the part A / part B split.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Solid geometry; specific gravities from Smooth-On and West System technical data sheets",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
