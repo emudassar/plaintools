@@ -455,6 +455,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "General Pump Nozzle Chart (2021): GPM by nozzle size and PSI",
   },
+  {
+    slug: "truck-cost-per-mile-calculator",
+    name: "Truck Cost Per Mile Calculator",
+    tagline:
+      "Enter a period's truck costs, fuel and miles and get your cost per mile and per loaded mile, split into fixed, variable and fuel, next to ATRI's industry average.",
+    category: "business",
+    status: "live",
+    scope: "US",
+    dataset: "Cost ÷ miles; ATRI 2026 Operational Costs of Trucking benchmark ($2.336/mile in 2025)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
