@@ -669,6 +669,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Signed-tetrahedron volume (Zhang & Chen 2001); Prusament filament densities",
   },
+  {
+    slug: "boat-fuel-cost-calculator",
+    name: "Boat Fuel Cost Calculator",
+    tagline:
+      "Enter your boat's fuel burn and engine hours, or distance and speed, plus the fuel price, and get the trip's fuel, cost, cost per hour and mile, and rule-of-thirds fuel to carry.",
+    category: "business",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Owner's burn rate and price; NC Sea Grant full-throttle estimate and rule of thirds",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

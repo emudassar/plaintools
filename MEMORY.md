@@ -83,6 +83,12 @@ Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by
   browser 20 mm cube = 8 cm3 / 9.9 g PLA ✓. Gotcha: `npm run build` while dev runs clobbers dev chunks (404s, no hydration) —
   stop dev before building, or restart it after.
 
+- #61 boat-fuel-cost-calculator (30/mo; `business`): owner's burn rate (gal or L per hour, per engine) x engines x hours or
+  distance/speed; price; cost/hr, cost/distance, distance per fuel unit. Only citable HP rule found: NC Sea Grant Coastwatch
+  2014 (E-Ching Lee) "about one gallon ... per hour for every 10 horsepower" at full throttle, gasoline 2/4-stroke on planing
+  hulls; its 250-hp example 25 gph WOT / 12.5 gph at 77.5% -> shown as warning. No diesel rule (none sourced). Rule of thirds
+  from same article -> fuel aboard = 1.5 x trip; optional tank check. Node 24/24; browser 12.5 gph, 34 nm at 17 kn = 1.36 nmpg ✓.
+
 **HANDOFF (session ended 2026-10-05 on the user's 5-hour limit): 16 of 20 done & pushed. REMAINING 4, same rules (build, test,
 commit, push; push pre-approved for this batch by the user):**
   1. resin-volume-calculator (110/KD2; 'resin calculator' 1,600/KD19): mold shapes -> ml/oz + weight; keep it distinct from
