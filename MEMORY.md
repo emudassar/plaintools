@@ -48,8 +48,14 @@ density; 9 printed product densities 75-100 lb/ft3, Special Grade Reef Sand list
 1-2 lb/gal rule shown as optional check; category `health`). Node 25/25. Note: HTML min="0" blocks submit of a
 negative value natively, so the stale result stays — same as other tools; lib rejects it anyway.
 
-**REMAINING from the 30-list (8), build in this order next session:**
-deck-joist-span-calculator (AWC DCA 6), hip-roof-calculator, gutter-coil-calculator,
+Then (#35): deck-joist-span-calculator (IRC Table R507.6 read in user's Chrome on codes.iccsafe.org chapter page
+`/content/IRC2021P2/chapter-5-floors` — the `/s/...SecR507.6` section page omits the table; all 528 cells diffed
+in-browser vs 2024 IRC: identical. 40 psf spans also = AWC DCA 6-2015 Table 2. Loads 40 live / 50-60-70 ground
+snow; cantilever by back span 4-18 ft, interpolation allowed (fn g), NP neighbour -> NP, <4 ft -> no extrapolation,
+back span > allowable span -> none). Node 35/35.
+
+**REMAINING from the 30-list (7), build in this order next session:**
+hip-roof-calculator, gutter-coil-calculator,
 tip-pool-calculator, pressure-washer-nozzle-calculator, truck-cost-per-mile-calculator,
 linear-feet-calculator-freight, playground-mulch-calculator (CPSC handbook).
 Reserves if one fails sourcing: icf-concrete-calculator, roof-drain-calculator (IPC 1106), 3-phase power,
@@ -221,6 +227,7 @@ Nothing is published. There is no domain, no hosting, no analytics, no ads.
 | How Many Smoke Detectors Do I Need? | `how-many-smoke-detectors-do-i-need` | US | 2024 IRC R310.3 / 2021 IRC R314.3 | live (built 2026-10-04) |
 | Chainsaw File Size Chart | `chainsaw-file-size-chart` | Worldwide | Oregon filing chart FOR 149 + manual; STIHL files page | live (built 2026-10-05) |
 | Aquarium Gravel Calculator | `aquarium-gravel-calculator` | Worldwide | CaribSea FAQ formula + densities | live (built 2026-10-05) |
+| Deck Joist Span Calculator | `deck-joist-span-calculator` | US | IRC Table R507.6 (2021 = 2024); DCA 6 cross-check | live (built 2026-10-05) |
 
 EMD candidates: `whatsoiltype.com` (tool #1), `oshasoiltype.com` (tool #2) — **neither
 availability checked.** No EMD proposed for tools #3–#6.

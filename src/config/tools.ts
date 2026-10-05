@@ -401,6 +401,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "CaribSea FAQ: length x width x depth / 1,728 x substrate density",
   },
+  {
+    slug: "deck-joist-span-calculator",
+    name: "Deck Joist Span Calculator",
+    tagline:
+      "Pick the lumber species, joist size, spacing and load and get the maximum deck joist span from IRC Table R507.6, plus the cantilever for your back span and a check of your own span.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "IRC Table R507.6 Maximum Deck Joist Spans (2021 and 2024, identical); AWC DCA 6-2015 Table 2",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
