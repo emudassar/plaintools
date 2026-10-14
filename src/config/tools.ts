@@ -39,6 +39,10 @@ export const categories = {
     label: "Work & Business",
     blurb: "Pay, cost and logistics arithmetic, with the published rules and figures behind it.",
   },
+  outdoors: {
+    label: "Sports & Outdoors",
+    blurb: "Gear sizing and outdoor questions answered from manufacturers' published charts and guides.",
+  },
   math: {
     label: "Math & Study",
     blurb: "Math and science questions worked from open textbook definitions, shown step by step.",
@@ -732,6 +736,17 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "Worldwide",
     dataset: "Minn Kota Motor Size selection guide (Rev. 8.21.2020) and buying guide",
+  },
+  {
+    slug: "ski-size-chart",
+    cluster: "snow-sports",
+    name: "Ski Size Chart",
+    tagline:
+      "Enter height, and a child's weight, and get the suggested ski length range in cm from Nordica's adult and junior charts, plus which end of the range to lean toward.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Nordica Ski Sizer (adult and child charts)",
   },
 ] as const;
 

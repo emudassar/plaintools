@@ -8,6 +8,16 @@
 
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
+**2026-10-14: new 10-tool shortlist from a fresh Semrush sweep → `research/2026-10-14-10-tool-shortlist.md`.**
+Nothing built. Lead picks: water heater age by serial (Bradford White 12.1K, others ~12K), HVAC age by serial, ski boot size
+conversion (~48K cluster), ski size chart (8.1K, S0), snowboard size calculator, oil tank chart, scuba weight calc, horse coat
+color calc, Mercury outboard year by serial. Serial-number tools need an official per-brand format doc before building.
+User then asked: build all 10 one by one, test, push each (push pre-approved for this batch). New category `outdoors`
+("Sports & Outdoors"), cluster `snow-sports`. Test harness: node --experimental-strip-types + resolve hook (scratchpad).
+- #63 ski-size-chart (8,100/KD7): Nordica Ski Sizer PDF (adult p1 14 rows; child p2 ages 3-14 with 50th-pct weights).
+  Adult = nearest row; child between rows -> weight vs linearly-read chart weight (Nordica's light/heavy rule). Ticked
+  go-shorter/longer reasons -> lean end. Node 19/19; browser adult 173 cm -> 160-180, child 4'3" 70 lb -> 120-130 ✓.
+
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**
 Baseline: 1,235 impr / 3 clicks in GSC, Bing 0 rows, 283 of 347 queries at position 51+. Fixes: (1) optional `cluster` field on
 `Tool` in `tools.ts` (42 tools tagged: pool, horse, honey, asphalt, ada, aquarium, soil, roofing, framing, gestation, epoxy,
