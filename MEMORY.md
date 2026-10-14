@@ -20,6 +20,9 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
 - #64 ski-boot-size-chart (9,900/KD17; cluster ~48K): Nordica Ski Boot Sizing Chart PDF (size-boot-sl.pdf): men's 23 rows /
   women's 13 (US/EU/UK, Mondo Standard + Performance fit, '-' = null), junior 29 (US child/youth, UK, mondo). Mondo input in
   cm or mm; between half sizes shows both. Node 18/18; browser 263 mm -> 26/26.5 rows ✓.
+- #65 snowboard-size-chart (14,800/KD16): Jones Snowboards size guide (base-camp blog page; tables read from raw HTML):
+  adult 15 overlapping weight rows, kids 11 (last row misprinted '130-45' -> open upper end), wide chart boot -> min waist.
+  'Middle size' = centre of matched span. Node 22/22; browser 165 lb -> ~155.5 cm, Men's 12 -> 26.7 cm wide ✓.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**

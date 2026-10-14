@@ -759,6 +759,17 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Nordica Ski Boot Sizing Chart (men's, women's and junior)",
   },
+  {
+    slug: "snowboard-size-chart",
+    cluster: "snow-sports",
+    name: "Snowboard Size Chart",
+    tagline:
+      "Enter your weight and boot size and get the snowboard length from Jones's adult and kids charts, the middle size when you fall in two ranges, and the minimum waist width if you need a wide board.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Jones Snowboards size guide (weight charts and wide-board chart)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
