@@ -34,6 +34,12 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
 - #68 water-heater-age-by-serial-number: brands ONLY where maker publishes format: A. O. Smith (Service & Warranty Guide Dec
   2018 p.10: YY + week 01-53; pdftotext verified), Rheem (rheem.com: 10 chars MM YY letter 5 digits), Bradford White (reuses
   #67 lib). Ruud/State/American/Whirlpool/Rinnai publish no format -> not decoded (Ruud lookup linked). Node 18/18; browser ✓.
+- HVAC age by serial (shortlist #3) DROPPED: no complete official format. goodmanmfg.com unreachable from this network
+  (curl + Chrome, DNS fail); Lennox EHB 210965 lists only months A-C, years 19-23; Carrier/Trane residential unpublished
+  (Trane only light-commercial article, 403). Replaced by go-kart gear ratio calculator (reserve, S0).
+- #69 scuba-weight-calculator (880/KD2 + dive weight calc 720 etc.): PADI blog (5/10/15% by suit, +2 kg tank offset, AL80
+  salt), DAN 'Weight Up!' (10%/5% baselines), Scuba Diving mag (fresh = -2.5% of diver+gear+weights; gear 32+8+15 lb;
+  HP steel 80 -6 lb). Step breakdown shown. Node 11/11; browser 170 lb -> 21.4 lb salt, 15.2 fresh ✓.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**

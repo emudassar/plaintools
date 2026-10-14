@@ -802,6 +802,16 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Makers' published serial formats: A. O. Smith Service and Warranty Guide, Rheem, Bradford White",
   },
+  {
+    slug: "scuba-weight-calculator",
+    name: "Scuba Weight Calculator",
+    tagline:
+      "Enter your body weight, suit, water and tank and get a starting dive weight from PADI's and DAN's guidelines, with each adjustment listed.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "PADI and DAN weighting guidelines; Scuba Diving magazine buoyancy article",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
