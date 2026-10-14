@@ -780,6 +780,17 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Tank geometry (circular-segment areas) × rated capacity; pickhvac.com standard tank sizes",
   },
+  {
+    slug: "bradford-white-water-heater-age",
+    cluster: "appliance-age",
+    name: "Bradford White Water Heater Age",
+    tagline:
+      "Type the serial number from a Bradford White water heater and get the month and year it was made and its age, using Bradford White's own date code.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Bradford White 'Determining The Age Of A Water Heater' bulletin",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

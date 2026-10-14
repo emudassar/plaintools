@@ -27,6 +27,10 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
   exists; geometry (circular-segment areas, obround/cylinder/box) -> fraction full x rated gal. Presets from pickhvac standard
   sizes (275/330 obround 27x44, 500/550/1000 cyl 48in dia). Reproduces pickhvac 275 V chart within 1.6 gal (44 rows), H within
   2.8 (27 rows). Custom dims + optional rating; >10% rated-vs-geometric mismatch warning. Node 19/19; browser ✓.
+- #67 bradford-white-water-heater-age (12,100/KD24): Bradford White For The Pro bulletin (raw HTML verified; bradfordwhite.com
+  itself 403s curl). 20 year letters (1984+i, +20, +40), months A-M skip I, 7 digits = before DM(Dec 2007), 8 = Dec 2007 on,
+  OA = Jan 1997. Ambiguous 7-digit A-M serials show both years. Today set in useEffect (no hydration mismatch). Cluster
+  `appliance-age`. Node 19/19; browser KA12345678 -> Jan 2013, DG6322957 -> 1987 or 2007, Q -> error ✓.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**
