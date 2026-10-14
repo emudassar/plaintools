@@ -40,6 +40,10 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
 - #69 scuba-weight-calculator (880/KD2 + dive weight calc 720 etc.): PADI blog (5/10/15% by suit, +2 kg tank offset, AL80
   salt), DAN 'Weight Up!' (10%/5% baselines), Scuba Diving mag (fresh = -2.5% of diver+gear+weights; gear 32+8+15 lb;
   HP steel 80 -6 lb). Step breakdown shown. Node 11/11; browser 170 lb -> 21.4 lb salt, 15.2 fresh ✓.
+- #70 horse-color-calculator (2,900/KD15 + coat color 1,900 etc.): UC Davis VGL gene pages read via Chrome (curl gets
+  Cloudflare 403; /test/gray is access-denied -> used gray_presence_absence). Genes E, A, Cr, D(nd1/nd2), G; independent
+  Mendelian cross; names only from VGL terms (bay+dun shown as 'bay + dun' since VGL says dun names vary by breed).
+  Node 11/11 (9:3:4 dihybrid ✓); browser buckskin x chestnut -> 25/25/18.75/18.75/6.25/6.25 ✓; tie headline fixed.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**

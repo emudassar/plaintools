@@ -812,6 +812,17 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "PADI and DAN weighting guidelines; Scuba Diving magazine buoyancy article",
   },
+  {
+    slug: "horse-color-calculator",
+    cluster: "horse",
+    name: "Horse Color Calculator",
+    tagline:
+      "Enter the sire's and dam's coat color test results and get the odds of each foal color, from chestnut, bay and black to palomino, buckskin, cremello and grullo.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "UC Davis Veterinary Genetics Laboratory gene pages (Extension, Agouti, Cream, Dun, Gray)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
