@@ -833,6 +833,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Mercury Marine owner's manual 8M0165094, Model Year Production Code",
   },
+  {
+    slug: "go-kart-gear-ratio-calculator",
+    name: "Go Kart Gear Ratio Calculator",
+    tagline:
+      "Enter clutch and axle sprocket teeth, tyre size and engine RPM and get the gear ratio, theoretical top speed and a gear ratio chart, with jackshaft support.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Chain-drive gear ratio and speed formula (CSG Network kart speed calculator)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

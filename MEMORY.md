@@ -48,6 +48,11 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
   pdftotext): decal 'c - Year manufactured' alpha code A-H=1-8, K=9, X=0 (BX=2020, AG=2017). Decodes the DECAL code only;
   serial itself has no published table (said on page). mercurymarine.com is Cloudflare-blocked (curl + Chrome) - don't retry.
   Future-year codes error out. Node 13/13; browser BX->2020, HK->1989, full serial -> explained error ✓.
+- #72 go-kart-gear-ratio-calculator (480/KD7 + chart 260 S0, mini bike 320 S0): CSG Network formula chain (ratio = axle/
+  clutch; mph = RPM/ratio x pi x D x 60/63360); reproduces CSG default 12.85 mph ('just under 13'). CSG page text says higher
+  ratio = higher top speed - that is backwards for axle/clutch; NOT repeated. Jackshaft stages multiply. Chart 10-14T x
+  50-80T. Node 14/14; browser 12/60 11in 3600 -> 23.6 mph, jackshaft 48/12 -> 20:1 ✓.
+  **2026-10-14 BATCH COMPLETE: 72 tools live (#63-#72).** Shortlist file moved to research/_completed/.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**
@@ -430,6 +435,16 @@ Categories now in use (2026-10-05 added `business` "Work & Business"): `property
 material questions with a concrete numeric or code answer). The `property` blurb was widened on
 2026-09-22 to "a specific building or plot, or the systems that serve it" so it could hold tool #3
 without inventing a new bucket.
+| Ski Size Chart | `ski-size-chart` | Worldwide | Nordica Ski Sizer (adult + child) | live (built 2026-10-14) |
+| Ski Boot Size Chart | `ski-boot-size-chart` | Worldwide | Nordica Ski Boot Sizing Chart | live (built 2026-10-14) |
+| Snowboard Size Chart | `snowboard-size-chart` | Worldwide | Jones Snowboards size guide | live (built 2026-10-14) |
+| Oil Tank Chart | `oil-tank-chart` | US | Tank geometry x rated gal; pickhvac sizes | live (built 2026-10-14) |
+| Bradford White Water Heater Age | `bradford-white-water-heater-age` | US | Bradford White For The Pro bulletin | live (built 2026-10-14) |
+| Water Heater Age by Serial Number | `water-heater-age-by-serial-number` | US | A. O. Smith guide, Rheem, Bradford White | live (built 2026-10-14) |
+| Scuba Weight Calculator | `scuba-weight-calculator` | Worldwide | PADI, DAN, Scuba Diving magazine | live (built 2026-10-14) |
+| Horse Color Calculator | `horse-color-calculator` | Worldwide | UC Davis VGL gene pages | live (built 2026-10-14) |
+| What Year Is My Mercury Outboard? | `what-year-is-my-mercury-outboard` | Worldwide | Mercury manual 8M0165094 year code | live (built 2026-10-14) |
+| Go Kart Gear Ratio Calculator | `go-kart-gear-ratio-calculator` | Worldwide | CSG Network formula chain | live (built 2026-10-14) |
 
 ## Tool #2 — OSHA Soil Classification, built 2026-09-22
 
