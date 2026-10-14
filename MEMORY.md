@@ -44,6 +44,10 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
   Cloudflare 403; /test/gray is access-denied -> used gray_presence_absence). Genes E, A, Cr, D(nd1/nd2), G; independent
   Mendelian cross; names only from VGL terms (bay+dun shown as 'bay + dun' since VGL says dun names vary by breed).
   Node 11/11 (9:3:4 dihybrid ✓); browser buckskin x chestnut -> 25/25/18.75/18.75/6.25/6.25 ✓; tie headline fixed.
+- #71 what-year-is-my-mercury-outboard (cluster ~4K mercury serial/year terms): Mercury manual 8M0165094 (2019 15/20 EFI,
+  pdftotext): decal 'c - Year manufactured' alpha code A-H=1-8, K=9, X=0 (BX=2020, AG=2017). Decodes the DECAL code only;
+  serial itself has no published table (said on page). mercurymarine.com is Cloudflare-blocked (curl + Chrome) - don't retry.
+  Future-year codes error out. Node 13/13; browser BX->2020, HK->1989, full serial -> explained error ✓.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**

@@ -823,6 +823,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "UC Davis Veterinary Genetics Laboratory gene pages (Extension, Agouti, Cream, Dun, Gray)",
   },
+  {
+    slug: "what-year-is-my-mercury-outboard",
+    name: "What Year Is My Mercury Outboard?",
+    tagline:
+      "Type the two-letter year code from your Mercury outboard's serial number decal and get the year it was made, using the table in Mercury's own manual.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Mercury Marine owner's manual 8M0165094, Model Year Production Code",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
