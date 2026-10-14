@@ -8,6 +8,13 @@
 
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
+**2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**
+Baseline: 1,235 impr / 3 clicks in GSC, Bing 0 rows, 283 of 347 queries at position 51+. Fixes: (1) optional `cluster` field on
+`Tool` in `tools.ts` (42 tools tagged: pool, horse, honey, asphalt, ada, aquarium, soil, roofing, framing, gestation, epoxy,
+freight, fire-safety, drawer, home-water); `relatedTools()` now lists same cluster first, then category, then the rest.
+(2) OSHA soil FAQ question reworded to "What are Type A and Type B soils..." (GSC query "what are type a and b soils?" at pos 15.2).
+Still open: submit sitemap in Bing (needs user yes), crawl for internal-link/orphan check, PSI key. Re-check GSC around 2026-10-28.
+
 **2026-10-05 (later): user-supplied 20-tool batch, each built → tested → committed → pushed (push pre-approved for this batch).**
 Keyword research: Semrush KMT (US) via balochseotools, 57 seeds. Slugs chosen by volume within the same intent.
 - #43 lumber-cost-calculator (140/KD9; `construction`): NIST HB 130-2026 §2.12.1.1 board foot = 144 in3, Table 1 dry dressed

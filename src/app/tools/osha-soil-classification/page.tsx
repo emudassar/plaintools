@@ -136,9 +136,9 @@ export default function OshaSoilClassificationPage() {
             "Because you left the unconfined compressive strength blank for a cohesive soil, and that number is the only thing that separates Type A, Type B and Type C for clay-like material. Rather than guess, the page shows every class still open given your other answers and names the measurement that would close it. The range is often narrower than you expect: a cohesive soil that is fissured cannot be Type A whatever its strength, so the answer becomes Type B or Type C without any measurement at all.",
         },
         {
-          question: "What is the difference between Type A, Type B and Type C?",
+          question: "What are Type A and Type B soils, and how do they differ from Type C?",
           answer:
-            "For cohesive soils it is strength: 1.5 tsf or greater is Type A, above 0.5 but below 1.5 is Type B, and 0.5 or less is Type C. For granular soils it is the material — angular gravel, silt, silt loam and sandy loam are Type B, while gravel, sand and loamy sand are Type C. On top of that sit conditions that override strength entirely: fissuring, vibration and previous disturbance all stop a soil being Type A, and submerged or freely seeping soil is Type C regardless of anything else. The result card quotes whichever of those clauses decided your answer.",
+            "Type A, Type B and Type C are OSHA's three classes of soil in 29 CFR 1926 Subpart P, Appendix A. For cohesive soils it is strength: 1.5 tsf or greater is Type A, above 0.5 but below 1.5 is Type B, and 0.5 or less is Type C. For granular soils it is the material — angular gravel, silt, silt loam and sandy loam are Type B, while gravel, sand and loamy sand are Type C. On top of that sit conditions that override strength entirely: fissuring, vibration and previous disturbance all stop a soil being Type A, and submerged or freely seeping soil is Type C regardless of anything else. The result card quotes whichever of those clauses decided your answer.",
         },
         {
           question: "My soil tested above 1.5 tsf. Why is the answer Type B?",
