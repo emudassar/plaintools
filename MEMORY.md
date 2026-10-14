@@ -17,6 +17,10 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
 - #63 ski-size-chart (8,100/KD7): Nordica Ski Sizer PDF (adult p1 14 rows; child p2 ages 3-14 with 50th-pct weights).
   Adult = nearest row; child between rows -> weight vs linearly-read chart weight (Nordica's light/heavy rule). Ticked
   go-shorter/longer reasons -> lean end. Node 19/19; browser adult 173 cm -> 160-180, child 4'3" 70 lb -> 120-130 ✓.
+- #64 ski-boot-size-chart (9,900/KD17; cluster ~48K): Nordica Ski Boot Sizing Chart PDF (size-boot-sl.pdf): men's 23 rows /
+  women's 13 (US/EU/UK, Mondo Standard + Performance fit, '-' = null), junior 29 (US child/youth, UK, mondo). Mondo input in
+  cm or mm; between half sizes shows both. Node 18/18; browser 263 mm -> 26/26.5 rows ✓.
+  GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**
 Baseline: 1,235 impr / 3 clicks in GSC, Bing 0 rows, 283 of 347 queries at position 51+. Fixes: (1) optional `cluster` field on

@@ -748,6 +748,17 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Nordica Ski Sizer (adult and child charts)",
   },
+  {
+    slug: "ski-boot-size-chart",
+    cluster: "snow-sports",
+    name: "Ski Boot Size Chart",
+    tagline:
+      "Convert a Mondopoint ski boot size to US men's, women's, kids', EU and UK sizes, or the other way round, with Nordica's standard and performance fit sizes.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Nordica Ski Boot Sizing Chart (men's, women's and junior)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
