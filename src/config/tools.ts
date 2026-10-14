@@ -770,6 +770,16 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Jones Snowboards size guide (weight charts and wide-board chart)",
   },
+  {
+    slug: "oil-tank-chart",
+    name: "Oil Tank Chart",
+    tagline:
+      "Enter the inches of oil on your dipstick and get the gallons left in a 275 or 330 gallon oval tank, a 500, 550 or 1000 gallon round tank, or your own tank, with the full inch-by-inch chart.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Tank geometry (circular-segment areas) × rated capacity; pickhvac.com standard tank sizes",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

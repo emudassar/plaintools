@@ -23,6 +23,10 @@ User then asked: build all 10 one by one, test, push each (push pre-approved for
 - #65 snowboard-size-chart (14,800/KD16): Jones Snowboards size guide (base-camp blog page; tables read from raw HTML):
   adult 15 overlapping weight rows, kids 11 (last row misprinted '130-45' -> open upper end), wide chart boot -> min waist.
   'Middle size' = centre of matched span. Node 22/22; browser 165 lb -> ~155.5 cm, Men's 12 -> 26.7 cm wide ✓.
+- #66 oil-tank-chart (cluster ~6.5K: 275 gal oil tank chart 390, oil tank chart 390, 1000/550 charts): no official chart
+  exists; geometry (circular-segment areas, obround/cylinder/box) -> fraction full x rated gal. Presets from pickhvac standard
+  sizes (275/330 obround 27x44, 500/550/1000 cyl 48in dia). Reproduces pickhvac 275 V chart within 1.6 gal (44 rows), H within
+  2.8 (27 rows). Custom dims + optional rating; >10% rated-vs-geometric mismatch warning. Node 19/19; browser ✓.
   GOTCHA: `npm run build` while `next dev` runs breaks the dev server (shared .next) -> stop preview before building.
 
 **2026-10-14: first SEO report saved (`reports/seo-report-2026-10-14.html`) and its code fixes applied locally (not pushed).**
