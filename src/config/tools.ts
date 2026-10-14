@@ -791,6 +791,17 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "Bradford White 'Determining The Age Of A Water Heater' bulletin",
   },
+  {
+    slug: "water-heater-age-by-serial-number",
+    cluster: "appliance-age",
+    name: "Water Heater Age by Serial Number",
+    tagline:
+      "Pick the brand, type the serial number from the rating plate, and get when an A. O. Smith, Rheem or Bradford White water heater was made and how old it is.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "Makers' published serial formats: A. O. Smith Service and Warranty Guide, Rheem, Bradford White",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
