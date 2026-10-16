@@ -64,6 +64,8 @@ Until then every new tool goes on the hub. The hub is the cheap place to be wron
 | When Does My Fire Extinguisher Expire? | `fire-extinguisher-expiration-date` | US | OSHA 29 CFR 1910.157(e), (f), Table L-1 | **live** (built 2026-10-04) |
 | How Many Smoke Detectors Do I Need? | `how-many-smoke-detectors-do-i-need` | US | 2024 IRC R310.3 / 2021 IRC R314.3 | **live** (built 2026-10-04) |
 
+Tools #13-#82 (latest batch #73-#82 built 2026-10-16) are listed in `MEMORY.md` -> Live tools; `src/config/tools.ts` is the source of truth.
+
 EMD candidate for tool #1: `whatsoiltype.com` — **availability not checked**.
 
 ### Before launch

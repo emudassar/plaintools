@@ -126,6 +126,7 @@ export default function ToolPageLayout({
             ))}
           </div>
 
+          {dataSection.sources.length > 0 && (
           <div className="mt-5 rounded-lg border border-[var(--color-line)] bg-[var(--color-accent-soft)] p-4">
             <h3 className="mb-2 text-sm font-semibold tracking-wide uppercase">Sources</h3>
             <ul className="space-y-2 text-sm">
@@ -146,6 +147,7 @@ export default function ToolPageLayout({
               ))}
             </ul>
           </div>
+          )}
         </section>
 
         <section className="mb-12">

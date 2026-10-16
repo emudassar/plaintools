@@ -6,6 +6,35 @@
 
 ## Current stage
 
+**2026-10-16: 10-tool batch #73-#82 built, tested, live in the registry (82 tools).** Fresh Semrush sweep (sr03,
+113 seeds, 15,319 kw, 70 SERP checks) -> `research/_completed/2026-10-16-10-tool-shortlist.md` (volumes, S-scores,
+reserves, rejects). User asked: find, build, test, push. Every source verified before code; Node logic tests 59/59
+(scratchpad harness: node --import reg.mjs with a .ts resolve hook); every page checked in the browser (real clicks /
+typing); typecheck + build pass; all 10 URLs in out/sitemap.xml.
+- #73 goat-gestation-calculator (2,900/KD14 S1): Merck 'Pregnancy in Goats' (Stewart, Jun 2026) 145-155 d avg 150 +
+  gestation table. Buck-period window like sheep. Mar 1 -> Jul 24-Aug 3 ✓.
+- #74 pig-gestation-calculator (~800 cluster, S1): Merck table 114 d + Pork Industry Handbook E-2139 (MSU archive,
+  1988) 113-116 d, flagged as archive on page. Jan 1 -> Apr 25 ✓.
+- #75 knitting-needle-size-chart (3,600/KD12 S1): Craft Yarn Council hooks & needles table read from page HTML (29 rows;
+  3 and 7 mm have no US size; shared US numbers shown). No UK sizes (not in the standard - said on page).
+- #76 deck-beam-span-chart (1,900/KD14 S0): IRC 2024 R507.5(1)-(4) transcribed (4 loads x 3 species x 12 beams x 10
+  joist-span/cantilever columns; 70 psf prints '18 & 1' not 1.5). Cross-checked vs IRC 2021 (cols 2,4,5,7-10 identical
+  except 2021 web garbles '604','6-22','5-20'). 3 cells break ordering with no 2021 counterpart -> SUSPECT set, shown as
+  'check printed table': 40/rw/2-2x10 col1 (12-2), 50/sp/3-2x10 col6 (8-4), 60/rw/3-2x12 col6 (8-4).
+- #77 firewood-calculator (1,600 + cord clusters, S2-3): NIST HB130 sec 2.4 via Connecticut DCP page: cord 128 ft3 ranked
+  and well stowed; face cord/rick not legal units. Face cord = 32 ft2 x depth. Price per face cord -> per full cord.
+- #78 baseboard-calculator (1,300/KD14 S1): arithmetic only; waste % is user's own; sources list empty ->
+  ToolPageLayout now hides the Sources box when a tool has none.
+- #79 how-many-screws-per-sheet-of-drywall (1,000/KD5 S0): IRC 2024 Table R702.3.5 screws column (12 ceiling, 16 wall
+  @16 oc, 12 wall @24 oc, 6 Type X garage ceiling). Count = framing lines x screws per line. 4x8 wall = 28, ceiling = 35.
+- #80 roller-chain-size-chart (720 S0 + chain size chart 1,900 S1): Tsubaki EU 'ANSI G8' single-strand tables (RS25-240,
+  RS41; RS37/38 dropped as Tsubaki-only). Pitch from length / pitches; 40 vs 41 by inner width.
+- #81 crown-molding-angle-chart (590/KD13 S0): Wikipedia crown formulas miter=atan(sinS/tan(W/2)),
+  bevel=asin(cosS*cos(W/2)); 38@90 -> 31.6/33.9, 45@90 -> 35.3/30.0, 180 -> 0/0. 52 deg spring dropped (unsourced).
+- #82 fishing-reel-line-capacity-calculator (320/KD0 S0): cylinder geometry d1^2 L1 = d2^2 L2, backing subtracted.
+- DROPPED: quilt size chart (4,400 cluster) - only mattress-size standard (ISPA) is paywalled -> pig gestation instead.
+- GOTCHA: a long bash heredoc with test JS failed with 'unexpected EOF' in this shell; write test files with Write.
+
 **Layer 1 — 6 tools live locally, nothing deployed, no domain registered.**
 
 **2026-10-14: new 10-tool shortlist from a fresh Semrush sweep → `research/2026-10-14-10-tool-shortlist.md`.**
@@ -445,6 +474,16 @@ without inventing a new bucket.
 | Horse Color Calculator | `horse-color-calculator` | Worldwide | UC Davis VGL gene pages | live (built 2026-10-14) |
 | What Year Is My Mercury Outboard? | `what-year-is-my-mercury-outboard` | Worldwide | Mercury manual 8M0165094 year code | live (built 2026-10-14) |
 | Go Kart Gear Ratio Calculator | `go-kart-gear-ratio-calculator` | Worldwide | CSG Network formula chain | live (built 2026-10-14) |
+| Goat Gestation Calculator | `goat-gestation-calculator` | Worldwide | Merck Vet Manual (145-155 d, avg 150) | live (built 2026-10-16) |
+| Pig Gestation Calculator | `pig-gestation-calculator` | Worldwide | Merck table 114 d; Pork Industry Handbook 113-116 d | live (built 2026-10-16) |
+| Knitting Needle Size Chart | `knitting-needle-size-chart` | Worldwide | Craft Yarn Council hooks & needles | live (built 2026-10-16) |
+| Deck Beam Span Chart | `deck-beam-span-chart` | US | IRC 2024 Tables R507.5(1)-(4), 2021 cross-check | live (built 2026-10-16) |
+| Firewood Calculator | `firewood-calculator` | US | NIST Handbook 130 cord (128 ft3) | live (built 2026-10-16) |
+| Baseboard Calculator | `baseboard-calculator` | Worldwide | Arithmetic | live (built 2026-10-16) |
+| How Many Screws per Sheet of Drywall | `how-many-screws-per-sheet-of-drywall` | US | IRC 2024 Table R702.3.5 | live (built 2026-10-16) |
+| Roller Chain Size Chart | `roller-chain-size-chart` | Worldwide | Tsubaki ANSI G8 tables | live (built 2026-10-16) |
+| Crown Molding Angle Chart | `crown-molding-angle-chart` | Worldwide | Compound-miter formulas (Wikipedia) | live (built 2026-10-16) |
+| Fishing Reel Line Capacity Calculator | `fishing-reel-line-capacity-calculator` | Worldwide | Cylinder geometry | live (built 2026-10-16) |
 
 ## Tool #2 — OSHA Soil Classification, built 2026-09-22
 

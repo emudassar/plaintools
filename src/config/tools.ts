@@ -843,6 +843,111 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Chain-drive gear ratio and speed formula (CSG Network kart speed calculator)",
   },
+  {
+    slug: "goat-gestation-calculator",
+    cluster: "gestation",
+    name: "Goat Gestation Calculator",
+    tagline:
+      "Enter a breeding date — or the dates a buck ran with the does — and get the kidding window from the Merck Veterinary Manual's 145–155-day goat gestation.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Merck Veterinary Manual (goat gestation 145–155 days, average 150)",
+  },
+  {
+    slug: "pig-gestation-calculator",
+    cluster: "gestation",
+    name: "Pig Gestation Calculator",
+    tagline:
+      "Enter a breeding date and get the farrowing date at 114 days and the 113–116-day farrowing window, plus a gestation chart of key dates.",
+    category: "farm",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Merck Veterinary Manual (pig 114 days); Pork Industry Handbook (113–116 days)",
+  },
+  {
+    slug: "knitting-needle-size-chart",
+    name: "Knitting Needle Size Chart",
+    tagline:
+      "Convert a knitting needle size between millimetres and US numbers using the Craft Yarn Council standard, with the full chart and the sizes that share a US number.",
+    category: "health",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Craft Yarn Council standard — Hooks & Needles",
+  },
+  {
+    slug: "deck-beam-span-chart",
+    cluster: "framing",
+    name: "Deck Beam Span Chart",
+    tagline:
+      "Pick the species, load, joist span and joist overhang and get the maximum deck beam span for every built-up beam size from IRC Table R507.5.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "IRC 2024 Tables R507.5(1)–(4) Maximum Deck Beam Span",
+  },
+  {
+    slug: "firewood-calculator",
+    name: "Firewood Calculator",
+    tagline:
+      "Enter the length, height and depth of a woodpile and get its volume in cords (128 cubic feet), face cords and cubic metres, plus the price per full cord.",
+    category: "property",
+    status: "live",
+    scope: "US",
+    dataset: "NIST Handbook 130 cord definition (128 cubic feet, ranked and well stowed)",
+  },
+  {
+    slug: "baseboard-calculator",
+    cluster: "trim",
+    name: "Baseboard Calculator",
+    tagline:
+      "Enter the room's walls, doorways and stock length and get the linear feet of baseboard, the number of pieces to buy with waste, and the cost.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Perimeter arithmetic (walls − openings, plus waste allowance)",
+  },
+  {
+    slug: "how-many-screws-per-sheet-of-drywall",
+    name: "How Many Screws per Sheet of Drywall",
+    tagline:
+      "Pick the sheet size, wall or ceiling and framing spacing and get the screw count per sheet and for the job at the IRC's maximum fastener spacing.",
+    category: "construction",
+    status: "live",
+    scope: "US",
+    dataset: "IRC 2024 Table R702.3.5 (maximum fastener spacing for gypsum board)",
+  },
+  {
+    slug: "roller-chain-size-chart",
+    name: "Roller Chain Size Chart",
+    tagline:
+      "Measure the pitch, roller diameter and inner width of a chain and identify its ANSI number (25 to 240), with the full dimension chart in inches and millimetres.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Tsubaki ANSI roller chain dimension table (RS25–RS240)",
+  },
+  {
+    slug: "crown-molding-angle-chart",
+    cluster: "trim",
+    name: "Crown Molding Angle Chart",
+    tagline:
+      "Enter the corner angle and the molding's spring angle and get the miter and bevel settings for cutting crown flat on a compound miter saw, with a full angle chart.",
+    category: "construction",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Compound-miter formulas for crown molding (spring angle and wall angle)",
+  },
+  {
+    slug: "fishing-reel-line-capacity-calculator",
+    name: "Fishing Reel Line Capacity Calculator",
+    tagline:
+      "Enter the reel's rated capacity and your line's diameter and get how many yards or metres of that line the spool holds, including braid over mono backing.",
+    category: "outdoors",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Spool capacity ∝ line diameter² × length (cylinder volume)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
