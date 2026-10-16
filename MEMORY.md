@@ -6,7 +6,7 @@
 
 ## Current stage
 
-**2026-10-16 (later): 10 location tools #83-#92 built, tested, live in the registry (92 tools).** User asked: research
+**2026-10-16 (later): 10 location tools #83-#92 built, tested, PUSHED and live on plaintools.site (92 tools; all 10 URLs returned 200, sitemap 98 URLs).** User asked: research
 simplemaplab.com in Semrush (sr05), find 10 tools with traffic, keyword-research them, build better versions, test, push
 once at the end. Research + volumes/KD/SERP -> `research/_completed/2026-10-16-simplemaplab-10-tools.md`. New category
 `location` ("Maps & Location"), clusters `where-am-i`, `distance`, `sun-sky`. Node tests: geodesy 13/13 (Vincenty
