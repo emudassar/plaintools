@@ -6,6 +6,38 @@
 
 ## Current stage
 
+**2026-10-16 (later): 10 location tools #83-#92 built, tested, live in the registry (92 tools).** User asked: research
+simplemaplab.com in Semrush (sr05), find 10 tools with traffic, keyword-research them, build better versions, test, push
+once at the end. Research + volumes/KD/SERP -> `research/_completed/2026-10-16-simplemaplab-10-tools.md`. New category
+`location` ("Maps & Location"), clusters `where-am-i`, `distance`, `sun-sky`. Node tests: geodesy 13/13 (Vincenty
+Flinders Peak example to 1 cm), calc 39/39, live services 13/13; every page tested in the browser; typecheck + build pass.
+- Shared: `lib/geodesy.ts` (Vincenty inverse/direct WGS84, sphere fallback, normalizeLon fix for antimeridian),
+  `lib/web-mercator.ts` + `components/TileMap.tsx` (dependency-free OSM tile map, drag, +/-, click-to-pick, attribution +
+  'Report a map issue' per OSM tile policy), `components/LocationPicker.tsx` (browser geolocation + Photon search),
+  `PlacePairForm.tsx`, `GeoBits.tsx`. New third-party services added to site.ts: USGS EPQS, Open-Meteo, FCC Area API,
+  OSM tile servers.
+- geocode.ts: `preferUS` option (default true = old behaviour); `reverseGeocodeDetail`; `&lang=en` on all Photon calls;
+  worldwide searches re-ask with `osm_tag=place` when Photon ranks POIs first ("New York City" -> NYC Ballet otherwise).
+- #83 what-is-my-elevation (12,100/KD36): USGS EPQS + Copernicus GLO-90 side by side; GPS altitude shown as ellipsoidal.
+  Colorado Capitol 5,276 ft ✓. EPQS over sea = plain text / no CORS header -> treated as no data, Copernicus 0 = water.
+- #84 what-county-am-i-in (74,000/KD39) + #85 what-state-am-i-in (14,800/KD41): one CensusAreaTool, FCC Area API 2020
+  blocks; device accuracy >= 25 m -> 4 edge points checked for a county/state line. Island Areas return county
+  'data unavailable' -> shown as FIPS only. ESB -> New York County 36061 ✓, Toronto -> explained + OSM names.
+- #86 what-country-am-i-in (18,100/KD25): Photon reverse; nearest feature > 25 km -> no country (at sea).
+- #87 as-the-crow-flies-distance-calculator (2,900/KD28): NYC-LA 3,945.7 km ellipsoid vs 3,937 sphere.
+- #88 halfway-point-between-two-cities-calculator (1,900/KD13): Vincenty midpoint + split slider + nearest place.
+- #89 random-location-generator (3,600/KD12): MathWorld sphere point picking, box/radius cap, Web Crypto, sea skip via
+  Open-Meteo 0 m (100 coords per request).
+- #90 radius-map (8,100/KD23): up to 4 geodesic rings, cap area, inside-check, shareable ?lat&lon&r&u URL.
+- #91 sun-position-calculator (720/KD27): NOAA spreadsheet equations; tz from Open-Meteo `timezone=auto`. NYC
+  2026-10-16 sunrise 7:08 / sunset 6:13 matches Open-Meteo within 1 min.
+- #92 distance-to-horizon-calculator (210/KD12): sqrt(2Rh+h^2), refraction R' = 7R/6 (A. T. Young); 1.7 m -> 4.65 /
+  5.03 km ✓ Wikipedia.
+- Rejected: time zone (timeanddate/nist SERP), antipodes map (antipodesmap.com AS65), zip code (KD50, OSM postcodes).
+- GOTCHA: Photon 503s Node's default User-Agent (browsers fine) -> live Node tests patch fetch with a browser UA.
+- Not verified: the device-location path in a real phone (preview browser has no geolocation grant); edge logic tested
+  in Node (Kansas City state line found the other state).
+
 **2026-10-16: 10-tool batch #73-#82 built, tested, live in the registry (82 tools).** Fresh Semrush sweep (sr03,
 113 seeds, 15,319 kw, 70 SERP checks) -> `research/_completed/2026-10-16-10-tool-shortlist.md` (volumes, S-scores,
 reserves, rejects). User asked: find, build, test, push. Every source verified before code; Node logic tests 59/59

@@ -43,6 +43,10 @@ export const categories = {
     label: "Sports & Outdoors",
     blurb: "Gear sizing and outdoor questions answered from manufacturers' published charts and guides.",
   },
+  location: {
+    label: "Maps & Location",
+    blurb: "Where a point is, how far apart places are, and what public datasets record for a set of coordinates.",
+  },
   math: {
     label: "Math & Study",
     blurb: "Math and science questions worked from open textbook definitions, shown step by step.",
@@ -947,6 +951,116 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "Worldwide",
     dataset: "Spool capacity ∝ line diameter² × length (cylinder volume)",
+  },
+  {
+    slug: "what-is-my-elevation",
+    cluster: "where-am-i",
+    name: "What Is My Elevation?",
+    tagline:
+      "Use your current location or type an address and get the ground elevation above sea level in feet and metres, from USGS 3DEP and the Copernicus 90 m model side by side.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "USGS 3D Elevation Program (EPQS) and Copernicus DEM GLO-90",
+  },
+  {
+    slug: "what-county-am-i-in",
+    cluster: "where-am-i",
+    name: "What County Am I In?",
+    tagline:
+      "Use your current location or type an address and get the county (or parish, borough or municipio), state and FIPS codes from the 2020 Census, with a warning when you are near a county line.",
+    category: "location",
+    status: "live",
+    scope: "US",
+    dataset: "FCC Area API (2020 Census blocks)",
+  },
+  {
+    slug: "what-state-am-i-in",
+    cluster: "where-am-i",
+    name: "What State Am I In?",
+    tagline:
+      "Use your current location or type an address and get the US state or territory you are in from the 2020 Census, with a warning when you are close to a state line.",
+    category: "location",
+    status: "live",
+    scope: "US",
+    dataset: "FCC Area API (2020 Census blocks)",
+  },
+  {
+    slug: "what-country-am-i-in",
+    cluster: "where-am-i",
+    name: "What Country Am I In?",
+    tagline:
+      "Use your device's location or a typed place and get the country it falls in, with its ISO code and region, from OpenStreetMap data — not from your IP address.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap via the Photon geocoder",
+  },
+  {
+    slug: "as-the-crow-flies-distance-calculator",
+    cluster: "distance",
+    name: "As the Crow Flies Distance Calculator",
+    tagline:
+      "Enter two places and get the straight-line distance between them in miles, kilometres and nautical miles, measured on the WGS84 ellipsoid, with the compass bearing and the route on a map.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Vincenty (1975) geodesic on the WGS84 ellipsoid",
+  },
+  {
+    slug: "halfway-point-between-two-cities-calculator",
+    cluster: "distance",
+    name: "Halfway Point Between Two Cities Calculator",
+    tagline:
+      "Enter two cities or addresses and get the exact halfway point between them — or any split you choose — with the nearest named place and the distance from each side.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Vincenty (1975) geodesic midpoint on WGS84, OpenStreetMap place names",
+  },
+  {
+    slug: "random-location-generator",
+    cluster: "distance",
+    name: "Random Location Generator",
+    tagline:
+      "Generate truly uniform random coordinates anywhere on Earth, inside a box, or within a radius of a place — with an option to skip open sea and the points shown on a map.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Uniform sphere point picking (MathWorld) with Web Crypto randomness",
+  },
+  {
+    slug: "radius-map",
+    cluster: "distance",
+    name: "Radius Map",
+    tagline:
+      "Draw one or more true-distance circles in miles or kilometres around any address on a map, see the area each covers, and check whether another place falls inside.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Geodesic circles on WGS84 over OpenStreetMap tiles",
+  },
+  {
+    slug: "sun-position-calculator",
+    cluster: "sun-sky",
+    name: "Sun Position Calculator",
+    tagline:
+      "Pick a place, date and time and get the sun's elevation and compass direction, plus sunrise, sunset, solar noon and day length in local time, with a chart of the sun's path that day.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "NOAA solar calculator equations (Meeus, Astronomical Algorithms)",
+  },
+  {
+    slug: "distance-to-horizon-calculator",
+    cluster: "sun-sky",
+    name: "Distance to Horizon Calculator",
+    tagline:
+      "Enter your eye height and get how far away the horizon is, with and without standard atmospheric refraction, plus how far you can see a tall object and how much of it the curve hides.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Spherical-Earth horizon formula d = √(2Rh + h²), refraction R′ = 7R/6 (A. T. Young)",
   },
 ] as const;
 

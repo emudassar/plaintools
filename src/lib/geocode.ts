@@ -72,10 +72,43 @@ async function photon<T>(url: string, options: HedgeOptions): Promise<T> {
   }, options);
 }
 
+export interface GeocodeOptions extends HedgeOptions {
+  /** Default true: prefer a US match for ambiguous queries. Worldwide tools pass false. */
+  preferUS?: boolean;
+}
+
+const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+
+/**
+ * Photon ranks points of interest above settlements for some city names:
+ * "New York City" returns "New York City Ballet", City Hall and a cemetery
+ * before the city itself (observed 2026-10-16). For a query with no digits
+ * (so not a street address), ask again filtered to `osm_tag=place` and use that
+ * settlement if its name is most of the query — unless the plain search's
+ * first hit is an exact name match.
+ */
+async function placeMatch(q: string, plain: PhotonResponse, options: HedgeOptions): Promise<GeocodeResult | null> {
+  if (/\d/.test(q)) return null;
+  const nq = norm(q);
+  const firstName = plain.features?.[0]?.properties?.name;
+  if (firstName && norm(firstName) === nq) return null;
+  try {
+    const data = await photon<PhotonResponse>(`${PHOTON_SEARCH}?q=${encodeURIComponent(q)}&limit=3&osm_tag=place&lang=en`, options);
+    const f = (data.features ?? []).find((x) => {
+      const name = x.properties?.name;
+      // Must cover most of the query, so "Central Park, New York" does not become New York City.
+      return name ? nq.includes(norm(name)) && norm(name).length >= 0.6 * nq.length : false;
+    });
+    return f ? toResult(f) : null;
+  } catch {
+    return null;
+  }
+}
+
 /** Address text -> coordinates. Throws a typed error when nothing matches. */
 export async function geocodeAddress(
   query: string,
-  options: HedgeOptions = {},
+  options: GeocodeOptions = {},
 ): Promise<GeocodeResult> {
   const q = query.trim();
   if (q.length < 3) {
@@ -85,7 +118,7 @@ export async function geocodeAddress(
   let data: PhotonResponse;
   try {
     data = await photon<PhotonResponse>(
-      `${PHOTON_SEARCH}?q=${encodeURIComponent(q)}&limit=5`,
+      `${PHOTON_SEARCH}?q=${encodeURIComponent(q)}&limit=5&lang=en`,
       options,
     );
   } catch (e) {
@@ -100,9 +133,18 @@ export async function geocodeAddress(
     .map(toResult)
     .filter((r): r is GeocodeResult => r !== null);
 
-  // This tool only covers the United States, so prefer a US match when the
-  // query is ambiguous rather than silently geocoding to another country.
-  const best = results.find((r) => r.countryCode === "US") ?? results[0];
+  // US-only tools prefer a US match when the query is ambiguous rather than
+  // silently geocoding to another country. Worldwide tools take Photon's first
+  // hit — unless the query names a settlement (see placeMatch).
+  let best =
+    options.preferUS === false
+      ? results[0]
+      : (results.find((r) => r.countryCode === "US") ?? results[0]);
+
+  if (options.preferUS === false) {
+    const place = await placeMatch(q, data, options);
+    if (place) best = place;
+  }
 
   if (!best) {
     throw new ToolError(
@@ -121,7 +163,7 @@ export async function reverseGeocode(
 ): Promise<string | null> {
   try {
     const data = await photon<PhotonResponse>(
-      `${PHOTON_REVERSE}?lat=${lat}&lon=${lon}`,
+      `${PHOTON_REVERSE}?lat=${lat}&lon=${lon}&lang=en`,
       options,
     );
     const first = (data.features ?? [])[0];
@@ -130,6 +172,53 @@ export async function reverseGeocode(
   } catch {
     return null;
   }
+}
+
+/** The administrative names Photon (OpenStreetMap) records for the nearest feature. */
+export interface PlaceDetail {
+  label: string | null;
+  country: string | null;
+  countryCode: string | null;
+  state: string | null;
+  county: string | null;
+  city: string | null;
+  postcode: string | null;
+  /** Coordinates of the OSM feature Photon matched (not the point asked about). */
+  featureLat: number | null;
+  featureLon: number | null;
+}
+
+/** Coordinates -> OSM administrative names. Throws `unavailable` if Photon fails. */
+export async function reverseGeocodeDetail(
+  lat: number,
+  lon: number,
+  options: HedgeOptions = {},
+): Promise<PlaceDetail | null> {
+  let data: PhotonResponse;
+  try {
+    data = await photon<PhotonResponse>(`${PHOTON_REVERSE}?lat=${lat}&lon=${lon}&lang=en`, options);
+  } catch (e) {
+    throw new ToolError(
+      "unavailable",
+      "The place-name service did not respond. Please try again in a moment.",
+      e instanceof Error ? e.message : String(e),
+    );
+  }
+  const first = (data.features ?? [])[0];
+  if (!first) return null;
+  const p = first.properties ?? {};
+  const c = first.geometry?.coordinates;
+  return {
+    label: labelFor(p) || null,
+    country: p.country ?? null,
+    countryCode: p.countrycode ? p.countrycode.toUpperCase() : null,
+    state: p.state ?? null,
+    county: p.county ?? null,
+    city: p.city ?? p.town ?? p.village ?? null,
+    postcode: p.postcode ?? null,
+    featureLat: c ? c[1] : null,
+    featureLon: c ? c[0] : null,
+  };
 }
 
 /** Accepts "41.75, -93.75" so a user can paste coordinates instead of an address. */

@@ -52,9 +52,34 @@ export const thirdPartyServices: readonly ThirdPartyService[] = [
   {
     name: "Photon (Komoot)",
     purpose:
-      "Turns a typed address into coordinates, and coordinates back into a place name. Used by What Soil Type Is My Property?",
+      "Turns a typed address into coordinates, and coordinates back into a place name. Used by What Soil Type Is My Property? and the Maps & Location tools.",
     privacyUrl: "https://www.komoot.com/privacy",
     receives: "Your IP address and the address text or coordinates you entered.",
+  },
+  {
+    name: "USGS Elevation Point Query Service",
+    purpose: "Returns the ground elevation for a set of coordinates. Used by What Is My Elevation?",
+    privacyUrl: "https://www.usgs.gov/policies-and-notices",
+    receives: "Your IP address and the latitude/longitude being looked up.",
+  },
+  {
+    name: "Open-Meteo",
+    purpose:
+      "Returns ground elevation (Copernicus DEM) and the time zone for a set of coordinates. Used by What Is My Elevation?, the Random Location Generator and the Sun Position Calculator.",
+    privacyUrl: "https://open-meteo.com/en/terms#privacy",
+    receives: "Your IP address and the latitude/longitude being looked up.",
+  },
+  {
+    name: "FCC Area API",
+    purpose: "Returns the 2020 Census county and state for a set of coordinates. Used by What County Am I In? and What State Am I In?",
+    privacyUrl: "https://www.fcc.gov/general/privacy-policy",
+    receives: "Your IP address and the latitude/longitude being looked up.",
+  },
+  {
+    name: "OpenStreetMap tile servers",
+    purpose: "Serve the map images shown on the Maps & Location tools.",
+    privacyUrl: "https://osmfoundation.org/wiki/Privacy_Policy",
+    receives: "Your IP address, browser type, the page that requested the map, and which map squares are shown (which reveals the area being viewed).",
   },
   {
     name: "Google Analytics",
