@@ -6,8 +6,8 @@
 
 ## Current stage
 
-**2026-10-17: 50-tool local-business batch #93-#142 built, tested, committed LOCALLY (142 tools). NOT pushed yet - waiting
-for the user's yes.** User asked: research ChatGPT's local-business tool ideas in Semrush (sr03), pick 50 low-competition
+**2026-10-17: 50-tool local-business batch #93-#142 built, tested, PUSHED and live on plaintools.site (142 tools; all 50
+URLs returned 200, live sitemap 148 URLs).** User asked: research ChatGPT's local-business tool ideas in Semrush (sr03), pick 50 low-competition
 tools, build + test all, push once at the end. Research (282 seeds, 9,661 kw, 46 SERP checks before the group-buy account was
 hard-disabled) -> `research/_completed/2026-10-17-50-tool-shortlist.md`. Node logic tests 261/261 across 5 batches
 (scratchpad harness), every page checked in the dev browser, typecheck + build pass, all 50 in out/sitemap.xml (148 URLs),
