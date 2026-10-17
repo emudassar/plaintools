@@ -6,6 +6,35 @@
 
 ## Current stage
 
+**2026-10-17: 50-tool local-business batch #93-#142 built, tested, committed LOCALLY (142 tools). NOT pushed yet - waiting
+for the user's yes.** User asked: research ChatGPT's local-business tool ideas in Semrush (sr03), pick 50 low-competition
+tools, build + test all, push once at the end. Research (282 seeds, 9,661 kw, 46 SERP checks before the group-buy account was
+hard-disabled) -> `research/_completed/2026-10-17-50-tool-shortlist.md`. Node logic tests 261/261 across 5 batches
+(scratchpad harness), every page checked in the dev browser, typecheck + build pass, all 50 in out/sitemap.xml (148 URLs),
+production build served statically: interactions + error states work, console clean.
+- New shared UI kit `components/CalcBits.tsx` (NumField/SelectField/DateField, ResultCard, DataTable, attempt/Output) -
+  use it for new calculators. New categories: `yard` (Yard & Garden), `energy` (Energy & Electrical), `mechanical`
+  (Auto & Mechanical). New clusters: flooring, landscape-stone, wall-panels, dilution, pond, concrete, fuel-use,
+  electrical, fittings, lawn.
+- Shared libs: `bulk-material.ts` (NM EMNRD / BLM H-3890-1 tons-per-yd table: gravel 1/4-2" 1.42, sand 1.45 ...),
+  `concrete-bags.ts` (QUIKRETE 1101 yields; reproduces all 32 QUIK-Tube chart cells x 2 bag sizes), `fuel-use.ts` (EIA Btu),
+  `dilution.ts` (parts + C1V1 + proof per 26 USC 5002).
+- Sources verified per tool (all in each lib header): Griffith Carpentry s17 (rafter, reproduces 13.98 ft example), IRC 2021
+  R802.10 (truss), R312.1.3 (4 in sphere), ENERGY STAR room AC chart (mini split), Armstrong install guide (drop ceiling;
+  reproduces 9'x10'6" borders), Penn State pond method, UK AGR-52 seeding rates, Iowa Ag grain method, NBS HB100 copper
+  (matches table 10 AWG 0.9988), Ham-Let SAE J514 37 deg table (AN), Kuphaldt LIEC (3-phase), Tremco (caulk), James Dunlop
+  (wallpaper; reproduces example), QUIKRETE 1139/1201 (stucco), 1249-50 (self-leveler), CMHA TEK 04-02A (block fill, 75
+  cells), IBC 2021 Table 1004.5 (occupancy), Sylvamo (paper; 28 lb bond = 105.3 gsm), Haas (chip load), Sheldon Brown (BMX),
+  UNL G1874 (horse gestation 335-340 avg, 320-370), OpenStax (gas law, pressure), Madico (tint), Hanna/ISU (mowing).
+- SWAPPED (no trustworthy source): hose clamp chart -> time-lapse-photography-calculator; granite weight ->
+  concrete-step-calculator; lag screw pilot hole (NDS changed between editions, AWC PDF 403) -> bmx-gear-ratio-calculator.
+- GOTCHA: Semrush group buy: sr03 got "sso/logout?backurl=/login/disable_hard" after ~50 SERP calls (also sr05; sr01/sr02
+  not in plan). Keyword pulls need page size <= 100 (200 = "Invalid params"). localStorage keeps results across reloads.
+- GOTCHA: functions can't be passed as props from a server page to a "use client" component, and constants exported from a
+  "use client" file can't be imported by server pages - keep shared constants in lib/.
+- Hub launch config `plaintools-static` (python http.server on out/, port 3101) added for checking the production export.
+- Not verified: real-device mobile layout (preview pane was hidden; checked via DOM/text only).
+
 **2026-10-16 (later): 10 location tools #83-#92 built, tested, PUSHED and live on plaintools.site (92 tools; all 10 URLs returned 200, sitemap 98 URLs).** User asked: research
 simplemaplab.com in Semrush (sr05), find 10 tools with traffic, keyword-research them, build better versions, test, push
 once at the end. Research + volumes/KD/SERP -> `research/_completed/2026-10-16-simplemaplab-10-tools.md`. New category
