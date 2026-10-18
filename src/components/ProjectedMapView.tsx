@@ -71,7 +71,7 @@ export default function ProjectedMapView({ map, fill, stroke = "#ffffff", stroke
         }}
       >
         <rect x={0} y={0} width={map.w} height={H} fill={background} />
-        <g transform={header ? `translate(0 ${header})` : undefined}>
+        <g transform={header || map.ox || map.oy ? `translate(${-(map.ox ?? 0)} ${header - (map.oy ?? 0)})` : undefined}>
           {map.regions.map((r) => (
             <path
               key={r.id}

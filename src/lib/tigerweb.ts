@@ -48,6 +48,41 @@ export async function zctaAt(lat: number, lon: number, options: HedgeOptions = {
 }
 
 /**
+ * Outlines of many ZCTAs by number, in batches of 25 (`where=ZCTA5 IN (...)`).
+ * VERIFIED 2026-10-18: 10001, 10002, 60614, 90210, 99999 -> four polygons (99999 has none), 1.4 s,
+ * CORS echoes the Origin. Only 5-digit strings are ever put into the query.
+ */
+/** Each ZCTA maps to its polygons, each polygon as [outer ring, ...holes]. */
+export async function zctaOutlines(zips: string[], onProgress?: (done: number) => void): Promise<Map<string, LatLon[][][]>> {
+  const clean = [...new Set(zips.filter((z) => /^\d{5}$/.test(z)))];
+  const out = new Map<string, LatLon[][][]>();
+  for (let i = 0; i < clean.length; i += 25) {
+    const batch = clean.slice(i, i + 25);
+    const where = encodeURIComponent(`ZCTA5 IN (${batch.map((z) => `'${z}'`).join(",")})`);
+    const url = `${TIGERWEB_ZCTA_URL}/query?where=${where}&outFields=ZCTA5&returnGeometry=true&outSR=4326&geometryPrecision=5&maxAllowableOffset=0.0005&f=geojson`;
+    let j: { features?: { properties?: { ZCTA5?: string }; geometry?: { type: string; coordinates: number[][][] | number[][][][] } }[]; error?: unknown };
+    try {
+      j = await hedged(async (signal) => {
+        const res = await fetch(url, { signal });
+        if (!res.ok) throw new Error(`TIGERweb HTTP ${res.status}`);
+        return res.json();
+      }, { deadlineMs: 40_000 });
+    } catch (e) {
+      throw new ToolError("unavailable", "The Census TIGERweb service did not respond. Please try again in a moment.", e instanceof Error ? e.message : String(e));
+    }
+    if (j.error) throw new ToolError("unavailable", "The Census TIGERweb service returned an error.");
+    for (const f of j.features ?? []) {
+      const z = f.properties?.ZCTA5, g = f.geometry;
+      if (!z || !g) continue;
+      const polys = g.type === "MultiPolygon" ? (g.coordinates as number[][][][]) : [g.coordinates as number[][][]];
+      out.set(z, polys.map((poly) => poly.map((r) => r.map(([x, y]) => ({ lat: y, lon: x })))));
+    }
+    onProgress?.(Math.min(clean.length, i + 25));
+  }
+  return out;
+}
+
+/**
  * Census places containing a point, from TIGERweb Places_CouSub_ConCity_SubMCD (current BAS 2026
  * group): layer 4 Incorporated Places, 5 Census Designated Places, 1 County Subdivisions.
  * VERIFIED 2026-10-18: Empire State Building -> "New York city" (incorporated); 40.5N 74.5W ->

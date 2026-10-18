@@ -25,8 +25,8 @@ export function svgSize(svg: string): { w: number; h: number } {
   return m ? { w: Number(m[1]), h: Number(m[2]) } : { w: 1200, h: 800 };
 }
 
-/** Renders the SVG at `width` px wide onto a white canvas. */
-export async function svgToCanvas(svg: string, width: number): Promise<HTMLCanvasElement> {
+/** Renders the SVG at `width` px wide onto a white (or transparent) canvas. */
+export async function svgToCanvas(svg: string, width: number, transparent = false): Promise<HTMLCanvasElement> {
   const { w, h } = svgSize(svg);
   const height = Math.round((width * h) / w);
   const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
@@ -42,8 +42,10 @@ export async function svgToCanvas(svg: string, width: number): Promise<HTMLCanva
     canvas.height = height;
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("This browser cannot draw images.");
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, width, height);
+    if (!transparent) {
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, width, height);
+    }
     ctx.drawImage(img, 0, 0, width, height);
     return canvas;
   } finally {
@@ -54,8 +56,8 @@ export async function svgToCanvas(svg: string, width: number): Promise<HTMLCanva
 const toBlob = (c: HTMLCanvasElement, type: string, q?: number) =>
   new Promise<Blob>((resolve, reject) => c.toBlob((b) => (b ? resolve(b) : reject(new Error("Export failed."))), type, q));
 
-export async function downloadPng(svg: string, width: number, filename: string): Promise<void> {
-  downloadBlob(await toBlob(await svgToCanvas(svg, width), "image/png"), filename);
+export async function downloadPng(svg: string, width: number, filename: string, transparent = false): Promise<void> {
+  downloadBlob(await toBlob(await svgToCanvas(svg, width, transparent), "image/png"), filename);
 }
 
 /** A one-page PDF, image rendered at 200 dpi for the chosen page. */

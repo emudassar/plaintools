@@ -21,6 +21,9 @@ export interface ProjectedMap {
   regions: Region[];
   /** Extra line work drawn on top (state lines on the county map). */
   lines?: string;
+  /** Offset of the crop inside the original drawing (cropped maps). */
+  ox?: number;
+  oy?: number;
 }
 
 const cache = new Map<string, Promise<ProjectedMap>>();
@@ -75,4 +78,59 @@ export function classOf(x: number | null | undefined, breaks: number[]): number 
   let i = 0;
   while (i < breaks.length && x >= breaks[i]) i++;
   return i;
+}
+
+/** Bounding box [x0, y0, x1, y1] of a path made of "M x y", relative "l dx dy" and "z". */
+export function pathBBox(d: string): [number, number, number, number] {
+  let x = 0, y = 0, x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  const re = /([Mlz])([^Mlz]*)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(d))) {
+    if (m[1] === "z") continue;
+    const nums = (m[2].match(/-?\d*\.?\d+/g) ?? []).map(Number);
+    if (m[1] === "M") [x, y] = nums;
+    else {
+      x += nums[0];
+      y += nums[1];
+    }
+    x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y);
+  }
+  return [x0, y0, x1, y1];
+}
+
+/** A sub-map of some regions, cropped to their extent (plus a margin). */
+export function cropMap(map: ProjectedMap, keep: (r: Region) => boolean, margin = 10): ProjectedMap {
+  const regions = map.regions.filter(keep);
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const r of regions) {
+    const b = pathBBox(r.d);
+    x0 = Math.min(x0, b[0]); y0 = Math.min(y0, b[1]); x1 = Math.max(x1, b[2]); y1 = Math.max(y1, b[3]);
+  }
+  return { regions, w: Math.round(x1 - x0 + 2 * margin), h: Math.round(y1 - y0 + 2 * margin), ox: x0 - margin, oy: y0 - margin };
+}
+
+/**
+ * Project lon/lat polygons (one state's counties) to a w-px-wide SVG with an equirectangular
+ * projection scaled by cos(middle latitude) — close to true shape for an area the size of a state.
+ * Longitudes are unwrapped around the median so Alaska's Aleutians do not split.
+ */
+export function projectLonLat(features: { id: string; name: string; polys: { lat: number; lon: number }[][][] }[], width = 1000): ProjectedMap {
+  const all = features.flatMap((f) => f.polys.flat(2));
+  const lons = all.map((p) => p.lon).sort((a, b) => a - b);
+  const mid = lons[Math.floor(lons.length / 2)];
+  const un = (lon: number) => (lon - mid > 180 ? lon - 360 : lon - mid < -180 ? lon + 360 : lon);
+  const lats = all.map((p) => p.lat);
+  const latMin = Math.min(...lats), latMax = Math.max(...lats);
+  const k0 = Math.cos((((latMin + latMax) / 2) * Math.PI) / 180);
+  const xs = all.map((p) => un(p.lon) * k0);
+  const xMin = Math.min(...xs), xMax = Math.max(...xs);
+  const s = width / (xMax - xMin);
+  const X = (lon: number) => Math.round((un(lon) * k0 - xMin) * s * 10) / 10;
+  const Y = (lat: number) => Math.round((latMax - lat) * s * 10) / 10;
+  const regions = features.map((f) => ({
+    id: f.id,
+    name: f.name,
+    d: f.polys.map((poly) => poly.map((ring) => ring.map((p, i) => `${i ? "L" : "M"}${X(p.lon)} ${Y(p.lat)}`).join("") + "Z").join("")).join(""),
+  }));
+  return { w: width, h: Math.round((latMax - latMin) * s), regions };
 }

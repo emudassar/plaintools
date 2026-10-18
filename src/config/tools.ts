@@ -1981,6 +1981,138 @@ export const tools: readonly Tool[] = [
     scope: "US",
     dataset: "US national parks list (NPS acreage); OSRM driving routes",
   },
+  {
+    slug: "google-maps-embed-code-generator",
+    cluster: "map-makers",
+    name: "Google Maps Embed Code Generator",
+    tagline:
+      "Make the iframe code to put a Google Map on your website — a place, search, directions, view or Street View — with size, responsive layout and accessibility title set for you.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Google Maps Embed API parameters (Google documentation)",
+  },
+  {
+    slug: "draw-on-map",
+    cluster: "map-makers",
+    name: "Draw on Map",
+    tagline:
+      "Draw freehand, lines, shapes and markers on a real map, see each line's length and each shape's area, label them and download the drawing as GeoJSON, KML or GPX.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap tiles; geodesic lengths and ellipsoidal areas",
+  },
+  {
+    slug: "map-legend-maker",
+    cluster: "map-makers",
+    name: "Map Legend Maker",
+    tagline:
+      "Build a legend for any map — colours, area, point, pin and line symbols, labels, columns and a title — and download it as a PNG (transparent if you like) or SVG.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Made in your browser (SVG)",
+  },
+  {
+    slug: "color-a-map",
+    cluster: "map-makers",
+    name: "Color a Map",
+    tagline:
+      "Click to colour US states, world countries or one continent, add a title and legend, or paste a list or numbers to shade them, then download the map as PNG, SVG or PDF.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Census 2024 state boundaries; Natural Earth 1:50m countries",
+  },
+  {
+    slug: "county-map-maker",
+    cluster: "map-makers",
+    name: "County Map Maker",
+    tagline:
+      "Make a county map of the whole US or any state: click counties to colour them or paste county names or FIPS codes with groups or numbers, add a legend and download PNG, SVG or PDF.",
+    category: "mapmaker",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 county boundaries (1:500,000)",
+  },
+  {
+    slug: "zip-code-map-maker",
+    cluster: "map-makers",
+    name: "ZIP Code Map Maker",
+    tagline:
+      "Paste up to 300 ZIP codes, with group names or numbers if you like, and see their real boundaries coloured on a map, with a legend and GeoJSON or KML download.",
+    category: "mapmaker",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2020 ZIP Code Tabulation Areas (TIGERweb)",
+  },
+  {
+    slug: "pin-map-maker",
+    cluster: "map-makers",
+    name: "Pin Map Maker",
+    tagline:
+      "Drop pins on a map by address or click, give each a label and colour, then share the map with a link or download it as KML, GeoJSON or CSV — no account needed.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap tiles; Photon geocoder",
+  },
+  {
+    slug: "csv-to-map",
+    cluster: "gis-files",
+    name: "CSV to Map",
+    tagline:
+      "Open or paste a spreadsheet as CSV and see its rows as points on a map — from latitude/longitude columns or addresses — coloured by any column, and export to GeoJSON or KML.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Your CSV on OpenStreetMap tiles; Photon geocoder for addresses",
+  },
+  {
+    slug: "kml-viewer",
+    cluster: "gis-files",
+    name: "KML Viewer",
+    tagline:
+      "Open a KML file in your browser and see its placemarks, paths and polygons on a map with their names, lengths and areas, then convert it to GeoJSON, GPX or CSV.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OGC KML 2.2, read in your browser",
+  },
+  {
+    slug: "geojson-viewer",
+    cluster: "gis-files",
+    name: "GeoJSON Viewer",
+    tagline:
+      "Open or drop a GeoJSON file and see every feature on a map with its properties, lengths and areas, then convert it to KML, GPX or CSV — without uploading it.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "GeoJSON (RFC 7946), read in your browser",
+  },
+  {
+    slug: "gpx-viewer",
+    cluster: "gis-files",
+    name: "GPX Viewer",
+    tagline:
+      "Open a GPX track from a watch, phone or bike computer and see it on a map with distance, climb, descent, time, average speed and an elevation chart.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "GPX 1.1, read in your browser",
+  },
+  {
+    slug: "country-size-comparison",
+    cluster: "map-makers",
+    name: "Country Size Comparison",
+    tagline:
+      "Move any country on top of another, or click anywhere on the map to drop it there, and see their true sizes compared without the Mercator map's distortion, with both areas and the ratio.",
+    category: "mapmaker",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Natural Earth 1:110m countries; rigid rotation on the sphere",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
