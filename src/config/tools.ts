@@ -1905,6 +1905,82 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Copernicus DEM GLO-90 via Open-Meteo; OSRM routes",
   },
+  {
+    slug: "zip-codes-within-radius",
+    cluster: "radius",
+    name: "ZIP Codes Within a Radius",
+    tagline:
+      "Enter an address or ZIP code and a radius and get every ZIP code within that many miles, with distance, population and income, as a list to copy or a CSV.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 Gazetteer ZCTA points; ACS 2019–2023 5-year estimates",
+  },
+  {
+    slug: "cities-within-radius",
+    cluster: "radius",
+    name: "Cities Within a Radius",
+    tagline:
+      "Enter an address and a radius and list every city and town within it, nearest first, with population and type — filter out small places and download as CSV.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 Gazetteer places; ACS 2019–2023 5-year estimates",
+  },
+  {
+    slug: "population-within-radius",
+    cluster: "radius",
+    name: "Population Within a Radius",
+    tagline:
+      "Enter an address and up to four radii (such as 1, 3 and 5 miles) and get how many people live within each, with density, from Census tract populations.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 Gazetteer tract points; ACS 2019–2023 5-year population",
+  },
+  {
+    slug: "address-to-county-lookup",
+    cluster: "county",
+    name: "Address to County Lookup",
+    tagline:
+      "Paste one US address or a list of up to 200 and get the county and its FIPS code for each from 2020 Census blocks, ready to download as CSV.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "FCC Area API (2020 Census blocks); OpenStreetMap via Photon",
+  },
+  {
+    slug: "county-map-with-cities",
+    cluster: "county",
+    name: "County Map With Cities",
+    tagline:
+      "Pick a state and see its county map with every city and town plotted and labelled; click a county to list the cities and towns inside it with their populations.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 county boundaries and Gazetteer places",
+  },
+  {
+    slug: "interactive-us-county-map",
+    cluster: "county",
+    name: "Interactive US County Map",
+    tagline:
+      "Explore all 3,144 US counties on one map coloured by population, density, income or home value; hover for figures, search any county and download the map or data.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 cartographic boundaries; ACS 2019–2023 5-year estimates",
+  },
+  {
+    slug: "nearest-national-park",
+    name: "Nearest National Park",
+    tagline:
+      "Enter your address or use your location and get all 63 US national parks ranked by distance, with driving distance and time to the three nearest.",
+    category: "usdata",
+    status: "live",
+    scope: "US",
+    dataset: "US national parks list (NPS acreage); OSRM driving routes",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

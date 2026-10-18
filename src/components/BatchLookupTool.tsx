@@ -19,7 +19,7 @@ import { inverse, type LatLon } from "@/lib/geodesy";
  * geocoding from addresses.
  */
 
-export type BatchMode = "city" | "country" | "state" | "geocode";
+export type BatchMode = "city" | "country" | "state" | "geocode" | "county";
 
 const MAX_LINES = 200;
 const FAR_M = 25_000;
@@ -37,6 +37,7 @@ const COLUMNS: Record<BatchMode, string[]> = {
   country: ["Country", "ISO code"],
   state: ["State", "Code", "County", "County FIPS", "State FIPS"],
   geocode: ["Latitude", "Longitude", "Matched place"],
+  county: ["County", "County FIPS", "State", "Matched place"],
 };
 
 const PLACEHOLDER: Record<BatchMode, string> = {
@@ -44,11 +45,33 @@ const PLACEHOLDER: Record<BatchMode, string> = {
   country: "51.5007, -0.1246\n-33.8568, 151.2153\n0, -30",
   state: "39.7392, -104.9903\n41.8781, -87.6298\n38.9072, -77.0369",
   geocode: "1600 Pennsylvania Ave NW, Washington, DC\nEiffel Tower, Paris\nSydney Opera House",
+  county: "350 5th Ave, New York, NY\n200 E Randolph St, Chicago, IL\n39.7392, -104.9903",
 };
 
 const pause = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 async function lookup(mode: BatchMode, line: string): Promise<Row> {
+  if (mode === "county") {
+    let p = parseLatLon(line);
+    let matched = "(coordinates)";
+    try {
+      if (!p) {
+        const g = await geocodeAddress(line, { preferUS: true, delays: [0, 6000] });
+        p = { lat: g.lat, lon: g.lon };
+        matched = g.label;
+      }
+    } catch (e) {
+      const err = asToolError(e);
+      return { input: line, point: null, cells: ["", "", "", ""], status: err.kind === "unavailable" ? "error" : "none", note: err.message };
+    }
+    try {
+      const a = await censusAreaAt(p.lat, p.lon, { delays: [0, 6000] });
+      if (!a) return { input: line, point: p, cells: ["", "", "", matched], status: "none", note: `Found at ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)} (${matched}), which is not inside a US county` };
+      return { input: line, point: p, cells: [a.countyName ?? "(name not published)", a.countyFips, a.stateName, matched], status: "ok" };
+    } catch (e) {
+      return { input: line, point: p, cells: ["", "", "", matched], status: "error", note: asToolError(e).message };
+    }
+  }
   if (mode === "geocode") {
     try {
       const g = await geocodeAddress(line, { preferUS: false, delays: [0, 6000] });
@@ -89,7 +112,7 @@ export default function BatchLookupTool({ mode }: { mode: BatchMode }) {
     const lines = text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
     setMsg(null);
     if (!lines.length) {
-      setMsg(mode === "geocode" ? "Type at least one address." : "Type at least one pair of coordinates.");
+      setMsg(mode === "geocode" || mode === "county" ? "Type at least one address." : "Type at least one pair of coordinates.");
       return;
     }
     if (lines.length > MAX_LINES) setMsg(`Only the first ${MAX_LINES} lines are looked up; split longer lists into batches.`);
@@ -116,7 +139,7 @@ export default function BatchLookupTool({ mode }: { mode: BatchMode }) {
       head.splice(1, 0, "latitude", "longitude");
       body.forEach((b, i) => b.splice(1, 0, rows[i].point?.lat.toFixed(6) ?? "", rows[i].point?.lon.toFixed(6) ?? ""));
     }
-    downloadText(toCsv([head, ...body]), `${mode === "geocode" ? "address-coordinates" : `coordinates-to-${mode}`}.csv`, "text/csv");
+    downloadText(toCsv([head, ...body]), `${mode === "geocode" ? "address-coordinates" : mode === "county" ? "address-to-county" : `coordinates-to-${mode}`}.csv`, "text/csv");
   }
 
   const ok = rows.filter((r) => r.status === "ok").length;
@@ -125,7 +148,7 @@ export default function BatchLookupTool({ mode }: { mode: BatchMode }) {
   return (
     <div>
       <label htmlFor={`batch-${mode}`} className="mb-1.5 block font-medium">
-        {mode === "geocode" ? "Addresses or place names — one per line" : "Coordinates — one pair per line, any common format"}
+        {mode === "geocode" ? "Addresses or place names — one per line" : mode === "county" ? "US addresses or coordinates — one per line" : "Coordinates — one pair per line, any common format"}
       </label>
       <textarea
         id={`batch-${mode}`}
@@ -193,7 +216,12 @@ export default function BatchLookupTool({ mode }: { mode: BatchMode }) {
             </table>
           </div>
           <footer className="border-t border-[var(--color-line)] px-4 py-3 text-xs text-[var(--color-muted)]">
-            {mode === "state" ? (
+            {mode === "county" ? (
+              <>
+                Addresses: OpenStreetMap via <Ext href="https://photon.komoot.io">Photon</Ext> (check the matched place column). County: FCC Area API from 2020 Census blocks, queried{" "}
+                {new Date().toLocaleDateString("en-US", { dateStyle: "long" })}. <Ext href={FCC_DOCS_URL}>FCC Area API</Ext>
+              </>
+            ) : mode === "state" ? (
               <>
                 Source: FCC Area API, 2020 Census blocks, queried {new Date().toLocaleDateString("en-US", { dateStyle: "long" })}. <Ext href={FCC_DOCS_URL}>FCC Area API</Ext>
               </>

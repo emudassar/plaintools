@@ -132,7 +132,7 @@ export default function DriveTimeMapTool() {
             {state.zones.some((z) => z.people !== null) && (
               <>
                 {" "}
-                People: sum of Census tracts whose internal point falls inside each zone (<Ext href={GAZETTEER_URL}>Gazetteer</Ext>, <Ext href={ACS_SF_URL}>ACS</Ext> {DATA_VINTAGE}) — an
+                People: sum of Census tracts whose internal point falls inside each zone (<Ext href={GAZETTEER_URL}>Gazetteer</Ext>, <Ext href={ACS_SF_URL}>ACS</Ext> ({DATA_VINTAGE})) — an
                 estimate, since tracts on the edge count wholly in or out.
               </>
             )}
