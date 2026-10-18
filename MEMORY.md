@@ -6,6 +6,43 @@
 
 ## Current stage
 
+**2026-10-18 IN PROGRESS (NOT pushed): simplemaplab.com full clone — all 68 tools + 110 blank maps.** User asked:
+"put literally all tools of simplemaplab.com (every category) + all blank maps on plaintools". 10 were already built
+(#83-#92). Remaining 58 new tools planned in 7 groups (slugs below). Push only after everything verified + user yes.
+- DONE + committed (e283806): 110 blank maps at /maps/blank/<slug>/ (world, 6 continents, US + 50 states + DC by county,
+  51 countries by region). Registry `src/config/blank-maps.ts`; generator `scripts/build-blank-maps.mjs` (needs GEO_RAW +
+  MAPSHAPER env; mapshaper 0.6.102 is installed only in the session scratchpad, re-install with
+  `npm i mapshaper@0.6.102` in a temp folder; raw files: Census GENZ2024 cb shp, 2024 Gazetteer, ACS 2023 5yr table-based
+  SF b01003/b19013/b25077 .dat, Natural Earth geojson from github nvkelso, tbb 2026e tz geojson). Output public/maps/blank/
+  <slug>.svg + .json overlay; facts src/data/blank-maps.json. Viewer: components/BlankMapViewer.tsx, libs blank-map-variants,
+  pdf-image (hand-written JPEG PDF), svg-export. Sitemap 259 URLs. Footer + homepage link added.
+- DONE (WIP commit after this note): data files via `scripts/build-geo-data.mjs`: public/data/{zcta,places,tracts,counties}.json,
+  public/data/geo/{us-counties,us-states,world,world-lonlat,tz-world,tz-us}.json, geo/counties/<SSFIPS>.json,
+  src/data/{geo-centers,earth-lines,national-parks}.json. Libs: us-data, routing (FOSSGIS OSRM route/table/trip + Valhalla
+  isochrone, ACAO *, 1 req/s), tigerweb (ZCTA + Census places at point, verified), coords (UTM/MGRS/geohash/OLC — UTM matches
+  PROJ to 1 mm, OLC passes official encoding.csv), wmm (WMM2025, all 100 NOAA test rows pass), moon (Schlyter; <1' vs JPL
+  Horizons, phases within 9 min Oct-Dec 2026), geo-formats (KML/GPX/GeoJSON/CSV), tz, sun-position +sunAltitudeTimes/subsolarPoint.
+  TileMap gained overlay/onDraw/drawing/initial/children, marker r, shape fillOpacity/width/more.
+- New categories in tools.ts: distance, coordinates, mapmaker, usdata, skytime, earthlines (6 old location tools recategorised).
+- GROUP 1 (registry entries added as live): what-city-am-i-in, what-zip-code-am-i-in, elevation-finder, address-to-coordinates,
+  coordinates-to-address, coordinates-to-city/-country/-state, latitude-longitude-finder, plot-coordinates-on-map — components
+  + pages written. time-zone-finder: component + lib done, PAGE NOT YET WRITTEN (src/app/tools/time-zone-finder/page.tsx).
+  Group 1 NOT yet browser-tested.
+- TODO groups: G2 gps-coordinate-converter, utm-to-lat-long, antipode-finder, bearing-calculator (WMM), geographic-center-finder,
+  dig-through-the-earth-map. G3 distance-between-two-places (straight+driving), distance-between-cities (places.json),
+  distance-between-zip-codes, multi-stop-distance-calculator (trip), distance-matrix-calculator (table), map-area-calculator,
+  drive-time-map (isochrone), elevation-profile. G4 zip-codes-within-radius, cities-within-radius, population-within-radius
+  (tracts), address-to-county-lookup (bulk FCC), county-map-with-cities, interactive-us-county-map, nearest-national-park.
+  G5 google-maps-embed-code-generator, draw-on-map, map-legend-maker, color-a-map, county-map-maker, zip-code-map-maker,
+  pin-map-maker, csv-to-map, kml-viewer, geojson-viewer, gpx-viewer, country-size-comparison. G6 sunrise-sunset-calculator,
+  time-difference-calculator, us-time-zone-map, world-time-zone-map, day-night-map, moon-position-map, moon-phase-calendar.
+  G7 equator-map, tropic-of-cancer-map, tropic-of-capricorn-map, arctic-circle-map, antarctic-circle-map, prime-meridian-map,
+  international-date-line-map (data in src/data/earth-lines.json).
+- Then: add TIGERweb, FOSSGIS routing (OSRM+Valhalla), Census static data to site.ts thirdPartyServices; check every cited URL
+  (script over src hrefs); browser-test all; build; update PROJECTS.md count; ask user before push.
+- GOTCHA: long bash heredocs fail ("unexpected EOF") — write files with the Write tool. curl here fails TLS to some hosts
+  (OSRM) — use python urllib. Census API now needs a key — use www2.census.gov bulk files instead.
+
 **2026-10-17: 50-tool local-business batch #93-#142 built, tested, PUSHED and live on plaintools.site (142 tools; all 50
 URLs returned 200, live sitemap 148 URLs).** User asked: research ChatGPT's local-business tool ideas in Semrush (sr03), pick 50 low-competition
 tools, build + test all, push once at the end. Research (282 seeds, 9,661 kw, 46 SERP checks before the group-buy account was

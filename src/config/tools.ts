@@ -45,7 +45,31 @@ export const categories = {
   },
   location: {
     label: "Maps & Location",
-    blurb: "Where a point is, how far apart places are, and what public datasets record for a set of coordinates.",
+    blurb: "Where a point is — city, county, state, country, ZIP code, elevation — from public datasets, for your location or any address.",
+  },
+  distance: {
+    label: "Distance & Measurement",
+    blurb: "Straight-line and road distances, areas, radii and travel-time zones, measured on the WGS84 ellipsoid or over OpenStreetMap roads.",
+  },
+  coordinates: {
+    label: "Coordinates & Geocoding",
+    blurb: "Addresses to coordinates and back, coordinate format conversions, bearings, antipodes and centre points.",
+  },
+  mapmaker: {
+    label: "Map Makers & GIS Files",
+    blurb: "Make, colour, annotate and export maps, and open KML, GPX, GeoJSON and CSV files in the browser.",
+  },
+  usdata: {
+    label: "US Map Data",
+    blurb: "ZIP codes, cities, counties, population and national parks around a point, from Census Bureau and National Park Service data.",
+  },
+  skytime: {
+    label: "Time Zones, Sun & Moon",
+    blurb: "Time zones, sunrise and sunset, day and night, and the moon's position and phase, computed from published astronomical formulas.",
+  },
+  earthlines: {
+    label: "Geographic Lines",
+    blurb: "The Equator, tropics, polar circles, prime meridian and date line: where they run and which countries they cross.",
   },
   math: {
     label: "Math & Study",
@@ -1014,7 +1038,7 @@ export const tools: readonly Tool[] = [
     name: "As the Crow Flies Distance Calculator",
     tagline:
       "Enter two places and get the straight-line distance between them in miles, kilometres and nautical miles, measured on the WGS84 ellipsoid, with the compass bearing and the route on a map.",
-    category: "location",
+    category: "distance",
     status: "live",
     scope: "Worldwide",
     dataset: "Vincenty (1975) geodesic on the WGS84 ellipsoid",
@@ -1025,7 +1049,7 @@ export const tools: readonly Tool[] = [
     name: "Halfway Point Between Two Cities Calculator",
     tagline:
       "Enter two cities or addresses and get the exact halfway point between them — or any split you choose — with the nearest named place and the distance from each side.",
-    category: "location",
+    category: "distance",
     status: "live",
     scope: "Worldwide",
     dataset: "Vincenty (1975) geodesic midpoint on WGS84, OpenStreetMap place names",
@@ -1036,7 +1060,7 @@ export const tools: readonly Tool[] = [
     name: "Random Location Generator",
     tagline:
       "Generate truly uniform random coordinates anywhere on Earth, inside a box, or within a radius of a place — with an option to skip open sea and the points shown on a map.",
-    category: "location",
+    category: "coordinates",
     status: "live",
     scope: "Worldwide",
     dataset: "Uniform sphere point picking (MathWorld) with Web Crypto randomness",
@@ -1047,7 +1071,7 @@ export const tools: readonly Tool[] = [
     name: "Radius Map",
     tagline:
       "Draw one or more true-distance circles in miles or kilometres around any address on a map, see the area each covers, and check whether another place falls inside.",
-    category: "location",
+    category: "distance",
     status: "live",
     scope: "Worldwide",
     dataset: "Geodesic circles on WGS84 over OpenStreetMap tiles",
@@ -1058,7 +1082,7 @@ export const tools: readonly Tool[] = [
     name: "Sun Position Calculator",
     tagline:
       "Pick a place, date and time and get the sun's elevation and compass direction, plus sunrise, sunset, solar noon and day length in local time, with a chart of the sun's path that day.",
-    category: "location",
+    category: "skytime",
     status: "live",
     scope: "Worldwide",
     dataset: "NOAA solar calculator equations (Meeus, Astronomical Algorithms)",
@@ -1069,7 +1093,7 @@ export const tools: readonly Tool[] = [
     name: "Distance to Horizon Calculator",
     tagline:
       "Enter your eye height and get how far away the horizon is, with and without standard atmospheric refraction, plus how far you can see a tall object and how much of it the curve hides.",
-    category: "location",
+    category: "distance",
     status: "live",
     scope: "Worldwide",
     dataset: "Spherical-Earth horizon formula d = √(2Rh + h²), refraction R′ = 7R/6 (A. T. Young)",
@@ -1605,6 +1629,127 @@ export const tools: readonly Tool[] = [
     status: "live",
     scope: "Worldwide",
     dataset: "University of Nebraska Extension G1874, The Foaling Mare",
+  },
+  {
+    slug: "what-city-am-i-in",
+    cluster: "where-am-i",
+    name: "What City Am I In?",
+    tagline:
+      "Use your current location or type an address and get the city or town you are in — and, in the US, whether you are inside its legal city limits or in an unincorporated area, from Census boundaries.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "US Census Bureau TIGERweb place boundaries; OpenStreetMap via Photon",
+  },
+  {
+    slug: "what-zip-code-am-i-in",
+    cluster: "where-am-i",
+    name: "What ZIP Code Am I In?",
+    tagline:
+      "Use your current location or type an address and get the ZIP code area you are in, drawn on a map, with its population, median household income and home value from the Census Bureau.",
+    category: "location",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2020 ZIP Code Tabulation Areas (TIGERweb); ACS 2019–2023 5-year estimates",
+  },
+  {
+    slug: "elevation-finder",
+    cluster: "where-am-i",
+    name: "Elevation Finder",
+    tagline:
+      "Click up to 50 points on a map (or paste coordinates) and get the ground elevation of each in feet and metres, with the height difference between them, from the Copernicus 90 m model.",
+    category: "location",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Copernicus DEM GLO-90 via Open-Meteo",
+  },
+  {
+    slug: "time-zone-finder",
+    cluster: "time-zones",
+    name: "Time Zone Finder",
+    tagline:
+      "Type any address or use your location and get its IANA time zone, current local time, UTC offset, whether daylight saving time is in effect, and the date of the next clock change.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Time zone from Open-Meteo; rules from the IANA tz database in your browser",
+  },
+  {
+    slug: "address-to-coordinates",
+    cluster: "geocoding",
+    name: "Address to Coordinates",
+    tagline:
+      "Turn one address or a whole list into latitude and longitude, with the matched place name, and download the results as CSV.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap via the Photon geocoder",
+  },
+  {
+    slug: "coordinates-to-address",
+    cluster: "geocoding",
+    name: "Coordinates to Address",
+    tagline:
+      "Enter latitude and longitude (any format) or click a map and get the nearest street address, plus the ground elevation and the local time zone at that point.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap via Photon; Copernicus DEM via Open-Meteo",
+  },
+  {
+    slug: "coordinates-to-city",
+    cluster: "geocoding",
+    name: "Coordinates to City",
+    tagline:
+      "Paste one coordinate pair or a list of up to 200 and get the city, county, state and country for each, ready to download as CSV.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap via the Photon reverse geocoder",
+  },
+  {
+    slug: "coordinates-to-country",
+    cluster: "geocoding",
+    name: "Coordinates to Country",
+    tagline:
+      "Paste one coordinate pair or a list of up to 200 and get the country and its ISO 3166-1 alpha-2 code for each, with points at sea flagged rather than guessed.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap via the Photon reverse geocoder",
+  },
+  {
+    slug: "coordinates-to-state",
+    cluster: "geocoding",
+    name: "Coordinates to State",
+    tagline:
+      "Paste one coordinate pair or a list of up to 200 US points and get the state, two-letter code, county and FIPS codes for each from 2020 Census blocks, ready to download as CSV.",
+    category: "coordinates",
+    status: "live",
+    scope: "US",
+    dataset: "FCC Area API (2020 Census blocks)",
+  },
+  {
+    slug: "latitude-longitude-finder",
+    cluster: "geocoding",
+    name: "Latitude and Longitude Finder",
+    tagline:
+      "Click anywhere on a map, search an address or use your location and get the exact latitude and longitude in decimal degrees, degrees-minutes-seconds and decimal minutes, ready to copy.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OpenStreetMap tiles and Photon geocoder; WGS84 coordinates",
+  },
+  {
+    slug: "plot-coordinates-on-map",
+    cluster: "geocoding",
+    name: "Plot Coordinates on Map",
+    tagline:
+      "Paste a list of coordinates in any common format, with optional labels, and see them as pins on a map — joined as a route if you like — then download as GeoJSON, KML or CSV.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Your coordinates on OpenStreetMap tiles",
   },
 ] as const;
 

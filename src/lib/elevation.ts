@@ -113,3 +113,24 @@ export async function lookupElevation(lat: number, lon: number, options: HedgeOp
     retrievedAt: new Date().toISOString(),
   };
 }
+
+/**
+ * Copernicus GLO-90 ground elevation for up to 100 points in one Open-Meteo request
+ * (comma-separated latitude and longitude lists, as the API documents).
+ * Open water reads 0. Returns metres, in the same order as the points.
+ */
+export async function copernicusBatch(points: { lat: number; lon: number }[], options: HedgeOptions = {}): Promise<number[]> {
+  if (points.length === 0) return [];
+  if (points.length > 100) throw new ToolError("bad-input", "Up to 100 points per request.");
+  const lat = points.map((p) => p.lat.toFixed(5)).join(",");
+  const lon = points.map((p) => p.lon.toFixed(5)).join(",");
+  let body: string;
+  try {
+    body = await getText(`${OPEN_METEO_ELEV_URL}?latitude=${lat}&longitude=${lon}`, options);
+  } catch (e) {
+    throw new ToolError("unavailable", "The elevation service did not respond. Please try again in a moment.", e instanceof Error ? e.message : String(e));
+  }
+  const j = JSON.parse(body) as { elevation?: number[]; reason?: string };
+  if (!j.elevation || j.elevation.length !== points.length) throw new ToolError("unavailable", j.reason ?? "The elevation service returned an unexpected answer.");
+  return j.elevation;
+}

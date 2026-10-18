@@ -27,6 +27,8 @@ import type { LatLon } from "@/lib/geodesy";
 export interface MapMarker extends LatLon {
   label?: string;
   color?: string;
+  /** Radius in px (default 7). */
+  r?: number;
 }
 export interface MapShape {
   points: LatLon[];
@@ -34,7 +36,14 @@ export interface MapShape {
   /** Closed and filled (a radius ring) rather than an open line. */
   fill?: boolean;
   dashed?: boolean;
+  fillOpacity?: number;
+  width?: number;
+  /** Extra rings drawn as holes or further parts of the same shape (closed shapes only). */
+  more?: LatLon[][];
 }
+
+/** Lat/lon -> overlay pixel position, unwrapped to sit next to the view centre. */
+export type Projector = (p: LatLon) => [number, number];
 
 interface Props {
   markers?: MapMarker[];
@@ -46,14 +55,40 @@ interface Props {
   height?: number;
   maxFitZoom?: number;
   ariaLabel: string;
+  /** Extra SVG drawn over the tiles, positioned with the given projector. */
+  overlay?: (px: Projector) => React.ReactNode;
+  /**
+   * Drawing mode: pointer drags report points (start / move / end) instead of panning the map.
+   * Used by freehand drawing.
+   */
+  onDraw?: (p: LatLon, phase: "start" | "move" | "end") => void;
+  drawing?: boolean;
+  /** Initial view when there is nothing to fit. */
+  initial?: { lat: number; lon: number; zoom: number };
+  /** Keep the current view when content changes unless fitKey changes. */
+  children?: React.ReactNode;
 }
 
 const ACCENT = "#1d4ed8";
 
-export default function TileMap({ markers = [], shapes = [], onPick, fitKey, height = 360, maxFitZoom = 14, ariaLabel }: Props) {
+export default function TileMap({
+  markers = [],
+  shapes = [],
+  onPick,
+  fitKey,
+  height = 360,
+  maxFitZoom = 14,
+  ariaLabel,
+  overlay,
+  onDraw,
+  drawing = false,
+  initial,
+  children,
+}: Props) {
   const box = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(640);
-  const [view, setView] = useState({ lat: 20, lon: 0, zoom: 2 });
+  const [view, setView] = useState(initial ?? { lat: 20, lon: 0, zoom: 2 });
+  const drawingNow = useRef(false);
   const drag = useRef<{ x: number; y: number; cx: number; cy: number; moved: boolean } | null>(null);
 
   useEffect(() => {
@@ -113,6 +148,16 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
       return [q.x - ox, q.y - oy] as const;
     });
   };
+  const one: Projector = (p) => {
+    const [[x, y]] = px([p]);
+    return [x, y];
+  };
+  const pointAt = (e: React.PointerEvent): LatLon | null => {
+    if (!box.current) return null;
+    const r = box.current.getBoundingClientRect();
+    const p = unproject(ox + (e.clientX - r.left), oy + (e.clientY - r.top), z);
+    return { lat: p.lat, lon: p.lon };
+  };
 
   function zoomBy(d: number) {
     setView((v) => ({ ...v, zoom: Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, v.zoom + d)) }));
@@ -121,9 +166,22 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
   function onPointerDown(e: React.PointerEvent) {
     if ((e.target as HTMLElement).closest("button,a")) return;
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    if (drawing && onDraw) {
+      const p = pointAt(e);
+      if (p) {
+        drawingNow.current = true;
+        onDraw(p, "start");
+      }
+      return;
+    }
     drag.current = { x: e.clientX, y: e.clientY, cx: c.x, cy: c.y, moved: false };
   }
   function onPointerMove(e: React.PointerEvent) {
+    if (drawingNow.current && onDraw) {
+      const p = pointAt(e);
+      if (p) onDraw(p, "move");
+      return;
+    }
     const d = drag.current;
     if (!d) return;
     const dx = e.clientX - d.x, dy = e.clientY - d.y;
@@ -133,6 +191,12 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
     setView((v) => ({ ...v, lat: p.lat, lon: p.lon }));
   }
   function onPointerUp(e: React.PointerEvent) {
+    if (drawingNow.current && onDraw) {
+      drawingNow.current = false;
+      const p = pointAt(e);
+      if (p) onDraw(p, "end");
+      return;
+    }
     const d = drag.current;
     drag.current = null;
     if (!d || d.moved || !onPick || !box.current) return;
@@ -147,7 +211,7 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
       role="region"
       aria-label={ariaLabel}
       className="relative w-full touch-none overflow-hidden rounded-lg border border-[var(--color-line)] bg-[#aad3df] select-none"
-      style={{ height, cursor: onPick ? "crosshair" : "grab" }}
+      style={{ height, cursor: drawing || onPick ? "crosshair" : "grab" }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -169,17 +233,20 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
       ))}
       <svg className="pointer-events-none absolute inset-0" width={width} height={height} aria-hidden="true">
         {shapes.map((s, i) => {
-          const d = px(s.points).map(([x, y], j) => `${j ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join("") + (s.fill ? "Z" : "");
+          const ring = (pts: LatLon[]) => px(pts).map(([x, y], j) => `${j ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join("") + (s.fill ? "Z" : "");
+          const d = ring(s.points) + (s.more ?? []).map(ring).join("");
           const col = s.color ?? ACCENT;
           return (
             <path
               key={i}
               d={d}
               fill={s.fill ? col : "none"}
-              fillOpacity={s.fill ? 0.12 : 0}
+              fillOpacity={s.fill ? (s.fillOpacity ?? 0.12) : 0}
+              fillRule="evenodd"
               stroke={col}
-              strokeWidth={2.5}
+              strokeWidth={s.width ?? 2.5}
               strokeDasharray={s.dashed ? "6 5" : undefined}
+              strokeLinejoin="round"
             />
           );
         })}
@@ -187,7 +254,7 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
           const [[x, y]] = px([m]);
           return (
             <g key={i} transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`}>
-              <circle r={7} fill={m.color ?? ACCENT} stroke="white" strokeWidth={2.5} />
+              <circle r={m.r ?? 7} fill={m.color ?? ACCENT} stroke="white" strokeWidth={2.5} />
               {m.label && (
                 <text x={11} y={4} fontSize={13} fontWeight={600} fill="#111" stroke="white" strokeWidth={3} paintOrder="stroke">
                   {m.label}
@@ -196,7 +263,9 @@ export default function TileMap({ markers = [], shapes = [], onPick, fitKey, hei
             </g>
           );
         })}
+        {overlay?.(one)}
       </svg>
+      {children}
       <div className="absolute top-2 left-2 flex flex-col overflow-hidden rounded-md border border-[var(--color-line)] bg-white shadow-sm">
         <button type="button" onClick={() => zoomBy(1)} className="h-8 w-8 text-lg leading-none font-medium" aria-label="Zoom in">
           +

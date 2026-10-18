@@ -214,3 +214,40 @@ export function zonedToUtc(y: number, m: number, d: number, hh: number, mm: numb
   }
   return t;
 }
+
+/**
+ * Times the sun's centre crosses a given geometric altitude on a local date — the same
+ * NOAA hour-angle method as sunrise, with the zenith angle 90° − altitude. Used for twilight
+ * (−6° civil, −12° nautical, −18° astronomical) and photographers' golden/blue hour limits.
+ * Each time is null when the sun never reaches that altitude that day.
+ */
+export function sunAltitudeTimes(y: number, m: number, d: number, lat: number, lon: number, altitude: number): { morning: number | null; evening: number | null } {
+  const day0 = Date.UTC(y, m - 1, d);
+  const noon = day0 + noonMinutes(day0, lon) * 60000;
+  const zen = 90 - altitude;
+  const ha = (t: number) => {
+    const { decl } = solarTerms(t);
+    return deg(Math.acos(Math.cos(rad(zen)) / (Math.cos(rad(lat)) * Math.cos(rad(decl))) - Math.tan(rad(lat)) * Math.tan(rad(decl))));
+  };
+  const event = (sign: -1 | 1): number | null => {
+    let t = noon;
+    for (let i = 0; i < 3; i++) {
+      const h = ha(t);
+      if (!Number.isFinite(h)) return null;
+      const { eqTime } = solarTerms(t);
+      t = day0 + (720 - 4 * (lon - sign * h) - eqTime) * 60000;
+    }
+    return t;
+  };
+  return { morning: event(-1), evening: event(1) };
+}
+
+/** The subsolar point (where the sun is overhead) at a UTC instant. */
+export function subsolarPoint(ms: number): { lat: number; lon: number } {
+  const { decl, eqTime } = solarTerms(ms);
+  const d = new Date(ms);
+  const minutes = d.getUTCHours() * 60 + d.getUTCMinutes() + d.getUTCSeconds() / 60;
+  let lon = -(minutes + eqTime - 720) / 4;
+  lon = ((((lon + 180) % 360) + 360) % 360) - 180;
+  return { lat: decl, lon };
+}
