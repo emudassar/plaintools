@@ -41,7 +41,7 @@ function Result({ a, b }: { a: Place; b: Place }) {
             {n(rh.bearing, 2)}° — {compassPoint(rh.bearing)} · {fmtMiKm(rh.metres)} along that line
           </Row>
           <Row k="Shortest distance">{fmtMiKm(g.metres, 2)}</Row>
-          <Row k="Magnetic declination change">{n(mag.declinationPerYear * 60, 1)}′ per year</Row>
+          <Row k="Magnetic declination change">{n(Math.abs(mag.declinationPerYear * 60), 1)}′ per year toward the {mag.declinationPerYear >= 0 ? "east" : "west"}</Row>
           <Row k="From">
             {a.label}
             <span className="block text-xs text-[var(--color-muted)]">{formatLatLon(a)}</span>

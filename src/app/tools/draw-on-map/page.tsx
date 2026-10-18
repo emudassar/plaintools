@@ -51,7 +51,7 @@ export default function Page() {
           { label: "GeoJSON specification (RFC 7946)", href: "https://www.rfc-editor.org/rfc/rfc7946" },
           { label: "OGC KML standard", href: "https://www.ogc.org/standards/kml/" },
           { label: "GPX 1.1 schema", href: "https://www.topografix.com/GPX/1/1/" },
-          { label: "Snyder (1987), Map Projections — A Working Manual", href: "https://pubs.usgs.gov/publication/pp1395" },
+          { label: "Snyder (1987), Map Projections — A Working Manual", href: "https://doi.org/10.3133/pp1395" },
         ],
       }}
       faqs={[

@@ -12,10 +12,10 @@
  */
 import { inverse, type LatLon } from "./geodesy";
 
-export const CHAMBERLAIN_URL = "https://trs.jpl.nasa.gov/handle/2014/41271";
+export const CHAMBERLAIN_URL = "https://hdl.handle.net/2014/41271";
 export const AUTHALIC_RADIUS_M = 6_371_007.2;
 
-export const SNYDER_URL = "https://pubs.usgs.gov/publication/pp1395";
+export const SNYDER_URL = "https://doi.org/10.3133/pp1395";
 
 const RAD = Math.PI / 180;
 const F = 1 / 298.257223563;

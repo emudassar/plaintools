@@ -44,7 +44,7 @@ export default function Page() {
         paragraphs: [
           "Elevations come from the Copernicus GLO-90 digital elevation model (European Space Agency), a worldwide grid of ground height at about 90 m spacing, served by Open-Meteo's elevation API.",
           "The path is divided into 200 equal steps along geodesics and the elevation is read at each one. Total climb adds every rise between samples; total descent adds every drop. The steepest stretch is the largest grade between neighbouring samples more than 30 m apart.",
-          "A 90 m grid smooths small features: bridges and tunnels show the ground under them, cliffs are softened, and climbs shorter than about 100 m can be missed. GPS watches and barometric altimeters usually report more total climb. Routes between two places come from OSRM over OpenStreetMap on the FOSSGIS servers.",
+          "A 90 m grid smooths small features: bridges and tunnels show the ground under them, cliffs are softened, and climbs shorter than about 100 m can be missed. In narrow canyons the opposite happens: a cell can take in the canyon walls, so a road along the bottom shows false ups and downs and too much climb. GPS watches and barometric altimeters usually report more total climb. Routes between two places come from OSRM over OpenStreetMap on the FOSSGIS servers.",
         ],
         sources: [
           { label: "Copernicus DEM GLO-90", href: "https://doi.org/10.5270/ESA-c5d3d65" },

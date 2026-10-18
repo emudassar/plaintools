@@ -150,7 +150,7 @@ export default function ElevationProfileTool() {
             <p className="mt-3 border-t border-[var(--color-line)] pt-3 text-xs text-[var(--color-muted)]">
               Ground elevation at {SAMPLES} evenly spaced points from the Copernicus GLO-90 digital elevation model (<Ext href={COPERNICUS_DOI_URL}>ESA</Ext>) via{" "}
               <Ext href={OPEN_METEO_DOCS_URL}>Open-Meteo</Ext>: a 90 m grid of the surface, so bridges, tunnels and steep cliffs are smoothed and climbs shorter than about 100 m can be
-              missed. Total climb counts every rise between samples; GPS watches usually report more. Steepest stretch: largest grade between neighbouring samples.
+              missed — and in a narrow canyon a cell can include the canyon walls, so a road along the bottom shows false ups and downs, too much total climb and too steep a grade. Total climb counts every rise between samples. Steepest stretch: largest grade between neighbouring samples.
               {mode === "route" && (
                 <>
                   {" "}

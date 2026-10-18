@@ -98,14 +98,32 @@ export function pathBBox(d: string): [number, number, number, number] {
   return [x0, y0, x1, y1];
 }
 
-/** A sub-map of some regions, cropped to their extent (plus a margin). */
-export function cropMap(map: ProjectedMap, keep: (r: Region) => boolean, margin = 10): ProjectedMap {
-  const regions = map.regions.filter(keep);
+/** Bounding boxes of each separate ring ("M ... z") of a path. */
+function subpathBoxes(d: string): [number, number, number, number][] {
+  return d
+    .split(/(?=M)/)
+    .filter((p) => p.trim())
+    .map(pathBBox);
+}
+
+/**
+ * A sub-map of some regions, cropped to their extent. Each region counts only its largest ring (its
+ * mainland), so overseas territories (French Guiana for France) do not stretch the crop. Regions
+ * listed in `skip` are drawn but left out of the extent, and `padRight` widens the crop eastward
+ * (Europe skips Russia, then shows its western part). `eastOnly` keeps only mainlands in the
+ * eastern half of the drawing (Oceania, so Pacific islands past the date line do not span the map).
+ */
+export function cropMap(map: ProjectedMap, keep: (r: Region) => boolean, opts: { skip?: string[]; padRight?: number; eastOnly?: boolean; margin?: number } = {}): ProjectedMap {
+  const margin = opts.margin ?? 10;
+  const regions = map.regions.filter((r) => keep(r) && r.d.includes("M"));
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
   for (const r of regions) {
-    const b = pathBBox(r.d);
+    if (opts.skip?.includes(r.id)) continue;
+    const b = subpathBoxes(r.d).reduce((m, q) => ((q[2] - q[0]) * (q[3] - q[1]) > (m[2] - m[0]) * (m[3] - m[1]) ? q : m));
+    if (opts.eastOnly && (b[0] + b[2]) / 2 < map.w / 2) continue;
     x0 = Math.min(x0, b[0]); y0 = Math.min(y0, b[1]); x1 = Math.max(x1, b[2]); y1 = Math.max(y1, b[3]);
   }
+  x1 += (x1 - x0) * (opts.padRight ?? 0);
   return { regions, w: Math.round(x1 - x0 + 2 * margin), h: Math.round(y1 - y0 + 2 * margin), ox: x0 - margin, oy: y0 - margin };
 }
 

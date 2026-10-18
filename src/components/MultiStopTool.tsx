@@ -25,7 +25,7 @@ interface Done {
 }
 
 export default function MultiStopTool() {
-  const [text, setText] = useState("Union Station, Chicago\nMilwaukee, WI\nMadison, WI\nRockford, IL");
+  const [text, setText] = useState("Chicago, IL\nMilwaukee, WI\nMadison, WI\nRockford, IL");
   const [profile, setProfile] = useState<Profile>("car");
   const [order, setOrder] = useState<"as" | "best">("as");
   const [round, setRound] = useState(false);

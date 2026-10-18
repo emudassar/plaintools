@@ -59,7 +59,7 @@ export default function PinMapTool() {
     <div>
       <LocationPicker
         onPick={(l) => {
-          add(l, l.source === "device" ? "My location" : l.label.split(",")[0]);
+          add(l, l.source === "device" ? "My location" : l.source === "coordinates" ? l.label : l.label.split(",")[0]);
           setFitKey(String(Date.now()));
         }}
         preferUS={false}

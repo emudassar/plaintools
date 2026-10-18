@@ -44,7 +44,7 @@ function Result({ loc, tz, at }: { loc: PickedLocation; tz: string; at: number }
           </Row>
           <Row k="Next clock change">
             {next
-              ? `${fmtInZone(next.ms, tz, { dateStyle: "full", timeStyle: "short" })} local — clocks go ${next.toMin > next.fromMin ? "forward" : "back"} ${Math.abs(next.toMin - next.fromMin)} minutes, to ${fmtOffset(next.toMin)}`
+              ? `${fmtInZone(next.ms + next.fromMin * 60000, "UTC", { dateStyle: "full", timeStyle: "short" })} local time — clocks go ${next.toMin > next.fromMin ? "forward" : "back"} ${Math.abs(next.toMin - next.fromMin)} minutes, to ${fmtOffset(next.toMin)}`
               : "None scheduled in the next 13 months"}
           </Row>
           <Row k="Compared with your device">{diff === 0 ? `Same time as your device (${mine})` : `${Math.abs(diff / 60)} hour${Math.abs(diff) === 60 ? "" : "s"} ${diff > 0 ? "ahead of" : "behind"} your device (${mine})`}</Row>

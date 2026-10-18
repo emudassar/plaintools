@@ -67,6 +67,8 @@ interface Props {
   initial?: { lat: number; lon: number; zoom: number };
   /** Keep the current view when content changes unless fitKey changes. */
   children?: React.ReactNode;
+  /** Fit the view to these points instead of to every marker and shape. */
+  fitTo?: LatLon[];
 }
 
 const ACCENT = "#1d4ed8";
@@ -84,6 +86,7 @@ export default function TileMap({
   drawing = false,
   initial,
   children,
+  fitTo,
 }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(640);
@@ -101,14 +104,13 @@ export default function TileMap({
 
   // Fit the view to everything drawn whenever the content changes.
   useEffect(() => {
-    const pts: LatLon[] = [...markers, ...shapes.flatMap((s) => s.points)];
+    const pts: LatLon[] = fitTo ?? [...markers, ...shapes.flatMap((s) => s.points)];
     if (pts.length === 0) return;
     const ref = pts[0].lon;
     // Markers unwrap independently (scattered points); shapes unwrap point to point (paths, rings).
-    const lons = [
-      ...markers.map((m) => unwrapLons([m.lon], ref)[0]),
-      ...shapes.flatMap((s) => unwrapLons(s.points.map((p) => p.lon), ref)),
-    ];
+    const lons = fitTo
+      ? unwrapLons(fitTo.map((p) => p.lon), ref)
+      : [...markers.map((m) => unwrapLons([m.lon], ref)[0]), ...shapes.flatMap((s) => unwrapLons(s.points.map((p) => p.lon), ref))];
     const lats = pts.map((p) => p.lat);
     const fit = fitBounds(
       { south: Math.min(...lats), north: Math.max(...lats), west: Math.min(...lons), east: Math.max(...lons) },

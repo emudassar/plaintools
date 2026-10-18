@@ -105,7 +105,8 @@ export default function CountrySizeTool() {
           <TileMap
             ariaLabel={`World map with ${A.name} moved over ${B.name}. Click to move it elsewhere.`}
             shapes={[...ring(A.polygons, "#1d4ed8", 0.1, true), ...ring(B.polygons, "#15803d", 0.15), ...ring(moved, "#c2410c", 0.35)]}
-            fitKey={fitKey}
+            fitKey={`${fitKey}${target ? `${target.lat},${target.lon}` : ""}`}
+            fitTo={[...B.polygons.map((p) => p[0]), ...moved.map((p) => p[0])].sort((x, y) => y.length - x.length).slice(0, 2).flat()}
             maxFitZoom={5}
             height={480}
             onPick={(p) => setTarget(p)}

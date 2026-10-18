@@ -51,8 +51,7 @@ async function loadBase(b: Base): Promise<ProjectedMap> {
     );
   }
   const w = await loadWorldMap();
-  // Russia and the US cross continents' edges; crop to members of the continent only.
-  return cropMap(w, (r) => r.group === CONTINENT[b]);
+  return cropMap(w, (r) => r.group === CONTINENT[b], b === "europe" ? { skip: ["RUS"], padRight: 0.25 } : b === "oceania" ? { eastOnly: true } : {});
 }
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "");

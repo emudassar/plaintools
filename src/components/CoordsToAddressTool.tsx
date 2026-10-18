@@ -23,7 +23,7 @@ type State = { phase: "idle" } | { phase: "loading"; p: LatLon } | { phase: "err
 const FAR_M = 2_000;
 
 function localTime(tz: string) {
-  return new Intl.DateTimeFormat("en-US", { timeZone: tz, dateStyle: "medium", timeStyle: "short", timeZoneName: "short" }).format(new Date());
+  return new Intl.DateTimeFormat("en-US", { timeZone: tz, year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date());
 }
 
 export default function CoordsToAddressTool() {

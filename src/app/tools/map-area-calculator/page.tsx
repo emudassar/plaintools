@@ -47,8 +47,8 @@ export default function Page() {
           "The result is horizontal (plan) area: a sloping field or roof has more surface than its footprint. Accuracy depends on how carefully you click; zoom in to place the corners. For legal acreage, a licensed survey is the authority.",
         ],
         sources: [
-          { label: "Chamberlain & Duquette (2007), Some Algorithms for Polygons on a Sphere", href: "https://trs.jpl.nasa.gov/handle/2014/41271" },
-          { label: "Snyder (1987), Map Projections — A Working Manual (USGS PP 1395)", href: "https://pubs.usgs.gov/publication/pp1395" },
+          { label: "Chamberlain & Duquette (2007), Some Algorithms for Polygons on a Sphere", href: "https://hdl.handle.net/2014/41271" },
+          { label: "Snyder (1987), Map Projections — A Working Manual (USGS PP 1395)", href: "https://doi.org/10.3133/pp1395" },
           { label: "OpenStreetMap copyright", href: "https://www.openstreetmap.org/copyright" },
         ],
       }}

@@ -46,7 +46,7 @@ export default function Page() {
         ],
         sources: [
           { label: "Natural Earth 1:110m countries", href: "https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/" },
-          { label: "Snyder (1987), Map Projections — A Working Manual", href: "https://pubs.usgs.gov/publication/pp1395" },
+          { label: "Snyder (1987), Map Projections — A Working Manual", href: "https://doi.org/10.3133/pp1395" },
         ],
       }}
       faqs={[

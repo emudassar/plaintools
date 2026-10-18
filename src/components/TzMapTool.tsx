@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ProjectedMapView, { serializeSvg } from "./ProjectedMapView";
 import { ErrorBox, Ext, Loading } from "./GeoBits";
 import { Btn, useMounted } from "./ToolBits";
-import { CENSUS_CB_URL, loadTzUs, loadTzWorld, loadUsStates, TBB_URL, type ProjectedMap, type Region } from "@/lib/projected";
+import { CENSUS_CB_URL, loadTzUs, loadTzWorld, loadUsStates, loadWorldMap, NE_ADMIN0_URL, TBB_URL, type ProjectedMap, type Region } from "@/lib/projected";
 import { abbreviation, dstInfo, fmtInZone, fmtOffset, IANA_TZ_URL, isValidZone, offsetMinutes } from "@/lib/tz";
 import { downloadPng } from "@/lib/svg-export";
 import { asToolError } from "@/lib/errors";
@@ -31,7 +31,7 @@ function TzMapInner({ which }: { which: "us" | "world" }) {
   const svg = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    (which === "us" ? Promise.all([loadTzUs(), loadUsStates()]) : Promise.all([loadTzWorld(), Promise.resolve(null)])).then(
+    (which === "us" ? Promise.all([loadTzUs(), loadUsStates()]) : Promise.all([loadTzWorld(), loadWorldMap()])).then(
       ([m, s]) => {
         setMap({ ...m, regions: m.regions.filter((r) => isValidZone(r.id)) });
         setStates(s);
@@ -62,7 +62,7 @@ function TzMapInner({ which }: { which: "us" | "world" }) {
   };
   const usGroups = Object.entries(US_NAMES)
     .map(([std, v]) => ({ std: Number(std), ...v }))
-    .filter((g) => [...info.values()].some((i) => i.std === g.std));
+    .filter((g) => [...info.values()].some((i) => i.std === g.std) && (g.std !== -240 || info.has("America/Puerto_Rico")));
   const worldGroups = [...new Set([...info.values()].map((i) => i.off))].sort((a, b) => a - b);
   const selInfo = sel ? info.get(sel) : null;
 
@@ -81,7 +81,7 @@ function TzMapInner({ which }: { which: "us" | "world" }) {
           const i = info.get(r.id);
           return (
             <>
-              <strong>{r.id.replace(/_/g, " ")}</strong>
+              <strong>{which === "world" ? `${fmtOffset(i?.off ?? 0)} — same clocks as ${r.id.replace(/_/g, " ")}` : r.id.replace(/_/g, " ")}</strong>
               <br />
               {fmtInZone(now, r.id, { hour: "numeric", minute: "2-digit", weekday: "short" })} · {abbreviation(r.id, now)} ({fmtOffset(i?.off ?? 0)})
               {i && !i.dst ? <><br />No daylight saving time</> : null}
@@ -90,7 +90,7 @@ function TzMapInner({ which }: { which: "us" | "world" }) {
         }}
       >
         {states && (
-          <g pointerEvents="none" fill="none" stroke="#475569" strokeWidth={0.6} strokeOpacity={0.55}>
+          <g pointerEvents="none" fill="none" stroke="#475569" strokeWidth={which === "us" ? 0.6 : 0.35} strokeOpacity={0.55} transform={which === "world" ? `translate(0 ${map.h - states.h})` : undefined}>
             {states.regions.map((s) => (
               <path key={s.id} d={s.d} />
             ))}
@@ -104,7 +104,7 @@ function TzMapInner({ which }: { which: "us" | "world" }) {
 
       {selInfo && sel && (
         <p className="mt-3 rounded-md border border-[var(--color-line)] bg-[var(--color-accent-soft)] p-3 text-sm">
-          <strong>{sel}</strong>: {fmtInZone(now, sel, { dateStyle: "full", timeStyle: "short" })} · {abbreviation(sel, now)} · {fmtOffset(selInfo.off)}
+          <strong>{which === "world" ? `Clocks as in ${sel}` : sel}</strong>: {fmtInZone(now, sel, { dateStyle: "full", timeStyle: "short" })} · {abbreviation(sel, now)} · {fmtOffset(selInfo.off)}
           {selInfo.dst ? ` · observes daylight saving (standard ${fmtOffset(selInfo.std)})` : " · no daylight saving"}
         </p>
       )}
@@ -152,6 +152,12 @@ function TzMapInner({ which }: { which: "us" | "world" }) {
         Zone boundaries: <Ext href={TBB_URL}>timezone-boundary-builder</Ext> (from OpenStreetMap, ODbL), simplified{which === "us" ? "; state lines from the " : "."}
         {which === "us" && <Ext href={CENSUS_CB_URL}>Census Bureau</Ext>}
         {which === "us" ? "." : ""} Current offsets, abbreviations and daylight saving: the <Ext href={IANA_TZ_URL}>IANA time zone database</Ext> in your browser, updated every 30 seconds.
+        {which === "world" && (
+          <>
+            {" "}
+            Country outlines: <Ext href={NE_ADMIN0_URL}>Natural Earth</Ext>. This edition of the boundary data merges zones that keep the same clock time from now on, so each area is named after one zone in it.
+          </>
+        )}
         {which === "world" ? " Colours follow the current UTC offset, so zones showing the same clock time share a colour; at sea, nautical zones are whole hours by longitude." : ""}
       </p>
     </div>
