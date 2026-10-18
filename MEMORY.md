@@ -7,7 +7,8 @@
 ## Current stage
 
 **2026-10-18: simplemaplab.com full clone — 58 new map/location tools (#143-#200) + 110 blank maps, built, tested,
-committed locally, NOT pushed (200 tools, sitemap 317 URLs).** User asked: "put literally all tools of simplemaplab.com
+PUSHED 2026-10-18 (44f99e8) and live on plaintools.site (200 tools; live sitemap 317 URLs, all 317 returned 200 with an
+h1; data files served).** User asked: "put literally all tools of simplemaplab.com
 (every category) + all blank maps on plaintools"; 10 already existed (#83-#92). Push only after user yes.
 - Blank maps (e283806): /maps/blank/<slug>/, registry `src/config/blank-maps.ts`, generator `scripts/build-blank-maps.mjs`
   (needs GEO_RAW + MAPSHAPER env; mapshaper 0.6.102 only in a scratchpad — reinstall `npm i mapshaper@0.6.102` in a temp
