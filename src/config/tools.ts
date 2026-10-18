@@ -2113,6 +2113,83 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Natural Earth 1:110m countries; rigid rotation on the sphere",
   },
+  {
+    slug: "sunrise-sunset-calculator",
+    cluster: "sun-sky",
+    name: "Sunrise Sunset Calculator",
+    tagline:
+      "Get sunrise, sunset, dawn, dusk, solar noon and day length for every day of any month at any place, in its local time with daylight saving, and download the table.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "NOAA solar calculation equations; IANA tz database",
+  },
+  {
+    slug: "time-difference-calculator",
+    cluster: "time-zones",
+    name: "Time Difference Calculator",
+    tagline:
+      "Compare the time in several cities at once, see how many hours ahead or behind each one is, convert a time between them and find the hours that suit everyone.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "IANA tz database in your browser; Open-Meteo time zone lookup",
+  },
+  {
+    slug: "us-time-zone-map",
+    cluster: "time-zones",
+    name: "US Time Zone Map",
+    tagline:
+      "A map of US time zones with the current time in each, their abbreviations and UTC offsets, and which areas skip daylight saving time — hover any area for its local clock.",
+    category: "skytime",
+    status: "live",
+    scope: "US",
+    dataset: "timezone-boundary-builder (OpenStreetMap); IANA tz database",
+  },
+  {
+    slug: "world-time-zone-map",
+    cluster: "time-zones",
+    name: "World Time Zone Map",
+    tagline:
+      "A live map of every time zone in the world coloured by its current UTC offset, with each zone's local time on hover and the time now at every offset.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "timezone-boundary-builder (OpenStreetMap); IANA tz database",
+  },
+  {
+    slug: "day-night-map",
+    cluster: "sun-sky",
+    name: "Day and Night Map",
+    tagline:
+      "See where on Earth it is day, twilight and night right now or at any time, with the points where the sun and moon are overhead, and check the light at any place.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "NOAA solar equations; Schlyter lunar method",
+  },
+  {
+    slug: "moon-position-map",
+    cluster: "moon",
+    name: "Moon Position Map",
+    tagline:
+      "See where the moon is overhead now and where it is above the horizon, its path over the next day, phase and distance, and its direction, moonrise and moonset from any place.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Schlyter lunar method (checked against JPL Horizons)",
+  },
+  {
+    slug: "moon-phase-calendar",
+    cluster: "moon",
+    name: "Moon Phase Calendar",
+    tagline:
+      "A month calendar of the moon's phase every day, with the exact times of new moon, first quarter, full moon and last quarter in your time zone, or every phase of a year.",
+    category: "skytime",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Schlyter lunar method (checked against USNO phase tables)",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

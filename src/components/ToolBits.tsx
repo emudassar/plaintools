@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Ext } from "./GeoBits";
 import { FOSSGIS_ABOUT_URL, OSRM_DOCS_URL, PROFILE_LABEL, type Profile } from "@/lib/routing";
 
@@ -59,4 +59,15 @@ export function Btn({ children, onClick, disabled, primary }: { children: ReactN
       {children}
     </button>
   );
+}
+
+/**
+ * False during the static build and the first client render, true after mount. Tools that show
+ * "now" (clocks, today's sky) render only once mounted, so the page HTML built at deploy time
+ * never disagrees with the visitor's clock.
+ */
+export function useMounted(): boolean {
+  const [m, setM] = useState(false);
+  useEffect(() => setM(true), []);
+  return m;
 }
