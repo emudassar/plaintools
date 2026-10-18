@@ -16,7 +16,7 @@ import { normalizeLon, type LatLon } from "./geodesy";
 
 export const KARNEY_URL = "https://arxiv.org/abs/1002.1417";
 export const MGRS_DOC_URL = "https://geographiclib.sourceforge.io/C++/doc/classGeographicLib_1_1MGRS.html";
-export const OLC_SPEC_URL = "https://github.com/google/open-location-code/blob/main/docs/specification.md";
+export const OLC_SPEC_URL = "https://github.com/google/open-location-code/blob/main/Documentation/Specification/specification.md";
 export const GEOHASH_URL = "https://en.wikipedia.org/wiki/Geohash";
 
 const RAD = Math.PI / 180;

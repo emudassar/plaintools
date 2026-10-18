@@ -50,7 +50,7 @@ export default function Page() {
         sources: [
           { label: "Karney (2011), Transverse Mercator with an accuracy of a few nanometers", href: "https://arxiv.org/abs/1002.1417" },
           { label: "GeographicLib: MGRS", href: "https://geographiclib.sourceforge.io/C++/doc/classGeographicLib_1_1MGRS.html" },
-          { label: "Open Location Code specification", href: "https://github.com/google/open-location-code/blob/main/docs/specification.md" },
+          { label: "Open Location Code specification", href: "https://github.com/google/open-location-code/blob/main/Documentation/Specification/specification.md" },
           { label: "Geohash", href: "https://en.wikipedia.org/wiki/Geohash" },
         ],
       }}

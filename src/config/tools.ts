@@ -2190,6 +2190,83 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Schlyter lunar method (checked against USNO phase tables)",
   },
+  {
+    slug: "equator-map",
+    cluster: "earth-lines",
+    name: "Equator Map",
+    tagline:
+      "See the Equator on a map with every country it crosses, where it enters and leaves each one and how many kilometres run over land, and how far any place is from it.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Natural Earth 1:10m countries; WGS84",
+  },
+  {
+    slug: "tropic-of-cancer-map",
+    cluster: "earth-lines",
+    name: "Tropic of Cancer Map",
+    tagline:
+      "See the Tropic of Cancer on a map at its exact latitude for this year, with the 19 countries and territories it crosses, the length over land in each, and your distance from it.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "IAU 2006 obliquity; Natural Earth 1:10m countries",
+  },
+  {
+    slug: "tropic-of-capricorn-map",
+    cluster: "earth-lines",
+    name: "Tropic of Capricorn Map",
+    tagline:
+      "See the Tropic of Capricorn on a map at its exact latitude for this year, with the 10 countries it crosses, the length over land in each, and your distance from it.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "IAU 2006 obliquity; Natural Earth 1:10m countries",
+  },
+  {
+    slug: "arctic-circle-map",
+    cluster: "earth-lines",
+    name: "Arctic Circle Map",
+    tagline:
+      "See the Arctic Circle on a map at its exact latitude for this year, with the 8 countries it crosses, the length over land in each, and how far north or south of it any place is.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "IAU 2006 obliquity; Natural Earth 1:10m countries",
+  },
+  {
+    slug: "antarctic-circle-map",
+    cluster: "earth-lines",
+    name: "Antarctic Circle Map",
+    tagline:
+      "See the Antarctic Circle on a map at its exact latitude for this year, where it crosses the Antarctic continent and how far any place is from it.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "IAU 2006 obliquity; Natural Earth 1:10m countries",
+  },
+  {
+    slug: "prime-meridian-map",
+    cluster: "earth-lines",
+    name: "Prime Meridian Map",
+    tagline:
+      "See the Prime Meridian (0° longitude) on a map with every country it crosses from the UK to Antarctica, the stretch over land in each, and how far east or west of it any place is.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Natural Earth 1:10m countries; WGS84",
+  },
+  {
+    slug: "international-date-line-map",
+    cluster: "earth-lines",
+    name: "International Date Line Map",
+    tagline:
+      "See the International Date Line on a map as it bends around Pacific island nations, and check the local date and time at any place on either side of it.",
+    category: "earthlines",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Natural Earth 1:10m geographic lines; IANA tz database",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

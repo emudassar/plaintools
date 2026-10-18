@@ -49,8 +49,8 @@ export default function Page() {
         ],
       }}
       faqs={[
-        { question: "How many time zones are there?", answer: "About 38 different UTC offsets are in use, but the IANA database lists several hundred named zones because their histories differ." },
-        { question: "Why does China have one time zone?", answer: "By national decision, all of China uses UTC+08:00 even though it spans about five hours of longitude." },
+        { question: "How many time zones are there?", answer: "A few dozen different UTC offsets are in use — the strip below the map lists every one in use right now — but the IANA database names several hundred zones because their histories differ." },
+        { question: "Why does China have one time zone?", answer: "By national decision, all of China uses UTC+08:00 even though it spans about 60° of longitude — four hours of sun time." },
         { question: "What are the zones over the ocean?", answer: "Nautical time zones, one hour wide by longitude, used at sea." },
         { question: "Where is it already tomorrow?", answer: "The zones just west of the International Date Line, such as Kiribati at UTC+14, are first into each new day." },
         { question: "Why do colours change in March and November?", answer: "Many countries switch to or from daylight saving then, changing their offset." },

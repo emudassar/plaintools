@@ -30,7 +30,7 @@ export default function Page() {
         heading: "Why look at a US time zone map",
         items: [
           { title: "Calling across the country", body: "Is it too early in California?" },
-          { title: "States split between zones", body: "Parts of Florida, Indiana, Kentucky, Tennessee, Texas, the Dakotas, Nebraska, Kansas, Idaho and Oregon are in a different zone from the rest of their state." },
+          { title: "States split between zones", body: "Parts of Florida, Indiana, Kentucky, Michigan, Tennessee, Texas, the Dakotas, Nebraska, Kansas, Idaho and Oregon are in a different zone from the rest of their state." },
           { title: "Arizona's exception", body: "Most of Arizona skips daylight saving; the Navajo Nation observes it." },
           { title: "Travel planning", body: "Know when you cross a zone line on a road trip." },
           { title: "Scheduling a broadcast", body: "Plan for viewers in every zone." },
@@ -47,7 +47,7 @@ export default function Page() {
         sources: [
           { label: "timezone-boundary-builder", href: "https://github.com/evansiroky/timezone-boundary-builder" },
           { label: "IANA time zone database", href: "https://www.iana.org/time-zones" },
-          { label: "US Department of Transportation: time zones", href: "https://www.transportation.gov/regulations/time-zones" },
+          { label: "49 CFR Part 71: Standard time zone boundaries (US DOT)", href: "https://www.ecfr.gov/current/title-49/subtitle-A/part-71" },
           { label: "Census Bureau cartographic boundary files", href: "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html" },
         ],
       }}

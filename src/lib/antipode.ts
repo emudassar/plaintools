@@ -17,7 +17,6 @@
 import { normalizeLon, WGS84_A, WGS84_F, type LatLon } from "./geodesy";
 
 export const PREM_DOI_URL = "https://doi.org/10.1016/0031-9201(81)90046-7";
-export const TR8350_URL = "https://earth-info.nga.mil/php/download.php?file=coord-wgs84";
 
 const RAD = Math.PI / 180;
 const E2 = WGS84_F * (2 - WGS84_F);

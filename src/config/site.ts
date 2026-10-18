@@ -65,15 +65,34 @@ export const thirdPartyServices: readonly ThirdPartyService[] = [
   {
     name: "Open-Meteo",
     purpose:
-      "Returns ground elevation (Copernicus DEM) and the time zone for a set of coordinates. Used by What Is My Elevation?, the Random Location Generator and the Sun Position Calculator.",
+      "Returns ground elevation (Copernicus DEM) and the time zone for a set of coordinates. Used by the elevation, antipode, sun, moon and time zone tools among the Maps & Location tools.",
     privacyUrl: "https://open-meteo.com/en/terms#privacy",
     receives: "Your IP address and the latitude/longitude being looked up.",
   },
   {
     name: "FCC Area API",
-    purpose: "Returns the 2020 Census county and state for a set of coordinates. Used by What County Am I In? and What State Am I In?",
+    purpose: "Returns the 2020 Census county and state for a set of coordinates. Used by What County Am I In?, What State Am I In?, Coordinates to State and the Address to County Lookup.",
     privacyUrl: "https://www.fcc.gov/general/privacy-policy",
     receives: "Your IP address and the latitude/longitude being looked up.",
+  },
+  {
+    name: "US Census Bureau TIGERweb",
+    purpose: "Returns Census boundaries — ZIP code areas and city limits — for a point or a list of ZIP codes. Used by What ZIP Code Am I In?, What City Am I In? and the ZIP Code Map Maker.",
+    privacyUrl: "https://www.census.gov/about/policies/privacy.html",
+    receives: "Your IP address and the latitude/longitude or the five-digit ZIP codes being looked up (never the names or values you attach to them).",
+  },
+  {
+    name: "FOSSGIS routing servers (OSRM and Valhalla)",
+    purpose:
+      "Calculate road, cycling and walking routes, distance tables and travel-time areas over OpenStreetMap. Used by the distance, drive-time, multi-stop and elevation-profile tools when you ask for a route.",
+    privacyUrl: "https://www.fossgis.de/datenschutzerkl%C3%A4rung",
+    receives: "Your IP address and the coordinates of the points being routed.",
+  },
+  {
+    name: "Google Maps (embed preview)",
+    purpose: "Draws the preview in the Google Maps Embed Code Generator, only when you press Preview.",
+    privacyUrl: "https://policies.google.com/privacy",
+    receives: "Your IP address, browser details, the place or route in the map, and the API key you typed (if any).",
   },
   {
     name: "OpenStreetMap tile servers",
