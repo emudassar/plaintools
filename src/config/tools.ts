@@ -1751,6 +1751,160 @@ export const tools: readonly Tool[] = [
     scope: "Worldwide",
     dataset: "Your coordinates on OpenStreetMap tiles",
   },
+  {
+    slug: "gps-coordinate-converter",
+    cluster: "coordinate-formats",
+    name: "GPS Coordinate Converter",
+    tagline:
+      "Paste a coordinate in any format — decimal degrees, DMS, decimal minutes, UTM, MGRS, Plus Code or geohash — and get it in every other format, one at a time or a whole list to CSV.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "WGS84 conversions: Karney (2011) UTM, NGA MGRS, Open Location Code, geohash",
+  },
+  {
+    slug: "utm-to-lat-long",
+    cluster: "coordinate-formats",
+    name: "UTM to Lat Long Converter",
+    tagline:
+      "Enter a UTM zone, hemisphere, easting and northing and get latitude and longitude on WGS84 — or convert the other way, or a whole list at once.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Transverse Mercator by Krüger's series (Karney 2011), WGS84",
+  },
+  {
+    slug: "antipode-finder",
+    cluster: "antipodes",
+    name: "Antipode Finder",
+    tagline:
+      "Find the exact point on the opposite side of the Earth from any address or your location, whether it is land or ocean, and see where land lies opposite land on a world map.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Antipode on WGS84; Copernicus DEM via Open-Meteo; Natural Earth land",
+  },
+  {
+    slug: "bearing-calculator",
+    cluster: "distance",
+    name: "Bearing Calculator",
+    tagline:
+      "Enter two places or click a map and get the true and magnetic bearing from one to the other, the bearing on arrival, the back bearing and the constant-heading rhumb line.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Vincenty inverse on WGS84; NOAA/BGS World Magnetic Model 2025",
+  },
+  {
+    slug: "geographic-center-finder",
+    cluster: "antipodes",
+    name: "Geographic Center Finder",
+    tagline:
+      "Find the geographic midpoint and the centre of minimum distance of any set of places, optionally weighted, or the area-weighted centre of any US state or country.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Spherical centroid and geometric median; Census and Natural Earth boundaries",
+  },
+  {
+    slug: "dig-through-the-earth-map",
+    cluster: "antipodes",
+    name: "Dig Through the Earth Map",
+    tagline:
+      "Pick where you start digging and see where a tunnel straight down would come out, how long it is, which layers of the Earth it passes and how long a fall through it would take.",
+    category: "coordinates",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "WGS84 ellipsoid normal; PREM Earth model (Dziewonski & Anderson 1981)",
+  },
+  {
+    slug: "distance-between-two-places",
+    cluster: "distance",
+    name: "Distance Between Two Places",
+    tagline:
+      "Enter any two addresses or places and get both the straight-line distance and the driving, cycling or walking distance and time, drawn on a map.",
+    category: "distance",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Vincenty on WGS84; OSRM routing over OpenStreetMap (FOSSGIS)",
+  },
+  {
+    slug: "distance-between-cities",
+    cluster: "distance",
+    name: "Distance Between Cities",
+    tagline:
+      "Pick any two US cities or towns from the Census list of 32,000 places and get the miles between them in a straight line and by road, plus the distance to the largest US cities.",
+    category: "distance",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 Gazetteer place points; OSRM driving routes",
+  },
+  {
+    slug: "distance-between-zip-codes",
+    cluster: "distance",
+    name: "Distance Between ZIP Codes",
+    tagline:
+      "Enter two ZIP codes for the straight-line and driving distance between them, or one ZIP and a list of thousands to get every distance as a CSV.",
+    category: "distance",
+    status: "live",
+    scope: "US",
+    dataset: "Census 2024 Gazetteer ZCTA points; OSRM driving routes",
+  },
+  {
+    slug: "multi-stop-distance-calculator",
+    cluster: "distance",
+    name: "Multi-Stop Distance Calculator",
+    tagline:
+      "List up to 25 stops and get the total driving, cycling or walking distance and time with every leg — in your order or reordered for the shortest trip, one way or round trip.",
+    category: "distance",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OSRM route and trip services over OpenStreetMap (FOSSGIS)",
+  },
+  {
+    slug: "distance-matrix-calculator",
+    cluster: "distance",
+    name: "Distance Matrix Calculator",
+    tagline:
+      "List up to 20 places and get a table of the road distance and travel time between every pair, or the straight-line distances, ready to download as CSV.",
+    category: "distance",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "OSRM table service over OpenStreetMap (FOSSGIS); Vincenty",
+  },
+  {
+    slug: "map-area-calculator",
+    cluster: "area",
+    name: "Map Area Calculator",
+    tagline:
+      "Click the corners of a field, lot or any shape on a map and get its area in acres, square feet, hectares and square miles, plus the perimeter, measured on the WGS84 ellipsoid.",
+    category: "distance",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Ellipsoidal polygon area (Chamberlain & Duquette; Snyder authalic latitude)",
+  },
+  {
+    slug: "drive-time-map",
+    cluster: "area",
+    name: "Drive Time Map",
+    tagline:
+      "Pick a starting point and see the area you can reach in 10, 20 or 30 minutes by car, bike or on foot, with the size of each zone and, in the US, how many people live inside it.",
+    category: "distance",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Valhalla isochrones over OpenStreetMap (FOSSGIS); Census tracts",
+  },
+  {
+    slug: "elevation-profile",
+    cluster: "area",
+    name: "Elevation Profile",
+    tagline:
+      "Draw a path on a map or route between two places and get its elevation profile chart with total climb and descent, highest and lowest points and the steepest grade.",
+    category: "distance",
+    status: "live",
+    scope: "Worldwide",
+    dataset: "Copernicus DEM GLO-90 via Open-Meteo; OSRM routes",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */
