@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 const legalLinks = [
   { href: "/about/", label: "About" },
   { href: "/tools/", label: "All tools" },
+  { href: "/maps/blank/", label: "Printable maps" },
   { href: "/privacy-policy/", label: "Privacy policy" },
   { href: "/terms-of-use/", label: "Terms of use" },
   { href: "/disclaimer/", label: "Disclaimer" },

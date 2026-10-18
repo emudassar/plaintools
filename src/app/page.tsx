@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { site } from "@/config/site";
 import { categories, liveTools, tools, usedCategoriesLive, toolsInCategory } from "@/config/tools";
 import { ToolCard } from "@/components/ToolPageLayout";
+import { blankMaps } from "@/config/blank-maps";
 
 export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
@@ -76,6 +77,17 @@ export default function HomePage() {
             </div>
           </div>
         )}
+      </section>
+
+      <section className="mt-12">
+        <Link
+          href="/maps/blank/"
+          className="block rounded-lg border border-[var(--color-line)] p-5 hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-soft)]"
+        >
+          <p className="text-xs font-semibold tracking-wide text-[var(--color-muted)] uppercase">Printable maps</p>
+          <p className="mt-1 text-lg font-medium">{blankMaps.length} free blank maps — SVG, PNG and PDF</p>
+          <p className="mt-1 text-sm text-[var(--color-muted)]">Outline maps drawn from public-domain boundary data, each in blank, labeled, colored and with-cities versions.</p>
+        </Link>
       </section>
 
       <section className="mt-16 max-w-3xl">

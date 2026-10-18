@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/config/site";
 import { liveTools } from "@/config/tools";
+import { blankMaps } from "@/config/blank-maps";
 
 export const dynamic = "force-static";
 
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: "/", priority: 1.0 },
     { path: "/tools/", priority: 0.9 },
+    { path: "/maps/blank/", priority: 0.8 },
     { path: "/about/", priority: 0.6 },
     { path: "/privacy-policy/", priority: 0.3 },
     { path: "/terms-of-use/", priority: 0.3 },
@@ -32,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...blankMaps.map((m) => ({
+      url: absoluteUrl(`/maps/blank/${m.slug}/`),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
     })),
   ];
 }
