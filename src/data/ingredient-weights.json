@@ -1,0 +1,661 @@
+{
+"source": "King Arthur Baking, Ingredient Weight Chart",
+"url": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+"retrieved": "2026-10-24",
+"items": [
+{
+"name": "'00' Pizza Flour",
+"listed": "1 cup",
+"grams": 116,
+"gPerCup": 116.0
+},
+{
+"name": "All-Purpose Flour",
+"listed": "1 cup",
+"grams": 120,
+"gPerCup": 120.0
+},
+{
+"name": "Almond butter",
+"listed": "1/4 cup",
+"grams": 68,
+"gPerCup": 272.0
+},
+{
+"name": "Almond Flour",
+"listed": "1 cup",
+"grams": 96,
+"gPerCup": 96.0
+},
+{
+"name": "Almonds (sliced)",
+"listed": "1/2 cup",
+"grams": 43,
+"gPerCup": 86.0
+},
+{
+"name": "Almonds, whole (unblanched)",
+"listed": "1 cup",
+"grams": 142,
+"gPerCup": 142.0
+},
+{
+"name": "Applesauce",
+"listed": "1 cup",
+"grams": 255,
+"gPerCup": 255.0
+},
+{
+"name": "Baking powder",
+"listed": "1 teaspoon",
+"grams": 4,
+"gPerCup": 192.0
+},
+{
+"name": "Baking soda",
+"listed": "1/2 teaspoon",
+"grams": 3,
+"gPerCup": 288.0
+},
+{
+"name": "Bananas (mashed)",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Bread Flour",
+"listed": "1 cup",
+"grams": 120,
+"gPerCup": 120.0
+},
+{
+"name": "Breadcrumbs (dried)",
+"listed": "1/4 cup",
+"grams": 28,
+"gPerCup": 112.0
+},
+{
+"name": "Breadcrumbs (Japanese Panko)",
+"listed": "1 cup",
+"grams": 50,
+"gPerCup": 50.0
+},
+{
+"name": "Brown rice flour",
+"listed": "1 cup",
+"grams": 128,
+"gPerCup": 128.0
+},
+{
+"name": "Brown sugar (dark or light, packed)",
+"listed": "1 cup",
+"grams": 213,
+"gPerCup": 213.0
+},
+{
+"name": "Buckwheat Flour",
+"listed": "1 cup",
+"grams": 120,
+"gPerCup": 120.0
+},
+{
+"name": "Butter",
+"listed": "8 tablespoons (1/2 cup)",
+"grams": 113,
+"gPerCup": 226.0
+},
+{
+"name": "Buttermilk",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Cacao nibs",
+"listed": "1 cup",
+"grams": 120,
+"gPerCup": 120.0
+},
+{
+"name": "Cashews (whole)",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Cheese (grated Parmesan)",
+"listed": "1/2 cup",
+"grams": 50,
+"gPerCup": 100.0
+},
+{
+"name": "Cheese (Ricotta)",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Cheese, grated (cheddar, jack, mozzarella or Swiss)",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Chia seeds",
+"listed": "1/4 cup",
+"grams": 37,
+"gPerCup": 148.0
+},
+{
+"name": "Chickpea flour",
+"listed": "1 cup",
+"grams": 85,
+"gPerCup": 85.0
+},
+{
+"name": "Chocolate Chips",
+"listed": "1 cup",
+"grams": 170,
+"gPerCup": 170.0
+},
+{
+"name": "Cocoa (unsweetened)",
+"listed": "1/2 cup",
+"grams": 42,
+"gPerCup": 84.0
+},
+{
+"name": "Coconut (sweetened, shredded)",
+"listed": "1 cup",
+"grams": 85,
+"gPerCup": 85.0
+},
+{
+"name": "Coconut Flour",
+"listed": "1 cup",
+"grams": 128,
+"gPerCup": 128.0
+},
+{
+"name": "Coconut milk; canned, well shaken",
+"listed": "1 cup",
+"grams": 241,
+"gPerCup": 241.0
+},
+{
+"name": "Coconut oil",
+"listed": "1/2 cup",
+"grams": 113,
+"gPerCup": 226.0
+},
+{
+"name": "Coconut sugar",
+"listed": "1/2 cup",
+"grams": 77,
+"gPerCup": 154.0
+},
+{
+"name": "Confectioners' sugar (unsifted)",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Corn syrup",
+"listed": "1 cup",
+"grams": 312,
+"gPerCup": 312.0
+},
+{
+"name": "Cornmeal (whole)",
+"listed": "1 cup",
+"grams": 138,
+"gPerCup": 138.0
+},
+{
+"name": "Cornstarch",
+"listed": "1/4 cup",
+"grams": 28,
+"gPerCup": 112.0
+},
+{
+"name": "Cranberries (dried)",
+"listed": "1/2 cup",
+"grams": 57,
+"gPerCup": 114.0
+},
+{
+"name": "Cream (heavy cream, light cream, or half & half)",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Cream cheese",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Dates (chopped)",
+"listed": "1 cup",
+"grams": 149,
+"gPerCup": 149.0
+},
+{
+"name": "Demerara sugar",
+"listed": "1 cup",
+"grams": 220,
+"gPerCup": 220.0
+},
+{
+"name": "Dried nonfat milk (powdered)",
+"listed": "1/4 cup",
+"grams": 28,
+"gPerCup": 112.0
+},
+{
+"name": "Flaxseed",
+"listed": "1/4 cup",
+"grams": 35,
+"gPerCup": 140.0
+},
+{
+"name": "Ghee",
+"listed": "1/4 cup",
+"grams": 44,
+"gPerCup": 176.0
+},
+{
+"name": "Gluten-Free All-Purpose Flour",
+"listed": "1 cup",
+"grams": 156,
+"gPerCup": 156.0
+},
+{
+"name": "Granola",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Hazelnuts (whole)",
+"listed": "1 cup",
+"grams": 142,
+"gPerCup": 142.0
+},
+{
+"name": "Honey",
+"listed": "1 tablespoon",
+"grams": 21,
+"gPerCup": 336.0
+},
+{
+"name": "Jam or preserves",
+"listed": "1/4 cup",
+"grams": 85,
+"gPerCup": 340.0
+},
+{
+"name": "Lard",
+"listed": "1/2 cup",
+"grams": 113,
+"gPerCup": 226.0
+},
+{
+"name": "Lemon juice",
+"listed": "1 tablespoon",
+"grams": 14,
+"gPerCup": 224.0
+},
+{
+"name": "Macadamia nuts (whole)",
+"listed": "1 cup",
+"grams": 149,
+"gPerCup": 149.0
+},
+{
+"name": "Maple syrup",
+"listed": "1/2 cup",
+"grams": 156,
+"gPerCup": 312.0
+},
+{
+"name": "Marshmallows (mini)",
+"listed": "1 cup",
+"grams": 43,
+"gPerCup": 43.0
+},
+{
+"name": "Masa Harina",
+"listed": "1 cup",
+"grams": 93,
+"gPerCup": 93.0
+},
+{
+"name": "Mayonnaise",
+"listed": "1/2 cup",
+"grams": 113,
+"gPerCup": 226.0
+},
+{
+"name": "Medium Rye Flour",
+"listed": "1 cup",
+"grams": 106,
+"gPerCup": 106.0
+},
+{
+"name": "Milk (evaporated)",
+"listed": "1/2 cup",
+"grams": 113,
+"gPerCup": 226.0
+},
+{
+"name": "Milk (fresh)",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Mini chocolate chips",
+"listed": "1 cup",
+"grams": 177,
+"gPerCup": 177.0
+},
+{
+"name": "Molasses",
+"listed": "1/4 cup",
+"grams": 85,
+"gPerCup": 340.0
+},
+{
+"name": "Oat Flour",
+"listed": "1 cup",
+"grams": 92,
+"gPerCup": 92.0
+},
+{
+"name": "Oats (old-fashioned or quick-cooking)",
+"listed": "1 cup",
+"grams": 89,
+"gPerCup": 89.0
+},
+{
+"name": "Olive oil",
+"listed": "1/4 cup",
+"grams": 50,
+"gPerCup": 200.0
+},
+{
+"name": "Pastry Flour",
+"listed": "1 cup",
+"grams": 106,
+"gPerCup": 106.0
+},
+{
+"name": "Peanut butter",
+"listed": "1/2 cup",
+"grams": 135,
+"gPerCup": 270.0
+},
+{
+"name": "Peanuts (whole, shelled)",
+"listed": "1 cup",
+"grams": 142,
+"gPerCup": 142.0
+},
+{
+"name": "Pecans (diced)",
+"listed": "1/2 cup",
+"grams": 57,
+"gPerCup": 114.0
+},
+{
+"name": "Pecans (whole)",
+"listed": "1 cup",
+"grams": 105,
+"gPerCup": 105.0
+},
+{
+"name": "Pine nuts",
+"listed": "1/2 cup",
+"grams": 71,
+"gPerCup": 142.0
+},
+{
+"name": "Pistachio nuts (shelled)",
+"listed": "1/2 cup",
+"grams": 60,
+"gPerCup": 120.0
+},
+{
+"name": "Polenta (coarse ground cornmeal)",
+"listed": "1 cup",
+"grams": 163,
+"gPerCup": 163.0
+},
+{
+"name": "Poppy seeds",
+"listed": "2 tablespoons",
+"grams": 18,
+"gPerCup": 144.0
+},
+{
+"name": "Potato starch",
+"listed": "1 cup",
+"grams": 152,
+"gPerCup": 152.0
+},
+{
+"name": "Pumpkin pur\u00e9e",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Pumpkin seeds",
+"listed": "1/4 cup",
+"grams": 40,
+"gPerCup": 160.0
+},
+{
+"name": "Quinoa (whole)",
+"listed": "1 cup",
+"grams": 177,
+"gPerCup": 177.0
+},
+{
+"name": "Raisins (loose)",
+"listed": "1 cup",
+"grams": 149,
+"gPerCup": 149.0
+},
+{
+"name": "Rice (long grain, dry)",
+"listed": "1/2 cup",
+"grams": 99,
+"gPerCup": 198.0
+},
+{
+"name": "Rice flour (white)",
+"listed": "1 cup",
+"grams": 142,
+"gPerCup": 142.0
+},
+{
+"name": "Rye flour blend",
+"listed": "1 cup",
+"grams": 106,
+"gPerCup": 106.0
+},
+{
+"name": "Salt (Kosher, Diamond Crystal)",
+"listed": "1 tablespoon",
+"grams": 8,
+"gPerCup": 128.0
+},
+{
+"name": "Salt (Kosher, Morton's)",
+"listed": "1 tablespoon",
+"grams": 16,
+"gPerCup": 256.0
+},
+{
+"name": "Salt (table)",
+"listed": "1 tablespoon",
+"grams": 18,
+"gPerCup": 288.0
+},
+{
+"name": "Self-Rising Flour",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Semolina Flour",
+"listed": "1 cup",
+"grams": 163,
+"gPerCup": 163.0
+},
+{
+"name": "Sesame seeds",
+"listed": "1/2 cup",
+"grams": 71,
+"gPerCup": 142.0
+},
+{
+"name": "Sour cream",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Spelt Flour",
+"listed": "1 cup",
+"grams": 99,
+"gPerCup": 99.0
+},
+{
+"name": "Steel cut oats",
+"listed": "1/2 cup",
+"grams": 70,
+"gPerCup": 140.0
+},
+{
+"name": "Sugar (granulated white)",
+"listed": "1 cup",
+"grams": 198,
+"gPerCup": 198.0
+},
+{
+"name": "Sunflower seeds",
+"listed": "1/4 cup",
+"grams": 35,
+"gPerCup": 140.0
+},
+{
+"name": "Superfine (caster) sugar",
+"listed": "1 cup",
+"grams": 190,
+"gPerCup": 190.0
+},
+{
+"name": "Sweetened condensed milk",
+"listed": "1/4 cup",
+"grams": 78,
+"gPerCup": 312.0
+},
+{
+"name": "Tahini paste",
+"listed": "1/2 cup",
+"grams": 128,
+"gPerCup": 256.0
+},
+{
+"name": "Tapioca starch or flour",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Turbinado sugar (raw)",
+"listed": "1 cup",
+"grams": 180,
+"gPerCup": 180.0
+},
+{
+"name": "Unbleached Cake Flour",
+"listed": "1 cup",
+"grams": 120,
+"gPerCup": 120.0
+},
+{
+"name": "Vanilla Extract",
+"listed": "1 tablespoon",
+"grams": 14,
+"gPerCup": 224.0
+},
+{
+"name": "Vegetable oil",
+"listed": "1 cup",
+"grams": 198,
+"gPerCup": 198.0
+},
+{
+"name": "Vegetable shortening",
+"listed": "1/4 cup",
+"grams": 46,
+"gPerCup": 184.0
+},
+{
+"name": "Walnuts (chopped)",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Water",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+},
+{
+"name": "Wheat germ",
+"listed": "1/4 cup",
+"grams": 28,
+"gPerCup": 112.0
+},
+{
+"name": "White Chocolate Chips",
+"listed": "1 cup",
+"grams": 170,
+"gPerCup": 170.0
+},
+{
+"name": "Whole wheat flour",
+"listed": "1 cup",
+"grams": 113,
+"gPerCup": 113.0
+},
+{
+"name": "Whole Wheat Pastry Flour / Graham Flour",
+"listed": "1 cup",
+"grams": 96,
+"gPerCup": 96.0
+},
+{
+"name": "Yeast (instant)",
+"listed": "2 teaspoons",
+"grams": 6,
+"gPerCup": 144.0
+},
+{
+"name": "Yogurt",
+"listed": "1 cup",
+"grams": 227,
+"gPerCup": 227.0
+}
+]
+}

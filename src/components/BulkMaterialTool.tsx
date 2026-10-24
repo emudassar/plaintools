@@ -1,23 +1,27 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { bulkMaterial, NM_FACTORS, NM_URL, NM_RETRIEVED, NM_SOURCE, type Shape, type LenUnit } from "@/lib/bulk-material";
+import { bulkMaterial, NM_FACTORS, NM_URL, NM_RETRIEVED, NM_SOURCE, type NmMaterial, type Shape, type LenUnit } from "@/lib/bulk-material";
 import { NumField, SelectField, Grid, Hint, ResultCard, Output, attempt, num, optNum, fmt, money } from "./CalcBits";
 
 /**
  * Shared by the material-specific landscape pages (pea gravel, river rock).
  * Each page passes its own defaults and a size note; the factor defaults to the
- * NM/BLM "Gravel ¼–2 in" row and stays editable.
+ * NM/BLM "Gravel ¼–2 in" row and stays editable. Pages covering several materials pass
+ * `materials`, which adds a picker that sets the factor from that NM/BLM row.
  */
 export default function BulkMaterialTool({
   materialName,
   defaultDepth,
   sizeNote,
+  materials,
 }: {
   materialName: string;
   defaultDepth: string;
   sizeNote: ReactNode;
+  materials?: readonly NmMaterial[];
 }) {
+  const [mat, setMat] = useState<NmMaterial>(materials?.[0] ?? "gravel-quarter-2");
   const [shape, setShape] = useState<Shape>("rect");
   const [unit, setUnit] = useState<LenUnit>("ft");
   const [a, setA] = useState("10");
@@ -25,7 +29,11 @@ export default function BulkMaterialTool({
   const [area, setArea] = useState("");
   const [depth, setDepth] = useState(defaultDepth);
   const [bag, setBag] = useState("0.5");
-  const [factor, setFactor] = useState(String(NM_FACTORS["gravel-quarter-2"].tonsPerYd));
+  const [factor, setFactor] = useState(String(NM_FACTORS[materials?.[0] ?? "gravel-quarter-2"].tonsPerYd));
+  const pickMaterial = (m: NmMaterial) => {
+    setMat(m);
+    setFactor(String(NM_FACTORS[m].tonsPerYd));
+  };
   const [waste, setWaste] = useState("0");
   const [ppt, setPpt] = useState("");
   const [ppb, setPpb] = useState("");
@@ -49,6 +57,11 @@ export default function BulkMaterialTool({
 
   return (
     <div>
+      {materials && (
+        <Grid cols={2}>
+          <SelectField label="Material" value={mat} onChange={pickMaterial} options={materials.map((m) => [m, NM_FACTORS[m].label] as const)} />
+        </Grid>
+      )}
       <Grid cols={3}>
         <SelectField label="Area shape" value={shape} onChange={setShape} options={[["rect", "Rectangle"], ["circle", "Circle"]]} />
         <SelectField label="Units" value={unit} onChange={setUnit} options={[["ft", "Feet, depth in inches"], ["m", "Metres, depth in cm"]]} />
@@ -61,7 +74,7 @@ export default function BulkMaterialTool({
       </Grid>
       <Grid cols={4}>
         <NumField label="Bag size (cu ft)" value={bag} onChange={setBag} hint="Printed on the bag; 0.5 is common." />
-        <NumField label="Tons per cubic yard" value={factor} onChange={setFactor} hint="1.42 = NM/BLM gravel ¼–2 in. Use your supplier's figure if you have it." />
+        <NumField label="Tons per cubic yard" value={factor} onChange={setFactor} hint={`${NM_FACTORS[mat].tonsPerYd} = NM/BLM ${NM_FACTORS[mat].label.toLowerCase()}. Use your supplier's figure if you have it.`} />
         <NumField label="Extra allowance (%)" value={waste} onChange={setWaste} />
         <div className="grid grid-cols-2 gap-2">
           <NumField label="$ / ton" value={ppt} onChange={setPpt} />
@@ -92,7 +105,7 @@ export default function BulkMaterialTool({
                 <a className="underline" href={NM_URL}>
                   {NM_SOURCE}
                 </a>
-                , &ldquo;Gravel ¼&Prime; – 2&Prime;&rdquo; = 1.42 short tons per cubic yard. Retrieved {NM_RETRIEVED}.
+                , &ldquo;{NM_FACTORS[mat].label}&rdquo; = {NM_FACTORS[mat].tonsPerYd} short tons per cubic yard. Retrieved {NM_RETRIEVED}.
               </p>
             }
           />

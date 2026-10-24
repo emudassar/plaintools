@@ -6,6 +6,33 @@
 
 ## Current stage
 
+**2026-10-24: 42 everyday tools (#201-#242) from Mudassar's 40-idea list built, tested, committed locally — NOT pushed
+(push only after his yes).** Research: Semrush sr04, 88 seeds, slug per idea chosen by volume vs KD ->
+`research/_completed/2026-10-24-40-tool-list.md` (item 17 = concrete + gravel + mulch, so 42 pages). Typecheck + build
+clean, sitemap 359 URLs. Node logic tests 128/128 (scratchpad harness), every page loaded on the static export
+(plaintools-static) with no console errors, interactions + error states + live lookups exercised.
+- New categories: `time` (Dates & Time), `money` (Money & Prices), `text` (Text & Writing), `fun` (Random & Games).
+  Kitchen/sizing/sleep went to `health`, school tools + roman numerals to `math`, electricity to `energy`.
+- Libs: date-calc (ymdBetween = whole months via clamped addMonths, then days; HOLIDAYS per 5 USC 6103 + Easter
+  computus), time-calc, pay-tax (IRS 2026 brackets/std deduction, SS base $184,500, Addl Medicare; state brackets from
+  `src/data/state-income-tax-2026.json`), money-calc (`src/data/sales-tax-2026.json` Tax Foundation midyear 2026,
+  `src/data/eia-residential-price.json` EIA Table 5.6.A Aug 2026), metal-price (gold-api.com + open.er-api.com, both
+  CORS, added to thirdPartyServices; ExchangeRate-API requires the attribution link — it is on the result card),
+  home-calc, kitchen-calc (`src/data/ingredient-weights.json` = 109 generic rows of King Arthur's weight chart),
+  study-calc, text-tools, fun-tools (Web Crypto randInt with rejection sampling).
+- BulkMaterialTool gained an optional `materials` picker (used by gravel-calculator); pea gravel/river rock unchanged.
+- Pages were generated from Python specs in the scratchpad (lost after the session) — edit page.tsx files directly.
+- Sources checked 2026-10-24: IRS 2026 release, IRS Topics 751/560, Tax Foundation 2026 income + sales tables, EIA
+  5.6.A, OPM 2,087-hour sheet, NINDS sleep, CDC sleep (7+ h adults), Behr Premium Plus 250-400 sq ft/gal, King Arthur
+  chart, Wikipedia (ring size, shoe size ISO/TS 19407 equations, gas mark, FLAMES, astrological sign/aspect, aging in
+  dogs 15/9/5), Wang 2020 dog formula (DOI, page not loadable here), Brysbaert 2019 238 wpm (DOI).
+- NOT sourced, so deliberately left out: per-room moving box counts (U-Haul blocks bots; tool counts the user's own
+  boxes), city sales tax rates (no free dataset; user types local rate), preset word limits, brand shoe offsets.
+- APA title-case page shows a CAPTCHA to automation — not used; the rule set is stated on the page instead.
+- USDA FDC API host (api.nal.usda.gov) does not resolve from this machine.
+- Overlaps noted to Mudassar: time zone converter -> convert-time-zones (time-difference-calculator already converts),
+  tile -> flooring-calculator, lumber -> fence-calculator. Several head terms are KD 70-93 (word counter, spin the wheel).
+
 **2026-10-18: simplemaplab.com full clone — 58 new map/location tools (#143-#200) + 110 blank maps, built, tested,
 PUSHED 2026-10-18 (44f99e8) and live on plaintools.site (200 tools; live sitemap 317 URLs, all 317 returned 200 with an
 h1; data files served).** User asked: "put literally all tools of simplemaplab.com

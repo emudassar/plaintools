@@ -1,0 +1,364 @@
+{
+"source": "Tax Foundation, State and Local Sales Tax Rates, Midyear 2026 (rates as of July 1, 2026)",
+"url": "https://taxfoundation.org/data/all/state/2026-sales-tax-rates/",
+"retrieved": "2026-10-24",
+"states": [
+{
+"state": "Alabama",
+"state_rate": 4.0,
+"avg_local": 5.46,
+"max_local": 8.0,
+"combined": 9.46
+},
+{
+"state": "Alaska",
+"state_rate": 0.0,
+"avg_local": 1.82,
+"max_local": 7.85,
+"combined": 1.82
+},
+{
+"state": "Arizona",
+"state_rate": 5.6,
+"avg_local": 2.94,
+"max_local": 5.3,
+"combined": 8.54
+},
+{
+"state": "Arkansas",
+"state_rate": 6.5,
+"avg_local": 2.98,
+"max_local": 6.13,
+"combined": 9.48
+},
+{
+"state": "California",
+"state_rate": 7.25,
+"avg_local": 1.78,
+"max_local": 5.25,
+"combined": 9.03
+},
+{
+"state": "Colorado",
+"state_rate": 2.9,
+"avg_local": 4.99,
+"max_local": 9.1,
+"combined": 7.89
+},
+{
+"state": "Connecticut",
+"state_rate": 6.35,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 6.35
+},
+{
+"state": "Delaware",
+"state_rate": 0.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 0.0
+},
+{
+"state": "District of Columbia",
+"state_rate": 6.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 6.0
+},
+{
+"state": "Florida",
+"state_rate": 6.0,
+"avg_local": 0.98,
+"max_local": 2.0,
+"combined": 6.98
+},
+{
+"state": "Georgia",
+"state_rate": 4.0,
+"avg_local": 3.56,
+"max_local": 5.0,
+"combined": 7.56
+},
+{
+"state": "Hawaii",
+"state_rate": 4.0,
+"avg_local": 0.5,
+"max_local": 0.5,
+"combined": 4.5
+},
+{
+"state": "Idaho",
+"state_rate": 6.0,
+"avg_local": 0.03,
+"max_local": 3.0,
+"combined": 6.03
+},
+{
+"state": "Illinois",
+"state_rate": 6.25,
+"avg_local": 2.73,
+"max_local": 4.75,
+"combined": 8.98
+},
+{
+"state": "Indiana",
+"state_rate": 7.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 7.0
+},
+{
+"state": "Iowa",
+"state_rate": 6.0,
+"avg_local": 0.94,
+"max_local": 1.0,
+"combined": 6.94
+},
+{
+"state": "Kansas",
+"state_rate": 6.5,
+"avg_local": 2.21,
+"max_local": 4.25,
+"combined": 8.71
+},
+{
+"state": "Kentucky",
+"state_rate": 6.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 6.0
+},
+{
+"state": "Louisiana",
+"state_rate": 5.0,
+"avg_local": 5.13,
+"max_local": 7.0,
+"combined": 10.13
+},
+{
+"state": "Maine",
+"state_rate": 5.5,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 5.5
+},
+{
+"state": "Maryland",
+"state_rate": 6.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 6.0
+},
+{
+"state": "Massachusetts",
+"state_rate": 6.25,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 6.25
+},
+{
+"state": "Michigan",
+"state_rate": 6.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 6.0
+},
+{
+"state": "Minnesota",
+"state_rate": 6.88,
+"avg_local": 1.26,
+"max_local": 3.0,
+"combined": 8.14
+},
+{
+"state": "Mississippi",
+"state_rate": 7.0,
+"avg_local": 0.06,
+"max_local": 1.0,
+"combined": 7.06
+},
+{
+"state": "Missouri",
+"state_rate": 4.23,
+"avg_local": 4.22,
+"max_local": 6.25,
+"combined": 8.44
+},
+{
+"state": "Montana",
+"state_rate": 0.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 0.0
+},
+{
+"state": "Nebraska",
+"state_rate": 5.5,
+"avg_local": 1.48,
+"max_local": 2.0,
+"combined": 6.98
+},
+{
+"state": "Nevada",
+"state_rate": 6.85,
+"avg_local": 1.39,
+"max_local": 1.53,
+"combined": 8.24
+},
+{
+"state": "New Hampshire",
+"state_rate": 0.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 0.0
+},
+{
+"state": "New Jersey",
+"state_rate": 6.63,
+"avg_local": -0.02,
+"max_local": 3.31,
+"combined": 6.6
+},
+{
+"state": "New Mexico",
+"state_rate": 4.88,
+"avg_local": 2.8,
+"max_local": 4.56,
+"combined": 7.68
+},
+{
+"state": "New York",
+"state_rate": 4.0,
+"avg_local": 4.54,
+"max_local": 4.88,
+"combined": 8.54
+},
+{
+"state": "North Carolina",
+"state_rate": 4.75,
+"avg_local": 2.35,
+"max_local": 3.5,
+"combined": 7.1
+},
+{
+"state": "North Dakota",
+"state_rate": 5.0,
+"avg_local": 2.09,
+"max_local": 3.75,
+"combined": 7.09
+},
+{
+"state": "Ohio",
+"state_rate": 5.75,
+"avg_local": 1.54,
+"max_local": 2.25,
+"combined": 7.29
+},
+{
+"state": "Oklahoma",
+"state_rate": 4.5,
+"avg_local": 4.56,
+"max_local": 7.0,
+"combined": 9.06
+},
+{
+"state": "Oregon",
+"state_rate": 0.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 0.0
+},
+{
+"state": "Pennsylvania",
+"state_rate": 6.0,
+"avg_local": 0.34,
+"max_local": 2.0,
+"combined": 6.34
+},
+{
+"state": "Rhode Island",
+"state_rate": 7.0,
+"avg_local": 0.0,
+"max_local": 0.0,
+"combined": 7.0
+},
+{
+"state": "South Carolina",
+"state_rate": 6.0,
+"avg_local": 1.49,
+"max_local": 3.0,
+"combined": 7.49
+},
+{
+"state": "South Dakota",
+"state_rate": 4.2,
+"avg_local": 1.91,
+"max_local": 4.5,
+"combined": 6.11
+},
+{
+"state": "Tennessee",
+"state_rate": 7.0,
+"avg_local": 2.61,
+"max_local": 2.75,
+"combined": 9.61
+},
+{
+"state": "Texas",
+"state_rate": 6.25,
+"avg_local": 1.95,
+"max_local": 2.0,
+"combined": 8.2
+},
+{
+"state": "Utah",
+"state_rate": 6.1,
+"avg_local": 1.32,
+"max_local": 4.7,
+"combined": 7.42
+},
+{
+"state": "Vermont",
+"state_rate": 6.0,
+"avg_local": 0.43,
+"max_local": 1.0,
+"combined": 6.43
+},
+{
+"state": "Virginia",
+"state_rate": 5.3,
+"avg_local": 0.47,
+"max_local": 2.7,
+"combined": 5.77
+},
+{
+"state": "Washington",
+"state_rate": 6.5,
+"avg_local": 3.07,
+"max_local": 4.2,
+"combined": 9.57
+},
+{
+"state": "West Virginia",
+"state_rate": 6.0,
+"avg_local": 0.6,
+"max_local": 1.4,
+"combined": 6.6
+},
+{
+"state": "Wisconsin",
+"state_rate": 5.0,
+"avg_local": 0.72,
+"max_local": 2.9,
+"combined": 5.72
+},
+{
+"state": "Wyoming",
+"state_rate": 4.0,
+"avg_local": 1.39,
+"max_local": 3.0,
+"combined": 5.39
+}
+]
+}

@@ -52,7 +52,7 @@ export const thirdPartyServices: readonly ThirdPartyService[] = [
   {
     name: "Photon (Komoot)",
     purpose:
-      "Turns a typed address into coordinates, and coordinates back into a place name. Used by What Soil Type Is My Property? and the Maps & Location tools.",
+      "Turns a typed address into coordinates, and coordinates back into a place name. Used by What Soil Type Is My Property?, the Maps & Location tools, Convert Time Zones and the Gas Cost Calculator when you type a place.",
     privacyUrl: "https://www.komoot.com/privacy",
     receives: "Your IP address and the address text or coordinates you entered.",
   },
@@ -65,7 +65,7 @@ export const thirdPartyServices: readonly ThirdPartyService[] = [
   {
     name: "Open-Meteo",
     purpose:
-      "Returns ground elevation (Copernicus DEM) and the time zone for a set of coordinates. Used by the elevation, antipode, sun, moon and time zone tools among the Maps & Location tools.",
+      "Returns ground elevation (Copernicus DEM) and the time zone for a set of coordinates. Used by the elevation, antipode, sun, moon and time zone tools among the Maps & Location tools, and by Convert Time Zones when you type a city.",
     privacyUrl: "https://open-meteo.com/en/terms#privacy",
     receives: "Your IP address and the latitude/longitude being looked up.",
   },
@@ -84,9 +84,21 @@ export const thirdPartyServices: readonly ThirdPartyService[] = [
   {
     name: "FOSSGIS routing servers (OSRM and Valhalla)",
     purpose:
-      "Calculate road, cycling and walking routes, distance tables and travel-time areas over OpenStreetMap. Used by the distance, drive-time, multi-stop and elevation-profile tools when you ask for a route.",
+      "Calculate road, cycling and walking routes, distance tables and travel-time areas over OpenStreetMap. Used by the distance, drive-time, multi-stop and elevation-profile tools, and by the Gas Cost Calculator, when you ask for a route.",
     privacyUrl: "https://www.fossgis.de/datenschutzerkl%C3%A4rung",
     receives: "Your IP address and the coordinates of the points being routed.",
+  },
+  {
+    name: "gold-api.com",
+    purpose: "Returns the live gold or silver spot price. Used by Gold Price per Gram.",
+    privacyUrl: "https://gold-api.com/privacy",
+    receives: "Your IP address and which metal is being priced.",
+  },
+  {
+    name: "ExchangeRate-API (open access)",
+    purpose: "Returns the day's currency exchange rates from US dollars. Used by Gold Price per Gram when you pick a currency other than US dollars.",
+    privacyUrl: "https://www.exchangerate-api.com/terms",
+    receives: "Your IP address. No input you type is sent.",
   },
   {
     name: "Google Maps (embed preview)",
