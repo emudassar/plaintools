@@ -26,6 +26,32 @@ body {
   line-height: 1.6;
 }
 
+/*
+ * Hand cursor on everything clickable. Tailwind v4's preflight resets buttons to the
+ * default arrow (v3 used a pointer). In the base layer so a cursor-* utility still wins.
+ */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  select:not(:disabled),
+  summary,
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="file"]:not(:disabled),
+  input[type="range"]:not(:disabled),
+  input[type="color"]:not(:disabled),
+  label:has(> input[type="checkbox"]:not(:disabled)),
+  label:has(> input[type="radio"]:not(:disabled)) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  select:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
+}
+
 /* Visible focus for keyboard users on every interactive element. */
 a:focus-visible,
 button:focus-visible,
