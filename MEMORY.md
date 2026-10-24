@@ -33,6 +33,15 @@ clean, sitemap 359 URLs. Node logic tests 128/128 (scratchpad harness), every pa
 - Overlaps noted to Mudassar: time zone converter -> convert-time-zones (time-difference-calculator already converts),
   tile -> flooring-calculator, lumber -> fence-calculator. Several head terms are KD 70-93 (word counter, spin the wheel).
 
+**2026-10-24 (later): indexing push.** Only ~64 pages indexed; every non-indexed URL checked was "URL is unknown to
+Google" (not rejected) — Google had last read the sitemap 2026-10-18 (317) and the homepage 2026-10-19. Done: sitemap
+resubmitted in GSC (359 discovered), sitemap + all 42 new URLs submitted to Bing. Sitemap lastmod now = last git commit
+date per page (scripts/build-lastmod.mjs runs as npm prebuild -> src/data/lastmod.json, committed; shallow clones keep
+the committed file). Dates lag one commit: run a build before committing page edits so the JSON is current.
+- GOTCHA: the gsc MCP token is read-only (submit_sitemap -> "Insufficient Permission"); do sitemap submits in Chrome
+  at search.google.com/u/1/ (account 1 owns the property; default account /u/0/ has no access).
+- Next: manual "Request indexing" for top pages (~10/day), a few real backlinks; recheck coverage ~2026-10-31.
+
 **2026-10-18: simplemaplab.com full clone — 58 new map/location tools (#143-#200) + 110 blank maps, built, tested,
 PUSHED 2026-10-18 (44f99e8) and live on plaintools.site (200 tools; live sitemap 317 URLs, all 317 returned 200 with an
 h1; data files served).** User asked: "put literally all tools of simplemaplab.com
